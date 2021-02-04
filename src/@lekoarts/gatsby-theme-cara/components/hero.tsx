@@ -50,13 +50,14 @@ const Hero = () => (
             width: `90%`,
           p: {
               fontSize: `display.lg`,
-              lineHeight: `subtitle`,
-              width: `60%`
+              lineHeight: `md`,
+              mb: 6,
+              width: `75%`
             }
           }}>
           <Intro />
           <CTA text="join our CCO" link="/cco" type="link" sx={{
-            variant: `buttons.primary`
+            variant: `links.primary`
           }} />
           </Box>
           <Box sx={{
@@ -66,12 +67,9 @@ const Hero = () => (
             // border: `1px solid red`,
             overflowX: `visible`,
             zIndex: 0
-          }}>
-            {/* <Content speed={0.4} offset={offset} factor={factor}> */}
-            {/* <UpDown> */}
-              <SVG icon="homeHero" hiddenMobile color="colors.background" left="-428px" top="170px" width="1440px" height="7300px" preserveAspectRatio="xMidYMid meet" />
-            {/* </UpDown> */}
-            {/* </Content> */}
+        }}>
+          
+              <SVG icon="homeHero" hiddenMobile color="colors.background" left="-390px" top="210px" width="551px" height="689px" preserveAspectRatio="xMidYMid meet" />
           </Box>
         </Flex>
       </Inner>

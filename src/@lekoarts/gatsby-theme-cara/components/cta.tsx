@@ -9,7 +9,8 @@ type CTAProps = {
   children?: React.ReactNode | any
   icon?: React.ReactNode | any
 }
-const CTA = ({ text, link, type, children, icon }) => {
+
+const CTA = ({ text, link, type, children, icon }:CTAProps) => {
   return (
     <>
       { type === 'button' ? (

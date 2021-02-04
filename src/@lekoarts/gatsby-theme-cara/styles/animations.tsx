@@ -1,5 +1,6 @@
 import { keyframes, css } from "@emotion/core"
 import styled from "@emotion/styled"
+import {useState, useEffect} from "react"
 
 const wave = keyframes`
   0% {
@@ -27,16 +28,16 @@ const upDownWide = keyframes`
     transform: translateY(0);
   }
   to {
-    transform: translateY(200px);
+    transform: translateY(150px);
   }
 `
 
 const upDownAnimation = css`
-  ${upDown} 4s ease-in-out infinite alternate;
+  ${upDown} 10s ease-in-out infinite alternate;
 `
 
 const upDownWideAnimation = css`
-  ${upDownWide} 18s ease-in-out infinite alternate;
+  ${upDownWide} 24s ease-in-out infinite alternate;
 `
 
 export const UpDown = styled.div`
@@ -46,6 +47,7 @@ export const UpDown = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 0;
 `
 
 export const UpDownWide = styled.div`
@@ -55,8 +57,47 @@ export const UpDownWide = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 0;
 `
 
 export const waveAnimation = (length: string) => css`
   animation: ${wave} ${length} linear infinite alternate;
 `
+
+// export const tracePath = ({ elID = "" }) => {
+//   const [drawLine, setDrawLine] = useState(0)
+//   function debounce(func, wait = 5, immediate = false) {
+//     let timeout;
+//     return function() {
+//       const context = this;
+//       const args = arguments;
+//       const later = function() {
+//         timeout = null;
+//         if (!immediate) func.apply(context, args);
+//       };
+//       const callNow = immediate && !timeout;
+//       clearTimeout(timeout);
+//       timeout = setTimeout(later, wait);
+//       if (callNow) func.apply(context, args);
+//     };
+//   }
+
+//   useEffect(() => {
+//     const el = document.querySelector(elID)
+//     console.log(el);
+    
+//     // el.strokeDasharray = ength
+//     // el.strokeDashoffset = length
+//     const handleScroll = () => {
+      
+//       let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+//       let draw = length * scrollpercent
+//       setDrawLine(draw)
+//     }
+//     window.addEventListener("scroll", debounce(handleScroll))
+
+//     return () => window.removeEventListener("scroll", debounce(handleScroll))
+
+//   }, [debounce])
+//   return drawLine;
+// }

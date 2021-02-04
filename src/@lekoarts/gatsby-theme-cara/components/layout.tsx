@@ -13,6 +13,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <Global
       styles={(theme) => ({
         "*": {
+          // outline: `1px solid red`,
           boxSizing: `inherit`,
           "&:before": {
             boxSizing: `inherit`,
@@ -28,7 +29,10 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         body: {
           backgroundColor: theme.colors.background,
           lineHeight: `1.75`,
-          position: `relative`
+          position: `relative`,
+          maxWidth: `100%`,
+          height: `100vh`,
+          overflowX: `hidden`
         },
         h2: {
           fontSize: `body.xl`
@@ -52,6 +56,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <SEO />
     <Header />
     <div className={className} sx={{
+      width: `100vw`,
       zIndex: `0`
     }}>{children}</div>
     <Footer />

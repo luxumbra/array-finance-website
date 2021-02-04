@@ -9,15 +9,20 @@ import { UpDown, UpDownWide } from "../styles/animations"
 
 type PageSectionProps = {
   children: React.ReactNode
+  styles?: object
 }
 
 
-const PageSection = ({ children }) => (
-  <Box as="div">
-    <Inner>
-      {children}
-    </Inner>
-  </Box>
-)
+const PageSection = ({ children, styles }:PageSectionProps) => {
+  // console.log(styles);
+  
+  return (
+    <div css={{position: `relative`, width: `full`}}>
+      <Inner>
+        {children}
+      </Inner>
+    </div>
+  )
+}
 
 export default PageSection
