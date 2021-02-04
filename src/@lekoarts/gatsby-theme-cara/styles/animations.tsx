@@ -43,6 +43,7 @@ const upDownWideAnimation = css`
 export const UpDown = styled.div`
   animation: ${upDownAnimation};
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   right: 0;
@@ -53,6 +54,7 @@ export const UpDown = styled.div`
 export const UpDownWide = styled.div`
   animation: ${upDownWideAnimation};
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   right: 0;

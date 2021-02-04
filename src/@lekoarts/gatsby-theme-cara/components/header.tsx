@@ -68,7 +68,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             variant: `styles.header`,
             textAlign: `center`,
             backgroundColor: `background`,
-            zIndex: `1000`,
+            zIndex: `2000`,
             transition: `height 0.3s ease-in-out, box-shadow 0.2s ease`
           }} ref={ref}>
           <Flex as="nav"

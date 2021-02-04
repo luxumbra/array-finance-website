@@ -8,39 +8,13 @@ import SVG from "./svg"
 import CTA from "./cta"
 import { UpDown, UpDownWide } from "../styles/animations"
 // @ts-ignore
-import Intro from "../sections/intro"
+import HomeHero from "../sections/home-hero"
+import TeamHero from "../sections/team-hero"
+import RoadmapHero from "../sections/roadmap-hero"
+import CCOHero from "../sections/cco-hero"
 
-const Hero = () => (
-  <div>
-    {/* <Divider speed={0.2} offset={offset} factor={factor}> */}
-      {/* <UpDown>
-        <SVG icon="triangle" hiddenMobile width={48} stroke color="icon_orange" left="10%" top="20%" />
-        <SVG icon="hexa" width={48} stroke color="icon_red" left="60%" top="70%" />
-        <SVG icon="box" width={6} color="icon_darker" left="60%" top="15%" />
-      </UpDown>
-      <UpDownWide>
-        <SVG icon="arrowUp" hiddenMobile width={16} color="icon_blue" left="80%" top="10%" />
-        <SVG icon="triangle" width={12} stroke color="icon_brightest" left="90%" top="50%" />
-        <SVG icon="circle" width={16} color="icon_darker" left="70%" top="90%" />
-        <SVG icon="triangle" width={16} stroke color="icon_darkest" left="30%" top="65%" />
-        <SVG icon="cross" width={16} stroke color="icon_pink" left="28%" top="15%" />
-        <SVG icon="circle" width={6} color="icon_darkest" left="75%" top="10%" />
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="45%" top="10%" />
-      </UpDownWide> */}
-      {/* <SVG icon="circle" hiddenMobile width={24} color="icon_darker" left="5%" top="70%" />
-      <SVG icon="circle" width={6} color="icon_darkest" left="4%" top="20%" />
-      <SVG icon="circle" width={12} color="icon_darkest" left="50%" top="60%" />
-      <SVG icon="upDown" width={8} color="icon_darkest" left="95%" top="90%" />
-      <SVG icon="upDown" hiddenMobile width={24} color="icon_darker" left="40%" top="80%" />
-      <SVG icon="triangle" width={8} stroke color="icon_darker" left="25%" top="5%" />
-      <SVG icon="circle" width={64} color="icon_green" left="95%" top="5%" />
-      <SVG icon="box" hiddenMobile width={64} color="icon_purple" left="5%" top="90%" />
-      <SVG icon="box" width={6} color="icon_darkest" left="10%" top="10%" />
-      <SVG icon="box" width={12} color="icon_darkest" left="40%" top="30%" />
-      <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" />
-      <SVG icon="hexa" width={8} stroke color="icon_darker" left="80%" top="70%" /> */}
-    {/* </Divider> */}
-    {/* <Content sx={{ variant: `texts.bigger` }} speed={0.2} offset={offset} factor={factor} align="center">*/}
+const Hero = ({page}) => (
+  <div sx={{ position: `relative`}}>
       <Inner> 
         <Flex sx={{
           position: `relative`,
@@ -48,31 +22,74 @@ const Hero = () => (
           <Box sx={{
             flex: `0 1 90%`,
             width: `90%`,
-          p: {
+            fontSize: `16px`,
+            p: {
               fontSize: `display.lg`,
               lineHeight: `md`,
-              mb: 6,
-              width: `75%`
+              mb: page !== `team` ? 6 : 5,
+              width: page !== `roadmap` ? `75%` : `65%`,
+              "&:last-of-type:not(:first-of-type)": {
+                fontSize: `display.md`,
+                fontWeight: `400`,
+                lineHeight: `lg`,
+                mb: 5,
+                width: `65%`
+              }
             }
-          }}>
-          <Intro />
-          <CTA text="join our CCO" link="/cco" type="link" sx={{
-            variant: `links.primary`
-          }} />
+
+        }}>
+          {page && page === `home` && (
+            <>
+              <HomeHero />
+              <CTA text="join our CCO" link="/cco" type="link" sx={{
+                variant: `links.primary`
+              }} />
+            </>
+          )}
+          {page && page === `team` && (
+            <TeamHero />            
+          )}
+          {page && page === `roadmap` && (
+            <RoadmapHero />            
+          )}
+          {page && page === `cco` && (
+            <CCOHero />            
+          )}
+          
           </Box>
           <Box sx={{
             position: `relative`,
             width: `10%`,
-            height: `689px`,
+            height: page !== `home` ? `auto` : `689px`,
             // border: `1px solid red`,
             overflowX: `visible`,
             zIndex: 0
-        }}>
-          
-              <SVG icon="homeHero" hiddenMobile color="colors.background" left="-390px" top="210px" width="551px" height="689px" preserveAspectRatio="xMidYMid meet" />
+          }}>
+          {page && page === `home` && (
+            <SVG icon="homeHero" hiddenMobile color="colors.background" left="-390px" top="210px" width="551px" height="689px" preserveAspectRatio="xMidYMid meet" />          
+          )}
+          {page && page === `team` && (
+            <SVG icon="backed" hiddenMobile color="colors.background" right="0" top="-50px" width="421px" preserveAspectRatio="xMidYMid meet" />           
+          )}
+          {page && page === `roadmap` && (
+            <SVG icon="futureProof" hiddenMobile color="colors.background" right="0" top="0" width="458px" height="458px" preserveAspectRatio="xMidYMid meet" />            
+          )}
+          {page && page === `cco` && (
+            <SVG icon="backed" hiddenMobile color="colors.background" right="0" top="-100px" width="421px" preserveAspectRatio="xMidYMid meet" />            
+          )}
           </Box>
         </Flex>
-      </Inner>
+    </Inner>
+    {page === `home` && (
+      <SVG icon="linesRight1" hiddenMobile width={492} color="icon_darkest" right="0" top="0%" opacity={1} />
+    )}
+    <UpDown sx={{
+      position: `absolute`,
+      width: `full`,
+      zIndex: 3000
+    }}>
+      <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" top="-5%" opacity={0.5} transform="scale(-1,-1)" />
+    </UpDown>
     {/* </Content> */}
   </div>
 )

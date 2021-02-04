@@ -38,7 +38,7 @@ const TraceLines = styled(animated.div)`
 
 const HomePage = () => (
   <Layout>
-    <Hero />
+    <Hero page="home" />
     <PageSection styles={{minHeight: `1005px`, position: 'relative'}}>
       <Flex>
       <Box sx={{
@@ -140,6 +140,9 @@ const HomePage = () => (
           </UpDown>
         </Box>
       </Flex>
+      <UpDown ssx={{ position: `absolute`, width: `full` }}>
+        <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" top="70%" opacity={1} />
+      </UpDown>
       <UpDownWide>
         {/* <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} /> */}
         <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="20%" opacity={0.2} />
@@ -147,7 +150,13 @@ const HomePage = () => (
       </UpDownWide>
       <UpDown sx={{position: `absolute`, width: `full`}}>
         <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} />
-          </UpDown>
+      </UpDown>
+      <UpDown sx={{
+        position: `absolute`,
+        
+      }}>
+        <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" top="70%" opacity={0.5} transform="scale(-1,-1)" />
+      </UpDown>
     </PageSection>
   </Layout>
 )

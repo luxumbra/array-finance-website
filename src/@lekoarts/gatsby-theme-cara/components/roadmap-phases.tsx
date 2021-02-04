@@ -50,7 +50,7 @@ export const RoadmapPhases = ({ phases }: RoadmapPhasesProps) => (
           ))
         )}
       </ul>
-      <Box sx={{ mb: 5}}>
+      <Box sx={{ my: 5}}>
         <p sx={{fontSize: `body.sm`, fontWeight: `300`, textAlign: `left`}}>* The Array roadmap is subject to change. Depending on governance proposals, parts of the roadmap may be modified or change in priority.</p>
       </Box>
     </Box>
