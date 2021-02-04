@@ -16,6 +16,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@lekoarts/gatsby-theme-cara": "^1.2.18",
     "@theme-ui/presets": "^0.3.5",
     "gatsby": "^2.25.3",
@@ -24,6 +26,8 @@
     "gatsby-plugin-netlify": "^2.4.0",
     "gatsby-plugin-offline": "^3.3.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
+    "lodash": "^4.17.20",
+    "lodash.debounce": "^4.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-spring": "^8.0.27",
