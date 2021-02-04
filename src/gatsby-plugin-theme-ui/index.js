@@ -6,6 +6,7 @@ const theme = merge(tailwind, {
   useCustomProperties: true,
   colors: {
     primary: `#0F30F5`,
+    primaryBlack: `#212121`,
     secondary: `#0F30F5`,
     text: tailwind.colors.white,
     heading: tailwind.colors.white,
@@ -23,6 +24,18 @@ const theme = merge(tailwind, {
     icon_pink: tailwind.colors.pink[5],
     icon_purple: tailwind.colors.purple[6],
     icon_green: tailwind.colors.green[5],
+    
+    brand: {
+      secondary: {
+        light: `#2D71F4`,
+        medium: `#061FAB`,
+        dark: `background`
+      },
+      accents: {
+        light: `#86E5CC`,
+        dark: `20DAF5`
+      }
+    }
     // modes: {
     //   light: {
     //     text: tailwind.colors.gray[8],
@@ -37,6 +50,9 @@ const theme = merge(tailwind, {
     //     icon_darkest: tailwind.colors.gray[6],
     //   },
     // },
+  },
+  backgroundImage: {
+    listBg: `url(./bullet-circle.png)`
   },
   fonts: {
     body: '"Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -68,8 +84,12 @@ const theme = merge(tailwind, {
     },
   },
   lineHeights: {
+    sm: `1.22`,
+    md: `1.287`,
+    lg: `1.48`,
     body: `1.22`,
-    heading: `125px`,
+    h3: `1.22`,
+    heading: `1.22`,
     subtitle: `41.89px`,
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
@@ -106,7 +126,7 @@ const theme = merge(tailwind, {
       },
     },
     p: {
-      fontSize: [`body.sm`, `body.md`, `body.lg`],
+      fontSize: [`body.xs`, `body.sm`, `body.sm`],
       fontweight: `body`,
       lineHeight: `body`,
       '--baseline-multiplier': 0.179,
@@ -131,14 +151,16 @@ const theme = merge(tailwind, {
       color: `heading`,
     },
     h2: {
-      fontSize: [`display.sm`, `display.md`, `display.xxl`],
+      fontSize: [`display.sm`, `display.md`, `display.lg`],
+      lineHeight: 1.22,
       mt: 2,
       mb: 2,
       color: `heading`,
     },
     h3: {
-      fontSize: [3, 4, 5],
-      mt: 3,
+      fontSize: [`display.sm`, `display.sm`, `display.md`],
+      mt: 5,
+      mb: 4,
       color: `heading`,
     },
     h4: {
@@ -179,6 +201,30 @@ const theme = merge(tailwind, {
       maxWidth: `5xl`,
     },
   },
+  lists: {
+    bigList: {
+      listStyle: `none`,
+      pl: 0,
+      "li": {
+        display: `inline-flex`,
+        alignItems: `start`,
+        justifyItems: `left`,
+        pl: `44px`,
+        backgroundImage: `listBg`,
+        backgroundRepeat: `no-repeat`,
+        backgroundPosition: `0 20%`,
+        backgroundSize: `24px`,
+        // "::before": {
+        //   content: `""`,
+        //   display: `block`,
+        //   flex: `0 0 25px`,
+        //   width: `25px`,
+        //   height: `25px`,
+        //   border: `1px solid red`
+        // }
+      }
+    }
+  },
   buttons: {
     toggle: {
       color: `background`,
@@ -205,6 +251,8 @@ const theme = merge(tailwind, {
       border: `4px solid white`,
       borderRadius: `0`,
       color: `white`,
+      fontSize: `display.sm`,
+      fontWeight: `heading`,
       px: `30px`,
       py: `16px`,
     },
