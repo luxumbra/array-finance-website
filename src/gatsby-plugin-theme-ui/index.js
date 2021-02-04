@@ -10,7 +10,7 @@ const theme = merge(tailwind, {
     secondary: `#0F30F5`,
     text: tailwind.colors.white,
     heading: tailwind.colors.white,
-    background: `#17043A`,
+    background: `#020A55`,
     navText: tailwind.colors.white,
     divider: tailwind.colors.gray[8],
     textMuted: tailwind.colors.gray[5],
@@ -24,18 +24,18 @@ const theme = merge(tailwind, {
     icon_pink: tailwind.colors.pink[5],
     icon_purple: tailwind.colors.purple[6],
     icon_green: tailwind.colors.green[5],
-    
+
     brand: {
       secondary: {
         light: `#2D71F4`,
         medium: `#061FAB`,
-        dark: `background`
+        dark: `background`,
       },
       accents: {
         light: `#86E5CC`,
-        dark: `20DAF5`
-      }
-    }
+        dark: `20DAF5`,
+      },
+    },
     // modes: {
     //   light: {
     //     text: tailwind.colors.gray[8],
@@ -52,7 +52,7 @@ const theme = merge(tailwind, {
     // },
   },
   backgroundImage: {
-    listBg: `url(./bullet-circle.png)`
+    listBg: `url(./bullet-circle.png)`,
   },
   fonts: {
     body: '"Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -113,6 +113,7 @@ const theme = merge(tailwind, {
       color: `text`,
       fontSize: `16px`,
       lineHeight: `22px`,
+      background: `linear-gradient(180deg, #020A55 0%, #17043A 100%)`,
       backgroundColor: `background`,
       a: {
         color: `primary`,
@@ -205,7 +206,7 @@ const theme = merge(tailwind, {
     bigList: {
       listStyle: `none`,
       pl: 0,
-      "li": {
+      li: {
         display: `inline-flex`,
         alignItems: `start`,
         justifyItems: `left`,
@@ -222,8 +223,8 @@ const theme = merge(tailwind, {
         //   height: `25px`,
         //   border: `1px solid red`
         // }
-      }
-    }
+      },
+    },
   },
   buttons: {
     toggle: {

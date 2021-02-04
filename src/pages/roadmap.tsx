@@ -42,9 +42,8 @@ const Roadmap = () => (
           }} />
         </Box>
       </Flex>
-    </PageSection> 
       <UpDown sx={{position: `absolute`, width: `full`, zIndex: 3000}}>
-        <SVG icon="gridAssetVert" hiddenMobile width={113} height={497} color="icon_darkest" left="0" top="85%" opacity={0.5}/>
+        <SVG icon="gridAssetVert" hiddenMobile width={113} height={497} color="icon_darkest" left="0" top="8%" opacity={0.5}/>
     </UpDown>
     <UpDownWide sx={{transform: `scaleY(-1)`}}>
       <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="45%" opacity={0.04} zIndex={2000} />
@@ -53,6 +52,7 @@ const Roadmap = () => (
     <UpDownWide sx={{transform: `scaleY(1)`}}>
       <SVG icon="afCircHomeSm" width={120} stroke color="white" left="25%" top="65%" opacity={0.1} fill="#86E5CC" />
     </UpDownWide>
+    </PageSection> 
   </Layout>
 )
 export default Roadmap

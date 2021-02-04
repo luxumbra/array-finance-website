@@ -29,11 +29,11 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     const sticky = header.offsetTop
     
     const handleScroll = () => {
-      // if (ref.current) {
-      //   setSticky(ref.current.getBoundingClientRect().top <= 0)
-      //   setHeader({ hs: isSticky ? [120, 15] : [170, 0]})
-      //   console.log('gbr', ref.current.getBoundingClientRect().top)
-      // }
+      if (ref.current) {
+        setSticky(ref.current.getBoundingClientRect().top <= 0)
+        setHeader({ hs: isSticky ? [120, 15] : [170, 0]})
+        console.log('gbr', ref.current.getBoundingClientRect().top)
+      }
       if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
       } else {
@@ -54,8 +54,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     <animated.header
       id="header"
       style={{
-        height: hs.interpolate((h, s) => `${h}px`),
-        boxShadow: hs.interpolate((h, s) => `0 0 ${s}px rgba(0,0,0,0.7)`),
+        height: isSticky ? hs.interpolate((h, s) => `${h}px`) : `170px`,
+        boxShadow: isSticky && `0 0 15px rgba(0,0,0,0.6)`,
       }}
       sx={{
             position: `sticky`,

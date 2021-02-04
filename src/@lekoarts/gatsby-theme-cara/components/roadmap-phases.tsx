@@ -10,22 +10,26 @@ export const roadmapPhases = [
   {
     name: `Phase I`,
     due: `Q1 2021`,
-    description: ` Launch CCO utilizing the DAOHaus platform, ensuring decentralization and governance as soon as possible.`
+    description: `Launch CCO utilizing the DAOHaus platform, ensuring decentralization and governance as soon as possible.`
   },
   {
     name: `Phase II`,
     due: `Q2 2021`,
-    description: ` Launch CCO utilizing the DAOHaus platform, ensuring decentralization and governance as soon as possible.`
+    description: `Launch v1 of the ArrayDAO and transition the CCO to the custom-built ArrayDAO, with several introductory vaults. Transition from the CCO to the Array DAO and bonding curve.
+    `
   },
   {
     name: `Phase III`,
     due: `Q3 2021`,
-    description: ` Launch CCO utilizing the DAOHaus platform, ensuring decentralization and governance as soon as possible.`
+    description: `Launch the first “on-rails” Array builder, using risk tolerance as the variable. Release more Array vaults and the Array AMM, kickstarting the Array insurance mechanism.
+
+    `
   },
   {
     name: `Phase IV`,
     due: `Q4 2021`,
-    description: ` Launch CCO utilizing the DAOHaus platform, ensuring decentralization and governance as soon as possible.`
+    description: `Launch v2 of the Array builder, allowing rapid deployment of user-created Arrays, with a migration tool for v1 Arrays.
+    `
   },
 ]
 
@@ -38,14 +42,14 @@ export const RoadmapPhases = ({ phases }: RoadmapPhasesProps) => (
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {phases && (
           phases.map((phase,i) => (
-            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`}}>
+            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`, mb: 6}}>
               <h3 sx={{
                 display: `flex`,
                 alignItems: `baseline`,
                 justifyContent: `space-between`,
 
               }}><Text sx={{ fontSize: `display.md` }}>{phase.name}</Text> <Text sx={{ fontSize: `body.sm`, opacity: 0.6 }}>{phase.due}</Text></h3>
-              <p>{phase.description}</p>
+              <p sx={{width: "70%"}}>{phase.description}</p>
             </li>
           ))
         )}

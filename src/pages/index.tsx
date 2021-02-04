@@ -140,9 +140,9 @@ const HomePage = () => (
           </UpDown>
         </Box>
       </Flex>
-      <UpDown ssx={{ position: `absolute`, width: `full` }}>
+      {/* <UpDown sx={{ position: `absolute`, width: `full` }}>
         <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" top="70%" opacity={1} />
-      </UpDown>
+      </UpDown> */}
       <UpDownWide>
         {/* <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} /> */}
         <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="20%" opacity={0.2} />
@@ -151,12 +151,7 @@ const HomePage = () => (
       <UpDown sx={{position: `absolute`, width: `full`}}>
         <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} />
       </UpDown>
-      <UpDown sx={{
-        position: `absolute`,
-        
-      }}>
-        <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" top="70%" opacity={0.5} transform="scale(-1,-1)" />
-      </UpDown>
+
     </PageSection>
   </Layout>
 )

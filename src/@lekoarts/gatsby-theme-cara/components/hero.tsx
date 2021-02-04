@@ -88,7 +88,7 @@ const Hero = ({page}) => (
       width: `full`,
       zIndex: 3000
     }}>
-      <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" top="-5%" opacity={0.5} transform="scale(-1,-1)" />
+      <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" top="-5%" opacity={0.5} transform="scale(-1,-1)" zIndex={3000} />
     </UpDown>
     {/* </Content> */}
   </div>

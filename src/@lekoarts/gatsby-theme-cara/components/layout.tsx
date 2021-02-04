@@ -30,8 +30,8 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           backgroundColor: theme.colors.background,
           lineHeight: `1.75`,
           position: `relative`,
-          maxWidth: `100%`,
-          height: `100vh`,
+          maxWidth: `100vw`,
+          minHeight: `100vh`,
           overflowX: `hidden`
         },
         h2: {
@@ -56,6 +56,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <SEO />
     <Header />
     <div className={className} sx={{
+      position: `relative`,
       width: `100vw`,
       zIndex: `0`
     }}>{children}</div>

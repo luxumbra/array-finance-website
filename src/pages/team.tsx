@@ -12,7 +12,7 @@ import Divider from "../@lekoarts/gatsby-theme-cara/elements/divider"
 import SVG from "../@lekoarts/gatsby-theme-cara/components/svg"
 import { UpDown, UpDownWide, waveAnimation } from "../@lekoarts/gatsby-theme-cara/styles/animations"
 import { TeamPreview, teamImages } from "../@lekoarts/gatsby-theme-cara/components/team-preview"
-import { RoadmapPhases, roadmapPhases } from "../@lekoarts/gatsby-theme-cara/components/roadmap-phases"
+import { TeamMembers, teamMembers, advisors, partners } from "../@lekoarts/gatsby-theme-cara/components/team-members"
 //
 // @ts-ignore
 import AutomateDefi from "../@lekoarts/gatsby-theme-cara/sections/automate-defi"
@@ -30,15 +30,28 @@ const InnerWave = styled.div`
     ${waveAnimation(`20s`)};
   }
 `
-const TraceLines = styled(animated.div)`
-  path {
-    stroke-dasharray: ${props => tracePath(props)};
-  }
-`
 
-const HomePage = () => (
+const TeamPage = () => (
   <Layout>
     <Hero page="team" />
+    <PageSection>
+      <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
+        <Box sx={{ position: `relative`, flex: `0 1 70%`, pt: 0, width: `70%`, justifySelf: `left`, margin: `0` }}>
+          <TeamMembers teamMembers={teamMembers} advisors={advisors} partners={partners} />
+        </Box>
+      </Flex>
+      <SVG icon="teamPlay" hiddenMobile width={117} color="icon_darkest" left="0" top="50%" opacity={0.5} transform="" zIndex={0} />
+    </PageSection>
+    <UpDown sx={{position: `absolute`, width: `full`, zIndex: 3000}}>
+      <SVG icon="teamStarRing" hiddenMobile width={268} color="icon_darkest" right="0" top="35%" opacity={0.5} />
+    </UpDown>
+    {/* <UpDownWide sx={{transform: `scaleY(-1)`}}>
+      <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="45%" opacity={0.04} zIndex={2000} />
+      <SVG icon="roadmapGrid" hiddenMobile width={90} color="icon_darkest" right="35%" top="105%" opacity={0.2} />
+    </UpDownWide> */}
+    {/* <UpDownWide sx={{transform: `scaleY(1)`}}>
+      <SVG icon="afCircHomeSm" width={120} stroke color="white" left="25%" top="65%" opacity={0.1} fill="#86E5CC" />
+    </UpDownWide> */}
   </Layout>
 )
-export default HomePage
+export default TeamPage
