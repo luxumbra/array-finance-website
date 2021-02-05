@@ -252,10 +252,15 @@ const theme = merge(tailwind, {
       border: `4px solid white`,
       borderRadius: `0`,
       color: `white`,
-      fontSize: `display.sm`,
+      fontSize: `display.md`,
       fontWeight: `heading`,
       px: `30px`,
       py: `16px`,
+      transition: `all 0.2s ease`,
+      '&:hover': {
+        color: `brand.secondary.light`,
+        borderColor: `brand.secondary.light`,
+      },
     },
   },
   texts: {

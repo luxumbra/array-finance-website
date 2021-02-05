@@ -23,11 +23,11 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
   const [isSticky, setSticky] = useState(false);
   const ref = useRef(null);
   const [{ hs }, setHeader] = useSpring(() => ({ hs: [170, 0] }))
-  
+
   useEffect(() => {
     const header = document.getElementById('header')
     const sticky = header.offsetTop
-    
+
     const handleScroll = () => {
       if (ref.current) {
         setSticky(ref.current.getBoundingClientRect().top <= 0)
@@ -39,17 +39,17 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       } else {
         header.classList.remove("sticky");
       }
-      
+
     };
     const throttledScroll = _.throttle(handleScroll, 1000)
     window.addEventListener('scroll', throttledScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', () => throttledScroll);
     };
   }, []);
-  
-  
+
+
   return (
     <animated.header
       id="header"
@@ -61,7 +61,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             position: `sticky`,
             top: 0,
             left: 0,
-            right: 0,            
+            right: 0,
             display: `flex`,
             alignItems: `flex-end`,
             justifyItems: `center`,
@@ -79,42 +79,44 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               px: 0,
               alignItems: 'baseline',
               fontSize: `1.44em`,
+              fontWeight: `400`,
               color: `white`
             }}>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
-                p: 2,
+                p: 0,
                 mr: `79px`,
                 position: `relative`,
                 flex: `0 1 70px`
               }}>
-                
               <SVG icon="afLogo" hiddenMobile width={70} left="0" bottom="0" />
             </NavLink>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
-                p: 2,
+                p: 0,
                 mr: `79px`,
-                position: `relative`
+                position: `relative`,
+                "&:hover": {
+                  ".line": {
+                    width: `100%`
+                  }
+                }
               }}>
               <span sx={{
                 display: `block`,
-                paddingBottom: `10px`
+                paddingBottom: `40px`
               }}>
                 array.finance</span>
-              <span sx={{
+              <span className="line" sx={{
                 position: `absolute`,
                 backgroundColor: `primary`,
                 height: `4px`,
                 width: `0%`,
-                bottom: 0,
+                bottom: `20px`,
                 left: 0,
                 transition: `width 0.3s ease-in-out`,
-                _hover: {
-                  width: `100%`
-                }
               }}></span>
               {/* <Spring
                 from={{ x: 100 }}
@@ -127,30 +129,87 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             <NavLink href='/team'
               sx={{
                 variant: 'styles.navlink',
-                p: 2,
-                mr: `79px`
+                p: 0,
+                mr: `79px`,
+                position: `relative`,
+                "&:hover": {
+                  ".line": {
+                    width: `100%`
+                  }
+                }
               }}>
-              team
+                            <span sx={{
+                display: `block`,
+                paddingBottom: `40px`
+              }}>
+                team</span>
+              <span className="line" sx={{
+                position: `absolute`,
+                backgroundColor: `primary`,
+                height: `4px`,
+                width: `0%`,
+                bottom: `20px`,
+                left: 0,
+                transition: `width 0.3s ease-in-out`,
+              }}></span>
             </NavLink>
             <NavLink href='/roadmap'
               sx={{
                 variant: 'styles.navlink',
-                p: 2,
-                mr: `79px`
+                p: 0,
+                mr: `79px`,
+                position: `relative`,
+                "&:hover": {
+                  ".line": {
+                    width: `100%`
+                  }
+                }
               }}>
-              roadmap
+                            <span sx={{
+                display: `block`,
+                paddingBottom: `40px`
+              }}>
+                roadmap</span>
+              <span className="line" sx={{
+                position: `absolute`,
+                backgroundColor: `primary`,
+                height: `4px`,
+                width: `0%`,
+                bottom: `20px`,
+                left: 0,
+                transition: `width 0.3s ease-in-out`,
+              }}></span>
             </NavLink>
             <NavLink href='/cco'
               sx={{
                 variant: 'styles.navlink',
-                p: 2,
+                p: 0,
+                position: `relative`,
+                "&:hover": {
+                  ".line": {
+                    width: `100%`,
+                  }
+                }
               }}>
-              CCO
+              <span sx={{
+                display: `block`,
+                paddingBottom: `40px`
+              }}>
+                CCO</span>
+              <span className="line" sx={{
+                position: `absolute`,
+                backgroundColor: `primary`,
+                height: `4px`,
+                width: `0%`,
+                bottom: `20px`,
+                left: 0,
+                transition: `width 0.3s ease-in-out`,
+              }}></span>
             </NavLink>
           </Flex>
         {/* </Box>  */}
     </animated.header>
-           
+
   )
 }
 
