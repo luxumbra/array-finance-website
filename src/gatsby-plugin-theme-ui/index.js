@@ -115,15 +115,15 @@ const theme = merge(tailwind, {
       lineHeight: `22px`,
       background: `linear-gradient(180deg, #020A55 0%, #17043A 100%)`,
       backgroundColor: `background`,
-      a: {
+    },
+    a: {
+      color: `light`,
+      textDecoration: `none`,
+      transition: `all 0.3s ease-in-out`,
+      '&:hover': {
         color: `primary`,
         textDecoration: `none`,
-        transition: `all 0.3s ease-in-out`,
-        '&:hover': {
-          color: `primary`,
-          textDecoration: `none`,
-          cursor: `pointer`,
-        },
+        cursor: `pointer`,
       },
     },
     p: {

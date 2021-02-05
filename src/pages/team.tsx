@@ -36,7 +36,7 @@ const TeamPage = () => (
     <Hero page="team" />
     <PageSection>
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
-        <Box sx={{ position: `relative`, flex: `0 1 70%`, pt: 0, width: `70%`, justifySelf: `left`, margin: `0` }}>
+        <Box sx={{ position: `relative`, flex: `0 0 100%`, pt: 0, width: `100%`, justifySelf: `left`, margin: `0` }}>
           <TeamMembers teamMembers={teamMembers} advisors={advisors} partners={partners} />
         </Box>
       </Flex>

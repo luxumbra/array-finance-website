@@ -507,6 +507,15 @@ const icons = {
     ),
     viewBox: `0 0 32 37`
   },
+  linkedinCircle: {
+    shape: (
+      <>
+        <circle cx="16" cy="16" r="15.5" stroke="white" fill="none"/>
+        <path d="M13.2701 21V14.9277H11.1265V21H13.2701ZM12.1986 14.0982C12.9461 14.0982 13.4114 13.6319 13.4114 13.0492C13.3974 12.4533 12.9461 12 12.2127 12C11.4795 12 11 12.4533 11 13.0492C11 13.6319 11.4652 14.0982 12.1846 14.0982H12.1985H12.1986ZM14.4566 21H16.6002V17.6089C16.6002 17.4275 16.6141 17.2462 16.6707 17.1164C16.8257 16.7538 17.1784 16.3783 17.7705 16.3783C18.5462 16.3783 18.8565 16.9351 18.8565 17.7514V21H21V17.5182C21 15.653 19.9425 14.7852 18.5321 14.7852C17.3757 14.7852 16.868 15.3938 16.5859 15.8083H16.6002V14.9276H14.4566C14.4847 15.4974 14.4566 20.9999 14.4566 20.9999L14.4566 21Z" fill="#fff"/>
+      </>
+    ),
+    viewBox: `0 0 32 32`
+  },
   roadmapGrid2: {
     shape: (
       <>
@@ -605,8 +614,21 @@ const icons = {
     ),
     viewBox: `0 0 117 352`
   },
+  defaultAvatar: {
+    shape: (
+      <>
+        <rect width="231" height="285" rx="32" fill="#0F30F5"/>
+        <circle cx="116" cy="96.7143" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+        <circle cx="116" cy="141" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+        <circle cx="160.286" cy="141" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+        <circle cx="71.7143" cy="141" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+        <circle cx="71.7143" cy="185.286" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+        <circle cx="160.286" cy="185.286" r="15.0357" stroke="white" strokeWidth="5.35714"/>
+      </>
+    ),
+    viewBox: `0 0 231 285`
+  },
 }
-
 
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross" | "line" | "afLogo" | "homeHero" | "afCircHome" | "afCircHomeSm" | "afDiscHome" | "afPlusHome" | "afStarFieldHome" | "bulletDisc" | "apyInfoG" | "autoDefi" | "backed" | "futureProof" | "gridAsset" | "gridAssetVert" | "linesRight2" | "roadmapGird" | "githubIcon" | "twitterIcon" | "discordIcon" | "mediumIcon" | "roadmapGrid2"
