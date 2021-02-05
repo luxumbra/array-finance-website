@@ -67,7 +67,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             justifyItems: `center`,
             variant: `styles.header`,
             textAlign: `center`,
-            backgroundColor: `background`,
+            backgroundColor: `transparent`,
+            backdropFilter: isSticky ? `blur(80px)` : `none`,
             zIndex: `2000`,
             transition: `height 0.3s ease-in-out, box-shadow 0.2s ease`
           }} ref={ref}>

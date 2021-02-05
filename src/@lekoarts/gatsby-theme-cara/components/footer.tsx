@@ -24,7 +24,6 @@ const InnerWaveB = styled.div`
 `
 
 const Footer = () => {
-
   return (
     <>
       <Box as="footer" variant="footer" sx={{ position: `relative`, mb: 0, px: [0, 0, 0], pt: 5, pb: [0, 0, 0], mx: [0, 0, 0], mt: [4, 5, 6], width: `100vw`, minHeight: `200px`, height: `200px`, textAlign: `center`, overflow: `hidden` }}>

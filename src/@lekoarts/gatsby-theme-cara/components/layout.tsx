@@ -34,6 +34,14 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           minHeight: `100vh`,
           overflowX: `hidden`
         },
+        a: {
+          color: `white`,
+          textDecoration: `none`,
+          cursor: `pointer`,
+          "&:hover": {
+            color: `brand.secondary.light`
+          }
+        },
         h2: {
           fontSize: `body.xl`
         },

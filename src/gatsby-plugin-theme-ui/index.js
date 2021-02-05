@@ -10,7 +10,7 @@ const theme = merge(tailwind, {
     secondary: `#0F30F5`,
     text: tailwind.colors.white,
     heading: tailwind.colors.white,
-    background: `#020A55`,
+    background: `#17043A`,
     navText: tailwind.colors.white,
     divider: tailwind.colors.gray[8],
     textMuted: tailwind.colors.gray[5],
@@ -114,7 +114,7 @@ const theme = merge(tailwind, {
       fontSize: `16px`,
       lineHeight: `22px`,
       background: `linear-gradient(180deg, #020A55 0%, #17043A 100%)`,
-      backgroundColor: `background`,
+      backgroundColor: `primary`,
     },
     a: {
       color: `light`,
@@ -184,6 +184,7 @@ const theme = merge(tailwind, {
     },
   },
   header: {
+    backgroundColor: `primary`,
     a: {
       color: `white`,
       fontWeight: `body`,
