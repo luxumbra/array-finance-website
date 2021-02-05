@@ -55,7 +55,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       id="header"
       style={{
         height: isSticky ? hs.interpolate((h, s) => `${h}px`) : `170px`,
-        boxShadow: isSticky && `0 0 15px rgba(0,0,0,0.6)`,
+        // boxShadow: isSticky && `0 0 15px rgba(0,0,0,0.6)`,
       }}
       sx={{
             position: `sticky`,
@@ -67,8 +67,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             justifyItems: `center`,
             variant: `styles.header`,
             textAlign: `center`,
-            backgroundColor: `transparent`,
-            backdropFilter: isSticky ? `blur(80px)` : `none`,
+            backgroundColor: `#020955`,
+            // backdropFilter: isSticky ? `blur(150px)` : `none`,
             zIndex: `2000`,
             transition: `height 0.3s ease-in-out, box-shadow 0.2s ease`
           }} ref={ref}>
