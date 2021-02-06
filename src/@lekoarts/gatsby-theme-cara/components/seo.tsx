@@ -58,6 +58,7 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f30f5" />
       <meta name="msapplication-TileColor" content="#0f30f5" />
       <meta name="theme-color" content="#ffffff" />
+      <meta name="robots" content="noindex" />
       {children}
     </Helmet>
   )
