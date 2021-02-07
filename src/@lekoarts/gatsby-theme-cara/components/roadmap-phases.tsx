@@ -38,11 +38,11 @@ type RoadmapPhasesProps = {
 }
 
 export const RoadmapPhases = ({ phases }: RoadmapPhasesProps) => (
-    <Box sx={{ fontSize: `16px`, textAlign: `center`}}>
+    <Box sx={{textAlign: `center`}}>
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {phases && (
           phases.map((phase,i) => (
-            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`, mb: 6}}>
+            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`, mb: [3,4,5]}}>
               <h3 sx={{
                 display: `flex`,
                 alignItems: `baseline`,

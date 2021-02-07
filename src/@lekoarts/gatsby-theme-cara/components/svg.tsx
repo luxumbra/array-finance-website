@@ -741,20 +741,20 @@ type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | 
 type SVGProps = {
   stroke?: boolean
   color?: string | number | any
-  width: string | number
-  height: string | number
-  icon: IconType
-  left: string
-  right: string
-  top: string
-  bottom: string
+  width: string | number | any
+  height: string | number | any
+  icon: string | IconType
+  left?: string | number | any
+  right?: string | number | any
+  top?: string | number | any
+  bottom?: string | number | any
   strokeDashoffset: number
   preserveAspectRatio?: string
   hiddenMobile?: boolean
-  opacity?: number
-  transform?: string
+  opacity?: number | any
+  transform?: string | any
   fill?: string
-  zIndex: number
+  zIndex: number | any
   position?: string
 }
 
@@ -764,7 +764,7 @@ const SVG = ({ stroke = false, color = ``, width, height, icon, left, right, top
       position: position,
       stroke: stroke ? `currentColor` : `none`,
       fill: fill ? `${fill} !important` : `currentColor`,
-      display: hiddenMobile ? hidden : `block`,
+      display: `block`,
       color,
       width,
       height,

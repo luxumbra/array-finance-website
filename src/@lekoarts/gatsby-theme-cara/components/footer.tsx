@@ -31,10 +31,10 @@ const Footer = () => {
           flexFlow: `row nowrap`,
           alignItems: `start`,
           justifyContent: `space-between`,
-          maxWidth: `1170px`,
+          maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
           mx: `auto`
         }}>
-          <Box sx={{ flex: `0 1 70%`, width: `70%`, textAlign: `left` }}>
+          <Box sx={{ flex: [`0 1 20%`,`0 1 20%`,`0 1 20%`,`0 1 20%`,`0 1 20%`, `0 1 70%`], width: [`20%`,`20%`,`20%`,`20%`,`20%`, `70%`], textAlign: `left` }}>
           <Link href='/'
               sx={{
                 display: `block`,
@@ -44,11 +44,11 @@ const Footer = () => {
               p: 0,
               position: `relative`,
             }}>
-              
+
             <SVG icon="afLogo" hiddenMobile width={`56px`} left="0" bottom="0" />
           </Link>
           </Box>
-          <Box sx={{ flex: `0 0 400px`, width: `400px`}}>
+          <Box sx={{ flex: [`0 0 80%`, `0 0 80%`, `0 0 400px`], width: [`80%`, `80%`, `400px`], overflowX: `hidden`}}>
             <ul sx={{
               display: `flex`,
               alignContent: `center`,
@@ -96,7 +96,7 @@ const Footer = () => {
                 <IconButton>
                   <SVG icon="mediumIcon" hiddenMobile color="colors.white" right="0" top="0" width="39px" height="39px" preserveAspectRatio="xMidYMid meet" />
                   </IconButton>
-                </Link>  
+                </Link>
               </li>
             </ul>
           </Box>
@@ -144,8 +144,10 @@ const Footer = () => {
           </InnerWaveB>
         </UpDownWide>
       </div>
-      <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" bottom="100px" opacity={0.5} transform="scale(-1,-1)" />
-      <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" bottom="150px" opacity={1} />
+      <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0}}>
+        <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" bottom="100px" opacity={0.5} transform="scale(-1,-1)" />
+          <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" bottom="150px" opacity={1} />
+        </div>
     </>
   )
 }

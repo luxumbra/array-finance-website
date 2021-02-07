@@ -13,7 +13,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <Global
       styles={(theme) => ({
         "*": {
-          // outline: `1px solid red`,
+          // outline: `1px solid red`, // for easier layout debugging
           boxSizing: `inherit`,
           "&:before": {
             boxSizing: `inherit`,
@@ -65,6 +65,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <Header />
     <div className={className} sx={{
       position: `relative`,
+      overflowX: `hidden`,
       width: `100vw`,
       zIndex: `0`
     }}>{children}</div>

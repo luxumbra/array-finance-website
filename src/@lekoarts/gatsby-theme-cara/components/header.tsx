@@ -53,12 +53,9 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
   return (
     <animated.header
       id="header"
-      style={{
-        height: isSticky ? hs.interpolate((h, s) => `${h}px`) : `170px`,
-        // boxShadow: isSticky && `0 0 15px rgba(0,0,0,0.6)`,
-      }}
       sx={{
             position: `sticky`,
+            height: [`170px`],
             top: 0,
             left: 0,
             right: 0,
@@ -68,36 +65,40 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             variant: `styles.header`,
             textAlign: `center`,
             backgroundColor: `#020955`,
+            overflowX: `hidden`,
             // backdropFilter: isSticky ? `blur(150px)` : `none`,
             zIndex: `2000`,
             transition: `height 0.3s ease-in-out, box-shadow 0.2s ease`
           }} ref={ref}>
           <Flex as="nav"
-            sx={{
-              maxWidth: `1170px`,
+        sx={{
+              display: [`none`, `flex`],
+              maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
               width: `100%`,
               mx: 'auto',
-              px: 0,
+              px: [0, 8, 10],
               alignItems: 'baseline',
-              fontSize: `1.44em`,
               fontWeight: `400`,
               color: `white`
             }}>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
+                alignSelf: `baseline`,
+                width: [`40px`, `70px`],
+                height: [`40px`, `70px`],
                 p: 0,
-                mr: `79px`,
+                mr: [`50px`,`79px`],
                 position: `relative`,
-                flex: `0 1 70px`
+                flex: [`0 1 40px`,`0 1 70px`]
               }}>
-              <SVG icon="afLogo" hiddenMobile width={70} left="0" bottom="0" />
+              <SVG icon="afLogo" width={[`40px`, `70px`]} left="0" bottom="0" top={[`22px`]} />
             </NavLink>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: `79px`,
+                mr: [`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -107,7 +108,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               }}>
               <span sx={{
                 display: `block`,
-                paddingBottom: `40px`
+                paddingBottom: `20px`
               }}>
                 array.finance</span>
               <span className="line" sx={{
@@ -115,7 +116,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 backgroundColor: `primary`,
                 height: `4px`,
                 width: `0%`,
-                bottom: `20px`,
+                bottom: 0,
                 left: 0,
                 transition: `width 0.3s ease-in-out`,
               }}></span>
@@ -131,7 +132,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: `79px`,
+                mr: [`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -141,7 +142,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               }}>
                             <span sx={{
                 display: `block`,
-                paddingBottom: `40px`
+                paddingBottom: `20px`
               }}>
                 team</span>
               <span className="line" sx={{
@@ -149,7 +150,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 backgroundColor: `primary`,
                 height: `4px`,
                 width: `0%`,
-                bottom: `20px`,
+                bottom: 0,
                 left: 0,
                 transition: `width 0.3s ease-in-out`,
               }}></span>
@@ -158,7 +159,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: `79px`,
+                mr: [`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -168,7 +169,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               }}>
                             <span sx={{
                 display: `block`,
-                paddingBottom: `40px`
+                paddingBottom: `20px`
               }}>
                 roadmap</span>
               <span className="line" sx={{
@@ -176,7 +177,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 backgroundColor: `primary`,
                 height: `4px`,
                 width: `0%`,
-                bottom: `20px`,
+                bottom: 0,
                 left: 0,
                 transition: `width 0.3s ease-in-out`,
               }}></span>
@@ -194,7 +195,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               }}>
               <span sx={{
                 display: `block`,
-                paddingBottom: `40px`
+                paddingBottom: `20px`
               }}>
                 CCO</span>
               <span className="line" sx={{
@@ -202,7 +203,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 backgroundColor: `primary`,
                 height: `4px`,
                 width: `0%`,
-                bottom: `20px`,
+                bottom: 0,
                 left: 0,
                 transition: `width 0.3s ease-in-out`,
               }}></span>

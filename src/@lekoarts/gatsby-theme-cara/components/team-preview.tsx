@@ -37,7 +37,7 @@ export const TeamPreview = ({ images }) => {
   )
   console.log(springs);
   // debugger
- 
+
   return (
     <Box sx={{textAlign: `center`}}>
       <Flex sx={{mx: `auto`, pl: `${(images.length * 50) / 2}px`, maxWidth: `5xl`, justifyContent: `center`}}>
@@ -59,7 +59,7 @@ export const TeamPreview = ({ images }) => {
         )}
       </Flex>
       <Box>
-        <p sx={{fontSize: `display.lg`, fontWeight: `300`}}>Made for the decentralized community, built by a public team with experience at Consensys and Fortune 500 companies.</p>
+        <p sx={{fontSize: [`display.md`,`display.md`,`display.md`,`display.md`,`body.xxl`,`display.lg`], fontWeight: `300`}}>Made for the decentralized community, built by a public team with experience at Consensys and Fortune 500 companies.</p>
         <CTA text="our team" link="/team" type="link" sx={{ variant: `links.primary` }} />
       </Box>
     </Box>

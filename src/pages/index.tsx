@@ -30,75 +30,63 @@ const InnerWave = styled.div`
     ${waveAnimation(`20s`)};
   }
 `
-const TraceLines = styled(animated.div)`
-  path {
-    stroke-dasharray: ${props => tracePath(props)};
-  }
-`
+
 
 const HomePage = () => (
   <Layout>
     <Hero page="home" />
-    <PageSection styles={{minHeight: `1005px`, position: 'relative'}}>
+    <PageSection styles={{minHeight: [`auto`,`auto`,`auto`,`1205px`, `1205px`, `1005px`], position: 'relative', mt: [200, 0]}}>
       <Flex>
-      <Box sx={{
-          flex: `0 1 60%`,
-          width: `60%`,
-          fontSize: `display.md`,
-          "p": { fontSize: `body.md`, lineHeight: `lg`, mt: 5, mb: 5 },
+        <Box sx={{
+          flex: [`0 0 100%`,`0 0 100%`,`0 0 100%`,`0 0 100%`,`0 1 60%`, `0 1 60%`],
+          width: [`100%`, `100%`, `100%`, `100%`, `60%`, `60%`],
+          lineHeight: [`sm`, `lg`],
+          "p": { fontSize: [`display.xs`,`display.xs`,`display.xs`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: [3,4,5], mb: [3,4,5], pr: [0, 6] },
           "ul": { listStyle: `none`, p: `0` },
           "ul": {variant: `lists.bigList`},
-          "li": { fontSize: `body.md`, lineHeight: `lg`, mb: 4 },
-          "& > div": {mt: 6, mb: 6, fontSize: `body.sm`}
+          "li": { lineHeight: `lg`, mb: [2,3,4] },
+          "& > div": { mt: 6, mb: 6, fontSize: `body.sm` },
+          zIndex: 200
           }}>
           <AssetManagement />
         </Box>
-        <Box sx={{position: `relative`, flex: `0 0 40%`, width: `40%`, overflowX: `visible`}}>
-          <SVG icon="apyInfoG" hiddenMobile color="colors.background" right="-20px" top="120px" width="426px" height="675px" preserveAspectRatio="xMidYMid meet" />
+        <Box sx={{position: `relative`, flex: `0 0 40%`, width: `40%`, overflowX: `visible`, zIndex: 0}}>
+          <SVG icon="apyInfoG" color="colors.background" right={[150,-20]} top={[-300, 120]} width={[300, 426]} preserveAspectRatio="xMidYMid meet" opacity={[0.4, 1]} />
         </Box>
       </Flex>
-
     </PageSection>
 
-    <PageSection styles={{position: `relative`, border: `1px solid red`}}>
+    <PageSection>
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row-reverse nowrap`, position: `relative`}}>
         <Box sx={{
-          flex: `0 1 70%`,
-          width: `70%`,
-          fontSize: `display.md`,
-          "p": { fontSize: `body.md`, lineHeight: `lg`, mt: 4, mb: 5 },
+          flex: [`0 0 100%`, `0 1 70%`],
+          width: [`100%`, `70%`],
+          "p": { fontSize: [`display.xs`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: 4, mb: 5 },
           // "& > div p": { fontSize: `body.sm` },
-          "& > div": {mt: 6, mb: 6, fontSize: `body.sm`}
+          "& > div": {mt: 6, mb: 6, fontSize: [`body.sm`, `body.sm`]}
           }}>
           <AutomateDefi />
-          <CTA text="join our CCO" link="/cco" type="link" sx={{
-            variant: `links.primary`
-          }} />
+          <CTA text="join our CCO" link="/cco" type="link" sx={{variant: `links.primary`}} />
         </Box>
         <Box sx={{position: `relative`, flex: `0 0 40%`, width: `40%`, overflowX: `visible`}}>
           <SVG icon="autoDefi" hiddenMobile color="colors.background" left="-150px" top="-100px" width="569px" height="499px" preserveAspectRatio="xMidYMid meet" />
         </Box>
       </Flex>
-      <UpDownWide>
+      {/* <UpDownWide>
         <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="0%" opacity={0.1} />
         <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="15%" opacity={0.04} />
-        {/* <SVG icon="gridAsset" hiddenMobile width={338} color="icon_darkest" left="0" top="60%" opacity={0.5} /> */}
-        {/* <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" right="180px" top="50%" opacity={0.5} strokeDashoffset={} /> */}
-      </UpDownWide>
-      <UpDown>
-      <SVG icon="gridAsset" hiddenMobile width={338} color="icon_darkest" left="0" top="60%" opacity={0.5} />
-
-      <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" right="0" top="40%" opacity={0.5} />
-      </UpDown>
+      </UpDownWide> */}
+      {/* <UpDown>
+        <SVG icon="gridAsset" hiddenMobile width={338} color="icon_darkest" left="0" top="60%" opacity={0.5} />
+        <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" right="0" top="40%" opacity={0.5} />
+      </UpDown> */}
     </PageSection>
     <PageSection sx={{}}>
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row nowrap`}}>
         <Box sx={{
           flex: `0 1 60%`,
           width: `60%`,
-          fontSize: `display.md`,
-          "p": { fontSize: `body.sm`, lineHeight: `lg`, mt: 4, mb: 5, pr: 6 },
-          // "& > div p": { fontSize: `body.sm` },
+          "p": { fontSize: [`display.xs`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: 4, mb: [3,4,5], pr: [0, 6] },
           }}>
           <Backed />
           <CTA text="read our whitepaper" link="/whitepaper" type="link" sx={{
@@ -120,37 +108,29 @@ const HomePage = () => (
         <Box sx={{
           flex: `0 1 54%`,
           width: `54%`,
-          fontSize: `display.md`,
-          "p": { fontSize: `body.sm`, lineHeight: `lg`, mt: 4, mb: 5, pr: 4 },
-
-          // "& > div p": { fontSize: `body.sm` },
+          "p": { fontSize: [`display.xs`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: 4, mb: [3,4,5], pr: [0, `50px`] },
           }}>
           <FutureProof />
         </Box>
         <Box sx={{position: `relative`, flex: `0 0 46%`, width: `46%`, minHeight: `458px`, overflowX: `visible`}}>
-          <SVG icon="futureProof" hiddenMobile color="colors.background" right="0" top="0" width="458px" height="458px" preserveAspectRatio="xMidYMid meet" />
+          <SVG icon="futureProof" color="colors.background" right="0" top="0" width="458px" height="458px" preserveAspectRatio="xMidYMid meet" />
         </Box>
         <Box sx={{ position: `relative`, flex: `0 1 50%`, pt: 5, width: `50%`, justifySelf: `center`, margin: `0 auto` }}>
           <RoadmapPhases phases={roadmapPhases} />
           <CTA text="join our CCO" link="/ccor" type="link" sx={{
             variant: `links.primary`
           }} />
-          <UpDown sx={{position: `absolute`, width: `full`}}>
-          <SVG icon="roadmapGrid" hiddenMobile width={115} color="icon_darkest" left="-50%" top="30%" opacity={1} />
-          </UpDown>
+          {/* <UpDown > // TODO: i think this is the problematic section.
+          <SVG icon="roadmapGrid" width={115} color="icon_darkest" left="-50%" top="30%" opacity={1} />
+          </UpDown> */}
         </Box>
       </Flex>
-      {/* <UpDown sx={{ position: `absolute`, width: `full` }}>
-        <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" top="70%" opacity={1} />
-      </UpDown> */}
-      <UpDownWide>
-        {/* <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} /> */}
+      {/* <UpDownWide >
         <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="20%" opacity={0.2} />
-        {/* <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" right="180px" top="50%" opacity={0.5} strokeDashoffset={} /> */}
-      </UpDownWide>
-      <UpDown sx={{position: `absolute`, width: `full`}}>
+      </UpDownWide> */}
+      {/* <UpDown>
         <SVG icon="afCircHomeSm" width={120} stroke color="white" left="-60px" top="10%" opacity={0.04} />
-      </UpDown>
+      </UpDown> */}
 
     </PageSection>
   </Layout>

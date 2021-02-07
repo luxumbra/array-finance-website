@@ -15,9 +15,9 @@ type PageSectionProps = {
 
 const PageSection = ({ children, styles }:PageSectionProps) => {
   // console.log(styles);
-  
+
   return (
-    <div css={{position: `relative`, width: `full`, zIndex: 1000}}>
+    <div css={{position: `relative`, width: `full`, zIndex: 500}}>
       <Inner>
         {children}
       </Inner>
