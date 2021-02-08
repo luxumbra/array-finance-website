@@ -35,23 +35,14 @@ const Roadmap = () => (
     <Hero page="roadmap" />
     <PageSection>
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
-        <Box sx={{ position: `relative`, flex: `0 1 50%`, pt: 0, width: `50%`, justifySelf: `center`, margin: `0 auto` }}>
+        <Box sx={{ position: `relative`, flex: [`0 1 90%`,`0 1 90%`,`0 1 90%`, `0 1 90%`,`0 1 90%`, `0 1 50%`], pt: 0, width: [`90%`,`90%`,`90%`,`90%`, `50%`], justifySelf: `center`, margin: `0 auto`, mt: [0, 0, 0, -100, -50] }}>
           <RoadmapPhases phases={roadmapPhases} />
-          <CTA text="join our CCO" link="/ccor" type="link" sx={{
+          <CTA text="join our CCO" link="/cco" type="link" sx={{
             variant: `links.primary`
           }} />
         </Box>
       </Flex>
-      <UpDown sx={{position: `absolute`, width: `full`, zIndex: 3000}}>
-        <SVG icon="gridAssetVert" hiddenMobile width={113} height={497} color="icon_darkest" left="0" top="8%" opacity={0.5}/>
-      </UpDown>
-    {/* <UpDownWide sx={{transform: `scaleY(-1)`}}>
-      <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="45%" opacity={0.04} zIndex={2000} />
-      <SVG icon="roadmapGrid" hiddenMobile width={90} color="icon_darkest" right="15%" top="85%" opacity={0.2} />
-    </UpDownWide>
-    <UpDownWide sx={{transform: `scaleY(1)`}}>
-      <SVG icon="afCircHomeSm" width={120} stroke color="white" left="25%" top="65%" opacity={0.1} fill="#86E5CC" />
-    </UpDownWide> */}
+        <SVG position={`absolute`} icon="gridAssetVert" hiddenMobile width={[60, 60, 60, 113]} color="icon_darkest" left="0" top={[`50%`,`50%`,`50%`,`50%`,`8%`]}  preserveAspectRatio="xMidYMid meet" opacity={[0.07,0.7,0.07, 0.5]}/>
     </PageSection>
   </Layout>
 )

@@ -87,78 +87,79 @@ type TeamMembersProps = {
 export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProps) => (
     <>
     <Box sx={{ fontSize: `16px`, textAlign: `center` }}>
-      <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mb: 5, ml: 0, pl: 0, listStyle: `none`}}>
+      <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mb: [0, 0, 5], ml: 0, pl: 0, listStyle: `none`}}>
         {teamMembers && (
           teamMembers.map((m,i) => (
-            <li key={`teamm-${i}`} sx={{ flex: `0 0 49%`, width: `49%`, pl: 0, textAlign: `left`, mb: 6 }}>
-              <div sx={{ position: `relative`, width: `100%`, maxWidth: `231px`, height: `285px` }}>
+            <li key={`team-${i}`} sx={{ flex: [`0 0 100%`,`0 0 100%`, `0 0 49%`], width: [`100%`,`100%`,`49%`], pl: 0, textAlign: `left`, mb: 6 }}>
+              <div sx={{ position: `relative`, width: `100%`, maxWidth: [`162px`,`162px`,`162px`,`162px`,`162px`,`231px`], height: [`200px`,`200px`,`200px`,`200px`,`200px`,`285px`] }}>
                 {m.imgPath ? (
                   <AspectImage
                     key={`image-${i}`}
                     ratio={231/285}
                     src={m.imgPath}
                     sx={{background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover`, mb: 3}}
-                    />                  
+                    />
                 ) : (
-                  <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width="231px" preserveAspectRatio="xMidYMid meet" />
+                  <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width={[`162px`,`162px`,`162px`,`162px`,`162px`,`231px`]} preserveAspectRatio="xMidYMid meet" />
                 )}
               </div>
               <h3 sx={{
                 fontSize: `display.md`, lineHeight: `md`, mb: 0
               }}><Text sx={{ fontSize: `display.md` }}>{m.name}</Text></h3>
               <p sx={{my: 0}}>{m.role}</p>
-              <p sx={{ width: "70%", mt: 3 }}>{m.bio}</p>
-              <Link href={m.link} sx={{ position: `relative`, transition: `all 0.2s ease`, "&:hover": { opacity: 0.7 }}}><SVG icon="linkedinCircle" color="red" left="0" top="0" width="32px" preserveAspectRatio="xMidYMid meet" /></Link>
+              <p sx={{ width: [`100%`, "70%"], mt: 3, lineHeight: `1.22`, fontSize:[`body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.md`] }}>{m.bio}</p>
+              <Link href={m.link} sx={{ position: `relative`, transition: `all 0.2s ease`, "&:hover": { opacity: 0.7 }}}><SVG icon="linkedinCircle" color="white" left="0" top="0" width="32px" preserveAspectRatio="xMidYMid meet" /></Link>
             </li>
           ))
         )}
       </ul>
   </Box>
-    <Box sx={{ fontSize: `16px`, textAlign: `center` }}>
-      <Heading as="h2" sx={{textAlign: `left`, fontSize: `display.xl`, mb: 4}}>Advisors</Heading>
-      <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mb: 5, ml: 0, pl: 0, listStyle: `none`}}>
+    <Box sx={{
+      textAlign: `center` }}>
+      <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.lg`], lineHeight: 1.22, mb: [0,4]}}>Advisors</Heading>
+      <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mb: [0,0,5], ml: 0, pl: 0, listStyle: `none`}}>
         {advisors && (
           advisors.map((m,i) => (
-            <li key={`adv-${i}`} sx={{ flex: `0 0 49%`, width: `49%`, pl: 0, textAlign: `left`, mb: 3, pr: `50px` }}>
-              <div sx={{ position: `relative`, width: `100%`, maxWidth: `231px`, height: `285px`, mb: 3 }}>
+            <li key={`adv-${i}`} sx={{ flex: [`0 0 100%`,`0 0 100%`, `0 0 49%`], width: [`100%`,`100%`,`49%`], pl: 0, textAlign: `left`, mb: [6,5, 3], pr: `50px` }}>
+              <div sx={{ position: `relative`, width: `100%`, maxWidth: [`162px`,`162px`,`162px`,`162px`,`162px`,`231px`], height: [`200px`,`200px`,`200px`,`200px`,`200px`,`285px`], mb: [3] }}>
                 {m.imgPath ? (
                   <AspectImage
                     key={`image-${i}`}
                     ratio={231 / 285}
                     src={m.imgPath}
-                    sx={{ background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover` }}/>                  
+                    sx={{ background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover` }}/>
                 ) : (
-                  <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width="231px" preserveAspectRatio="xMidYMid meet" />
+                  <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width={[`162px`,`162px`,`162px`,`162px`,`162px`,`231px`]} preserveAspectRatio="xMidYMid meet" />
                 )}
               </div>
               <h3 sx={{
-                fontSize: `display.md`, lineHeight: `md`, mb: 0
-              }}><Text sx={{ fontSize: `display.md` }}>{m.name}</Text></h3>
+                 lineHeight: `md`, mb: 0
+              }}><Text sx={{ fontSize: [`body.lg`, `display.md`, `display.md`] }}>{m.name}</Text></h3>
               <p sx={{my: 0}}>{m.role}</p>
-              <p sx={{ width: "70%" }}>{m.bio}</p>
+              <p sx={{ width: [`100%`, "70%"], lineHeight: `1.22`, fontSize: [`body.xs`, `body.sm`, `body.sm`,`body.sm`,`body.sm`, `body.md`]}}>{m.bio}</p>
               <Link href={m.link} sx={{ position: `relative`, transition: `all 0.2s ease`, "&:hover": { opacity: 0.7 }}}><SVG icon="linkedinCircle" color="red" left="0" top="0" width="32px" preserveAspectRatio="xMidYMid meet" /></Link>
             </li>
           ))
         )}
       </ul>
     </Box>
-    <Box sx={{ fontSize: `16px`, textAlign: `center` }}>
-    <Heading as="h2" sx={{textAlign: `left`, fontSize: `display.xl`, mb: 4}}>Partners</Heading>
+    <Box sx={{textAlign: `center` }}>
+    <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.lg`], lineHeight: 1.22, mb: [0,4]}}>Partners</Heading>
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {partners && (
           partners.map((m,i) => (
             <li key={`adv-${i}`} sx={{ flex: `0 0 49%`, width: `49%`, pl: 0, textAlign: `left`, mb: 3, pr: `50px` }}>
-            <div sx={{ position: `relative`, width: `100%`, maxWidth: `274px`, height: `72px`, mb: 3 }}>
+            <div sx={{ position: `relative`, width: `100%`, maxWidth: `274px`, maxHeight: `72px`, mb: 3 }}>
               {m.imgPath && (
                 <AspectImage
                   key={`image-${i}`}
                   ratio={274/72}
                   src={m.imgPath}
                   sx={{ width: `100%`, height: `100%`, objectFit: `cover`, mixBlendMode: `luminosity`
-                }}/>                  
+                }}/>
               )}
             </div>
-              <Link href={m.link} sx={{position: `relative`, transition: `all 0.2s ease` }}>{ m.link }</Link>
+              <Link href={m.link} sx={{position: `relative`, transition: `all 0.2s ease`, fontSize:[`body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.md`]  }}>{ m.link }</Link>
             </li>
           ))
         )}
