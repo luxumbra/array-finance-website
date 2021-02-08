@@ -35,24 +35,20 @@ export const TeamPreview = ({ images }) => {
     images.length,
     images.map((i) => ({ x: 0, transform: `translateX(0)` }))
   )
-  console.log(springs);
-  // debugger
 
   return (
-    <Box sx={{textAlign: `center`}}>
+    <Box sx={{textAlign: `center`, mt: [100]}}>
       <Flex sx={{mx: `auto`, pl: `${(images.length * 50) / 2}px`, justifyContent: `center`}}>
         {springs && (
           springs.map(( { x, transform } , i) => (
             <animated.div
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-              sx={{ transform: inHover ? x.interpolate(v => `translateX(${v}px)`) : [`none`, `translateX(${i * -50}px)`] }}
+              sx={{ transform: `translateX(${i * -50}px)` }}
             >
               <Image
                 key={`image-${i}`}
                 src={images[i].imgPath}
                 variant="avatar"
-                sx={{border: [`5px solid #17043A`,`10px solid #17043A`], borderRadius: [`50%`], width:[`75px`, `160px`], height: [`75px`,`160px`]}}
+                sx={{backgroundColor: ` #17043A`,  border: [`5px solid #17043A`,`10px solid #17043A`], borderRadius: [`50%`], width:[`75px`, `160px`], height: [`75px`,`160px`]}}
               />
             </animated.div>
           ))

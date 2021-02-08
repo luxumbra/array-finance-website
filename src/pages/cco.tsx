@@ -97,8 +97,8 @@ export const ProgressBar = ({current = 0, max = 100}) => {
   return (
     <PageSection>
       <div sx={{ position: `relative`, maxWidth: `1170px` }}>
-        <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left="-130px" top="-3px" opacity={1} />
-        <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left="-230px" top="-3px" opacity={1}/>
+        <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left={[30,30,30,30,30, -130, -130]} top={[-30,-30,-30,-45,-45, -1, -1]} opacity={[0.2, 0.2,0.2,0.2,0.2, 1]} />
+        <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left={[130,130,130,130,190,-64, -230, -230]} top={[-50,-80,-110,-110,-110, -1, -1]} opacity={[0.4, 0.3,0.3,0.3,0.3, 1]}/>
         <ProgressIndicator max={max} current={current} />
       </div>
     </PageSection>
@@ -108,18 +108,16 @@ export const ProgressBar = ({current = 0, max = 100}) => {
 export const ProgressInfo = ({ currentTotal = 0 }) => {
   return (
     <PageSection>
-      <Flex sx={{flexFlow: `row nowrap`, alignContent: `center`, justifyContent: `space-between`, mb: 5}}>
-        <p sx={{flex: `0 0 52%`, width: `52%`, fontSize: `display.md`}}>CCO shares will be migrated to the ArrayDAO in Q2. 5% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</p>
-        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: `right`, fontSize: `display.lg`, fontWeight: `700`, textAlign: `left`, pl: `100px` }}>
+      <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75, -100], mb: [4,4,5]}}>
+        <p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}}>CCO shares will be migrated to the ArrayDAO in Q2. 5% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</p>
+        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`left`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
           <span sx={{flex: `0 0 auto`}}>
-            <SVG icon="daiLogo" hiddenMobile width="72px" color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
+            <SVG icon="daiLogo" hiddenMobile width={[36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
           </span>
           <span sx={{flex: `0 0 auto`, ml: 3}}>{currentTotal} DAI</span>
         </div>
       </Flex>
-      <CTA text="propose to join" link="/join" type="link" sx={{
-                  fontSize: `40px`, variant: `links.primary`
-                }} />
+      <CTA text="propose to join" link="/join" type="link" sx={{variant: `links.primary`}} />
     </PageSection>
   )
 }
@@ -128,31 +126,23 @@ const CCOPage = () => (
     <Hero page="cco" />
     <ProgressBar current={78} max={100} />
     <ProgressInfo currentTotal={15194.51} />
-    <PageSection sx={{}}>
+    <PageSection sx={{"&>div": {pt: [0]}}}>
     <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
-       <Box sx={{ position: `relative`, flex: `0 1 50%`, pt: 0, width: `50%`, justifySelf: `center`, margin: `0 auto` }}>
-        <Heading as="h2"  sx={{textAlign: `left`, fontSize: `display.xl`, mb: 4}}>FAQ</Heading>
+       <Box sx={{ position: `relative`, flex: [`0 0 100%`,`0 0 100%`,`0 0 100%`,`0 1 50%`, `0 1 50%`], pt: 0, width: [`100%`, `100%`, `100%`, `50%`, `50%`], justifySelf: `center`, margin: `0 auto` }}>
+        <Heading as="h2"  sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.xl`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: 4}}>FAQ</Heading>
           <ul sx={{ listStyle: `none`, pl: 0 }}>
             {faqs && (
               faqs.map((faq, i) => (
-                <li key={`faq-${i}`} sx={{mb: 5}}>
-                  <Heading  as="h3" sx={{textAlign: `left`, fontSize: `display.lg`, mb: 3}}>{faq.question}</Heading>
-                  <p>{faq.answer}</p>
+                <li key={`faq-${i}`} sx={{mb: [4,4,5]}}>
+                  <Heading  as="h3" sx={{textAlign: `left`, fontSize: [`body.lg`,`display.md`,`display.md`, `display.lg`], lineHeight: 1.22, mb: [3]}}>{faq.question}</Heading>
+                  <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`, `body.md`], width: [`100%`, `100%`, `80%`, `auto`, `auto`, ]}}>{faq.answer}</p>
                 </li>
               ))
             )}
         </ul>
         </Box>
      </Flex>
-     <UpDown sx={{position: `absolute`, width: `full`, zIndex: 3000}}>
-       <SVG icon="ccoGrid2" hiddenMobile width={172} color="icon_darkest" left="0" top="15%" opacity={1}/>
-      </UpDown>
-      {/* <UpDownWide sx={{transform: `scaleY(-1)`}}>
-        <SVG icon="afCircHome" width={200} color="icon_brightest" right="-100px" top="45%" opacity={0.04} zIndex={2000} />
-      </UpDownWide>
-      <UpDownWide sx={{transform: `scaleY(1)`}}>
-        <SVG icon="afCircHomeSm" width={120} stroke color="white" left="25%" top="65%" opacity={0.1} fill="#86E5CC" />
-      </UpDownWide> */}
+     <SVG icon="ccoGrid2" hiddenMobile width={[125, 125, 172]} color="icon_darkest" left={[200, 200,420,300, 0]} top={[-25, -25,-100,-60,`15%`]} opacity={[0.2,0.2,0.2,0.2, 1]}/>
     </PageSection>
   </Layout>
 

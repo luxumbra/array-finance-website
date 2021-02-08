@@ -87,8 +87,8 @@ const Hero = ({ page }) => {
             )}
             {page && page === `cco` && (
               <>
-                <SVG icon="ccoSemiCirc" color="colors.background" right={["-50px"]} top={["-10px"]} width={["411px"]} preserveAspectRatio="xMidYMid meet" />
-                <SVG icon="ccoGrid1" color="colors.background" right={["275px"]} top={["180px"]} width={["85px"]} preserveAspectRatio="xMidYMid meet" />
+                <SVG icon="ccoSemiCirc" color="colors.background" right={[-10, -20, -20, -20, -50]} top={[20, 20, -10]} width={[250, 300, 350,411]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+                <SVG icon="ccoGrid1" color="colors.background" right={[125,225,200, 275]} top={[130,130,160, 180]} width={[60,60,60, 85]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
               </>
             )}
             </Box>
@@ -98,7 +98,7 @@ const Hero = ({ page }) => {
           <SVG icon="linesRight1" width={[180,180,300,250, 492]} color="icon_darkest" right={[0, 0]} top={[-250, -250, -50, -50]} opacity={1} />
       )}
       <UpDown sx={{position: `absolute`, zIndex: 50}}>
-        <SVG icon="linesRight2" width={[140,140,200, 302]} color="icon_darkest" left="0" top={[-50,50,50, -50]} opacity={1} transform="scale(-1,-1)" />
+        <SVG icon="linesRight2" width={[140,140,200, 200, 220,302]} color="icon_darkest" left="0" top={[-50,50,50, -50]} opacity={1} transform="scale(-1,-1)" />
       </UpDown>
       {/* </Content> */}
     </div>
