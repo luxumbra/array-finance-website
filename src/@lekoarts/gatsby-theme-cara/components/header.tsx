@@ -78,31 +78,36 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               mx: 'auto',
               px: [0, 8, 10],
               alignItems: 'baseline',
-              fontWeight: [`300`, `400`],
               color: `white`,
-              fontSize: [`10px`, `16px`],
               ".line": {
                 display: [`none`, `block`]
+              },
+              "a": {
+                fontSize: [`body.xs`, `body.sm`, `display.sm`, `20px`,`20px`,`20px`, `26px`],
+                fontWeight: [`300`, `300`, `300`, `400`],
+                "&:hover": {
+                  color: `white`
+                }
               }
             }}>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
                 alignSelf: `baseline`,
-                width: [`40px`, `70px`],
-                height: [`40px`, `70px`],
+                width: [`40px`,`40px`,`50px`, `70px`],
+                height: [`40px`,`40px`,`50px`, `70px`],
                 p: 0,
                 mr: [`50px`,`79px`],
                 position: `relative`,
-                flex: [`0 1 40px`,`0 1 70px`]
+                flex: [`0 1 40px`,`0 1 40px`,`0 1 50px`,`0 1 70px`]
               }}>
-              <SVG icon="afLogo" width={[`40px`, `70px`]} left="0" bottom="0" top={[`22px`]} />
+              <SVG icon="afLogo" width={[`40px`,`40px`,`50px`, `70px`]} left="0" bottom="0" top={[`22px`]} />
             </NavLink>
             <NavLink href='/'
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`30px`,`50px`,`79px`],
+                mr: [`30px`,`30px`,`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -136,7 +141,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`30px`,`50px`,`79px`],
+                mr: [`30px`,`30px`,`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -163,7 +168,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`30px`,`50px`,`79px`],
+                mr: [`30px`,`30px`,`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
