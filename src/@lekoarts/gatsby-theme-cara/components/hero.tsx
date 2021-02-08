@@ -87,8 +87,8 @@ const Hero = ({ page }) => {
             )}
             {page && page === `cco` && (
               <>
-                <SVG icon="ccoSemiCirc" color="colors.background" right={[-10, -20, -20, -20, -50]} top={[20, 20, -10]} width={[250, 300, 350,411]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
-                <SVG icon="ccoGrid1" color="colors.background" right={[125,225,200, 275]} top={[130,130,160, 180]} width={[60,60,60, 85]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+                <SVG icon="ccoSemiCirc" color="colors.background" right={[-10, -20, -20, -20,-20, -50]} top={[20, 20, -10]} width={[250, 300, 350,411]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+                <SVG icon="ccoGrid1" color="colors.background" right={[125,225,200, 275,275]} top={[130,130,160, 180]} width={[60,60,60, 85]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
               </>
             )}
             </Box>

@@ -58,16 +58,16 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
   // use spring to change the width value of progress from zero to `current`
 
   return (
-    <div className="indicator" sx={{display: `flex`, flexFlow: `column wrap`}}>
+    <div className="indicator" sx={{ display: `flex`, flexFlow: `column wrap`, fontSize: [`body.xs`, `body.xs`, `body.xs`, `body.sm`] }}>
       <div className="bounds" sx={{width: `${max}%`, backgroundColor: `#0F30F520`, borderRadius: `40px`, height: `33px`}}>
         <div className="progress" sx={{ position: `relative`, width: `${current}%`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`, }}>
-        <span sx={{position: `absolute`, top: `-60px`, display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}}>We're here!</span>
+        <span sx={{position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}}>We're here!</span>
           <span sx={{ visibility: `hidden` }}>{current}%</span>
         </div>
       </div>
       <div className="numbers" sx={{
         width: `${max}%`,
-        pt: 4,
+        pt: [2,2,4,4],
         position: `relative`,
         "span": {
           position: `absolute`,
@@ -110,7 +110,7 @@ export const ProgressInfo = ({ currentTotal = 0 }) => {
     <PageSection>
       <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75, -100], mb: [4,4,5]}}>
         <p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}}>CCO shares will be migrated to the ArrayDAO in Q2. 5% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</p>
-        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`left`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
+        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`center`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
           <span sx={{flex: `0 0 auto`}}>
             <SVG icon="daiLogo" hiddenMobile width={[36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
           </span>
@@ -129,13 +129,13 @@ const CCOPage = () => (
     <PageSection sx={{"&>div": {pt: [0]}}}>
     <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
        <Box sx={{ position: `relative`, flex: [`0 0 100%`,`0 0 100%`,`0 0 100%`,`0 1 50%`, `0 1 50%`], pt: 0, width: [`100%`, `100%`, `100%`, `50%`, `50%`], justifySelf: `center`, margin: `0 auto` }}>
-        <Heading as="h2"  sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.xl`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: 4}}>FAQ</Heading>
+        <Heading as="h2"  sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.lg`, `display.lg`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: 4}}>FAQ</Heading>
           <ul sx={{ listStyle: `none`, pl: 0 }}>
             {faqs && (
               faqs.map((faq, i) => (
                 <li key={`faq-${i}`} sx={{mb: [4,4,5]}}>
-                  <Heading  as="h3" sx={{textAlign: `left`, fontSize: [`body.lg`,`display.md`,`display.md`, `display.lg`], lineHeight: 1.22, mb: [3]}}>{faq.question}</Heading>
-                  <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`, `body.md`], width: [`100%`, `100%`, `80%`, `auto`, `auto`, ]}}>{faq.answer}</p>
+                  <Heading  as="h3" sx={{textAlign: `left`, fontSize: [`body.lg`,`body.xl`,`body.xl`,`body.xl`,`body.xl`, `display.lg`], lineHeight: 1.22, mb: [3]}}>{faq.question}</Heading>
+                  <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`,`body.sm`,`body.sm`, `body.md`], width: [`100%`, `100%`, `80%`, `auto`, `auto`, ]}}>{faq.answer}</p>
                 </li>
               ))
             )}
