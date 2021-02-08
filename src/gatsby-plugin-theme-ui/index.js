@@ -145,7 +145,7 @@ const theme = merge(tailwind, {
     h1: {
       fontSize: [`body.xxl`, `display.lg`, `display.xl`, `display.xl`, `display.xxl`],
       fontWeight: `heading`,
-      lineHeight: [`1.22`, `1.22`,            `1.22`,            `1.22`,            `7.8125rem`],
+      lineHeight: [`1.22`, `1.22`, `1.22`, `1.22`, `7.8125rem`],
       mt: 2,
       mb: 3,
       letterSpacing: `normal`,
@@ -248,9 +248,9 @@ const theme = merge(tailwind, {
       border: `4px solid white`,
       borderRadius: `0`,
       color: `white`,
-      fontSize: [`display.sm`, `display.md`],
-      fontWeight: `heading`,
-      px: [`20px`, `30px`],
+      fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.md`],
+      fontWeight: [`body`,  `heading`,  `heading`],
+      px: [`30px`],
       py: [`10px`, `16px`],
       transition: `all 0.2s ease`,
       '&:hover': {

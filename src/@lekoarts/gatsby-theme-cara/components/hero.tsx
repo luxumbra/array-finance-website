@@ -20,7 +20,7 @@ const Hero = ({ page }) => {
   let heroW:string | number | any;
 
   if (page === 'home' || page == 'team') {
-    heroW = [`100%`,`80%`, `85%`, `75%`]
+    heroW = [`100%`,`80%`, `85%`, `75%`, `75%`, `75%`]
   } else {
     heroW = `65%`
   }
@@ -37,7 +37,7 @@ const Hero = ({ page }) => {
               width: [`90%`],
               zIndex: 200,
               p: {
-                fontSize:[`display.sm`, `body.lg`, `body.xl`, `body.md`, `body.md`, `display.lg`],
+                fontSize:[`display.sm`, `body.lg`, `body.xl`, `body.xl`, `display.lg`, `display.lg`],
                 lineHeight: [`sm`,`md`],
                 mb: page !== `team` ? [5,5, 5, 6] : [3,4,5],
                 width: heroW && heroW,
@@ -95,11 +95,11 @@ const Hero = ({ page }) => {
           </Flex>
       </Inner>
       {page === `home` && (
-        <SVG icon="linesRight1" width={[180, 492]} color="icon_darkest" right={[0, 0]} top={[-250,-250,-250,-400,-140, 200]} opacity={1} />
+          <SVG icon="linesRight1" width={[180,180,300,250, 492]} color="icon_darkest" right={[0, 0]} top={[-250, -250, -50, -50]} opacity={1} />
       )}
-      {/* <UpDown sx={{position: `relative`, zIndex: 4000}}>
-        <SVG icon="linesRight2" width={[140, 302]} color="icon_darkest" left="0" top={[50, `-5%`]} opacity={1} transform="scale(-1,-1)" zIndex={3000} />
-      </UpDown> */}
+      <UpDown sx={{position: `absolute`, zIndex: 50}}>
+        <SVG icon="linesRight2" width={[140,140,200, 302]} color="icon_darkest" left="0" top={[50,50,50, -50]} opacity={1} transform="scale(-1,-1)" />
+      </UpDown>
       {/* </Content> */}
     </div>
   )

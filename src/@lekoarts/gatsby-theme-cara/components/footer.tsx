@@ -146,8 +146,8 @@ const Footer = () => {
         </UpDownWide>
       </div>
       <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0}}>
-        <SVG icon="linesRight2" hiddenMobile width={[150,150,200, 302]} color="icon_darkest" left="0" bottom="100px" opacity={[0.8, 0.5]} transform="scale(-1,-1)" />
-        <SVG icon="roadmapGrid2" hiddenMobile width={[155,155,200, 310]} color="icon_darkest" right={[`-100px`,`-100px`,`-100px`, `-200px`]} bottom={[`100px`,`100px`,`100px`, `150px`]} opacity={1} />
+        <SVG icon="linesRight2" hiddenMobile width={[100,150,200, 302]} color="icon_darkest" left="0" bottom="100px" opacity={[0.8, 0.5]} transform="scale(-1,-1)" />
+        <SVG icon="roadmapGrid2" hiddenMobile width={[125,155,200, 310]} color="icon_darkest" right={[`-80px`,`-100px`,`-100px`, `-200px`]} bottom={[`100px`,`100px`,`100px`, `150px`]} opacity={1} />
         </div>
     </>
   )

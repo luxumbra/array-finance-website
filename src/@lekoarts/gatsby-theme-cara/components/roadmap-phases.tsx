@@ -47,8 +47,8 @@ export const RoadmapPhases = ({ phases }: RoadmapPhasesProps) => (
                 display: `flex`,
                 alignItems: `baseline`,
                 justifyContent: `space-between`,
-              }}><Text sx={{ fontSize:[`display.sm`,`display.md`,`display.md`, `display.lg`] }}>{phase.name}</Text> <Text sx={{ fontSize: [`body.xs`,`body.sm`,`body.md`, `body.lg`], opacity: 0.6 }}>{phase.due}</Text></h3>
-              <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`, `body.lg`], width: [`100%`, `70%`]}}>{phase.description}</p>
+              }}><Text sx={{ fontSize:[`body.lg`,`display.md`,`display.md`, `display.lg`] }}>{phase.name}</Text> <Text sx={{ fontSize: [`body.xs`,`body.sm`,`body.md`, `body.lg`], opacity: 0.6 }}>{phase.due}</Text></h3>
+              <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`, `body.md`], width: [`100%`, `80%`,`80%`, `75%`, `75%`]}}>{phase.description}</p>
             </li>
           ))
         )}

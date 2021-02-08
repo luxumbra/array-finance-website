@@ -31,7 +31,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     const handleScroll = () => {
       if (ref.current) {
         setSticky(ref.current.getBoundingClientRect().top <= 0)
-        setHeader({ hs: isSticky ? [120, 15] : [170, 0]})
+        setHeader({ hs: isSticky ? [100, 15] : [170, 0]})
         console.log('gbr', ref.current.getBoundingClientRect().top)
       }
       if (window.pageYOffset > sticky) {
@@ -56,7 +56,6 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       sx={{
             position: `sticky`,
             height: [`100px`, `170px`],
-            borderBottom: `0.5px solid white`,
             top: 0,
             left: 0,
             right: 0,
