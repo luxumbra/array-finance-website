@@ -28,6 +28,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         },
         body: {
           backgroundColor: theme.colors.background,
+          fontSize: [`12px`, `14px`, `16px`],
           lineHeight: `1.75`,
           position: `relative`,
           maxWidth: `100vw`,

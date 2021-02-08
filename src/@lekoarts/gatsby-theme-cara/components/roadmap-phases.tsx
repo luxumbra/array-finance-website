@@ -42,20 +42,19 @@ export const RoadmapPhases = ({ phases }: RoadmapPhasesProps) => (
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {phases && (
           phases.map((phase,i) => (
-            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`, mb: [3,4,5]}}>
+            <li key={`phase-${i}`} sx={{pl: 0, textAlign: `left`, mb: [4, 5]}}>
               <h3 sx={{
                 display: `flex`,
                 alignItems: `baseline`,
                 justifyContent: `space-between`,
-
-              }}><Text sx={{ fontSize: `display.md` }}>{phase.name}</Text> <Text sx={{ fontSize: `body.sm`, opacity: 0.6 }}>{phase.due}</Text></h3>
-              <p sx={{width: "70%"}}>{phase.description}</p>
+              }}><Text sx={{ fontSize:[`display.sm`,`display.md`,`display.md`, `display.lg`] }}>{phase.name}</Text> <Text sx={{ fontSize: [`body.xs`,`body.sm`,`body.md`, `body.lg`], opacity: 0.6 }}>{phase.due}</Text></h3>
+              <p sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`, `body.lg`], width: [`100%`, `70%`]}}>{phase.description}</p>
             </li>
           ))
         )}
       </ul>
       <Box sx={{ my: 5}}>
-        <p sx={{fontSize: `body.sm`, fontWeight: `300`, textAlign: `left`}}>* The Array roadmap is subject to change. Depending on governance proposals, parts of the roadmap may be modified or change in priority.</p>
+        <p sx={{fontSize: [`body.xs`, `body.xs`,`body.xs`,`body.sm`], fontStyle: `italic`, fontWeight: `300`, textAlign: `left`, pr: [0, 0, 5, 0]}}>* The Array roadmap is subject to change. Depending on governance proposals, parts of the roadmap may be modified or change in priority.</p>
       </Box>
     </Box>
 )

@@ -55,7 +55,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       id="header"
       sx={{
             position: `sticky`,
-            height: [`170px`],
+            height: [`100px`, `170px`],
+            borderBottom: `0.5px solid white`,
             top: 0,
             left: 0,
             right: 0,
@@ -72,14 +73,18 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           }} ref={ref}>
           <Flex as="nav"
         sx={{
-              display: [`none`, `flex`],
+              display: [`flex`],
               maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
               width: `100%`,
               mx: 'auto',
               px: [0, 8, 10],
               alignItems: 'baseline',
-              fontWeight: `400`,
-              color: `white`
+              fontWeight: [`300`, `400`],
+              color: `white`,
+              fontSize: [`10px`, `16px`],
+              ".line": {
+                display: [`none`, `block`]
+              }
             }}>
             <NavLink href='/'
               sx={{
@@ -98,7 +103,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`50px`,`79px`],
+                mr: [`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -132,7 +137,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`50px`,`79px`],
+                mr: [`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {
@@ -159,7 +164,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               sx={{
                 variant: 'styles.navlink',
                 p: 0,
-                mr: [`50px`,`79px`],
+                mr: [`30px`,`50px`,`79px`],
                 position: `relative`,
                 "&:hover": {
                   ".line": {

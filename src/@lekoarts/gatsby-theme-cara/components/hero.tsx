@@ -20,7 +20,7 @@ const Hero = ({ page }) => {
   let heroW:string | number | any;
 
   if (page === 'home' || page == 'team') {
-    heroW = [`100%`,`50%`, `75%`]
+    heroW = [`100%`,`80%`, `85%`, `75%`]
   } else {
     heroW = `65%`
   }
@@ -35,14 +35,11 @@ const Hero = ({ page }) => {
             <Box sx={{
               flex: [`0 1 90%`, `0 1 90%`],
               width: [`90%`],
-              fontSize: [`14px`, `14px`, `16px`],
-              h1: {
-                // lineHeight: `125px`
-              },
+              zIndex: 200,
               p: {
-                fontSize:[`display.md`, `display.lg`],
+                fontSize:[`display.sm`, `body.lg`, `body.xl`, `body.md`, `body.md`, `display.lg`],
                 lineHeight: [`sm`,`md`],
-                mb: page !== `team` ? [4,5,6] : [3,4,5],
+                mb: page !== `team` ? [5,5, 5, 6] : [3,4,5],
                 width: heroW && heroW,
                 "&:last-of-type:not(:first-of-type)": {
                   fontSize: `display.md`,
@@ -75,12 +72,12 @@ const Hero = ({ page }) => {
             <Box sx={{
               position: `relative`,
               width: `10%`,
-              height: page !== `home` ? `auto` : [`400px`,`400px`,`400px`,`800px`,`850px`,`689px`],
+              height: page !== `home` ? `auto` : [`275px`,`400px`,`400px`,`800px`,`850px`,`689px`],
               overflowX: `visible`,
               zIndex: 0
             }}>
             {page && page === `home` && (
-              <SVG icon="homeHero" color="colors.background" left={[`-90px`,`-90px`,`-90px`,`-90px`,`-310px`, `-390px`]} top={[`70px`,`70px`,`203px`,`210px`, `200px`]} width={[`250px`,`250px`,`250px`,`250px`,`551px`, `551px`]}  preserveAspectRatio="xMidYMid meet" />
+              <SVG icon="homeHero" color="colors.background" left={[`-200px`,`-200px`,`-210px`,`-90px`,`-310px`, `-390px`]} top={[`-20px`,`-70px`,`135px`,`210px`, `200px`]} width={[`250px`,`250px`,`300px`,`250px`,`551px`, `551px`]}  preserveAspectRatio="xMidYMid meet" zIndex={0} opacity={[0.1, 1]} />
             )}
             {page && page === `team` && (
               <SVG icon="backed" color="colors.background" right="0" top="-50px" width="421px" preserveAspectRatio="xMidYMid meet" />
@@ -98,7 +95,7 @@ const Hero = ({ page }) => {
           </Flex>
       </Inner>
       {page === `home` && (
-        <SVG icon="linesRight1" width={[180, 492]} color="icon_darkest" right={[0, 0]} top={[-50,-50,-50,-400,-140, 200]} opacity={1} />
+        <SVG icon="linesRight1" width={[180, 492]} color="icon_darkest" right={[0, 0]} top={[-250,-250,-250,-400,-140, 200]} opacity={1} />
       )}
       {/* <UpDown sx={{position: `relative`, zIndex: 4000}}>
         <SVG icon="linesRight2" width={[140, 302]} color="icon_darkest" left="0" top={[50, `-5%`]} opacity={1} transform="scale(-1,-1)" zIndex={3000} />

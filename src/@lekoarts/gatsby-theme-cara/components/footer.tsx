@@ -26,7 +26,7 @@ const InnerWaveB = styled.div`
 const Footer = () => {
   return (
     <>
-      <Box as="footer" variant="footer" sx={{ position: `relative`, mb: 0, px: [0, 0, 0], pt: 5, pb: [0, 0, 0], mx: [0, 0, 0], mt: [4, 5, 6], width: `100vw`, minHeight: `200px`, height: `200px`, textAlign: `center`, overflow: `hidden` }}>
+      <Box as="footer" variant="footer" sx={{ position: `relative`, mb: 0, px: [0, 0, 0], pt: 5, pb: [0, 0, 0], mx: [0, 0, 0], mt: [4, 5, 6], width: `100vw`, minHeight: [`150px`,`150px`,`150px`, `200px`], height: [`150px`,`150px`,`150px`, `200px`], textAlign: `center`, overflow: `hidden` }}>
         <Flex sx={{
           flexFlow: `row nowrap`,
           alignItems: `start`,
@@ -34,32 +34,33 @@ const Footer = () => {
           maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
           mx: `auto`
         }}>
-          <Box sx={{ flex: [`0 1 20%`,`0 1 20%`,`0 1 20%`,`0 1 20%`,`0 1 20%`, `0 1 70%`], width: [`20%`,`20%`,`20%`,`20%`,`20%`, `70%`], textAlign: `left` }}>
+          <Box sx={{ flex: [`0 1 15%`,`0 1 20%`,`0 1 20%`,`0 1 20%`,`0 1 20%`, `0 1 70%`], width: [`15%`,`20%`,`20%`,`20%`,`20%`, `70%`], textAlign: `left` }}>
           <Link href='/'
               sx={{
                 display: `block`,
-                width: `56px`,
-                height: `56px`,
-              variant: 'styles.navlink',
-              p: 0,
-              position: `relative`,
+                width: [`35px`,`56px`],
+                height: [`35px`,`56px`],
+                variant: 'styles.navlink',
+                p: 0,
+                position: `relative`,
             }}>
 
-            <SVG icon="afLogo" hiddenMobile width={`56px`} left="0" bottom="0" />
+            <SVG icon="afLogo" hiddenMobile width={[`35px`,`56px`]} left="0" bottom="0" />
           </Link>
           </Box>
-          <Box sx={{ flex: [`0 0 80%`, `0 0 80%`, `0 0 400px`], width: [`80%`, `80%`, `400px`], overflowX: `hidden`}}>
+          <Box sx={{ flex: [`0 1 85%`, `0 0 85%`, `0 0 400px`], width: [`80%`, `80%`, `400px`], overflowX: `hidden`}}>
             <ul sx={{
               display: `flex`,
               alignContent: `center`,
-              justifyContent: `space-between`,
+              justifyContent: [`space-evenly`, `space-between`],
               listStyle: `none`,
               pl: 0,
               width: `100%`,
               "li": {
                 position: `relative`,
-                flex: `0 0 40px`,
-                width: `40px`,
+                fontSize: [`body.xs`, `body.sm`],
+                flex: [`0 0 42px`,`0 0 40px`],
+                width: [`42px`,`40px`],
                 "&:first-of-type": {
                   width: `auto`,
                   flex: `0 1 auto`
@@ -73,28 +74,28 @@ const Footer = () => {
               <li>
                 <Link href="/">
                   <IconButton>
-                    <SVG icon="githubIcon" hiddenMobile color="colors.white" right="0" top="0" width="32px" height="32px" preserveAspectRatio="xMidYMid meet" />
+                    <SVG icon="githubIcon" hiddenMobile color="colors.white" right="0" top="0" height={[`20px`, `32px`]}  preserveAspectRatio="xMidYMid meet" />
                   </IconButton>
                 </Link>
               </li>
               <li>
               <Link href="/">
                 <IconButton>
-                  <SVG icon="twitterIcon" hiddenMobile color="colors.white" right="0" top="0" width="30px" height="25px" preserveAspectRatio="xMidYMid meet" />
+                    <SVG icon="twitterIcon" hiddenMobile color="colors.white" right="0" top="0" height={[`20px`, `32px`]} preserveAspectRatio="xMidYMid meet" />
                   </IconButton>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                 <IconButton>
-                  <SVG icon="discordIcon" hiddenMobile color="colors.white" right="0" top="0" width="24px" height="32px" preserveAspectRatio="xMidYMid meet" />
+                  <SVG icon="discordIcon" hiddenMobile color="colors.white" right="0" top="0" height={[`23px`, `32px`]} preserveAspectRatio="xMidYMid meet" />
                   </IconButton>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                 <IconButton>
-                  <SVG icon="mediumIcon" hiddenMobile color="colors.white" right="0" top="0" width="39px" height="39px" preserveAspectRatio="xMidYMid meet" />
+                  <SVG icon="mediumIcon" hiddenMobile color="colors.white" right="0" top="0" height={[`33px`, `33px`, `45px`]} preserveAspectRatio="xMidYMid meet" />
                   </IconButton>
                 </Link>
               </li>
@@ -102,9 +103,9 @@ const Footer = () => {
           </Box>
         </Flex>
       </Box>
-      <div sx={{ position: `absolute`, bottom: `0`, left: `0`, width: `100vw`, height: `200px`, overflow: `hidden` }}>
+      <div sx={{ position: `absolute`, bottom: `0`, left: `0`, width: `100vw`, height: [`150px`,`150px`,`150px`, `200px`], overflow: `hidden` }}>
         <UpDown sx={{position: `absolute`, bottom: `-50px`, zIndex: 100}}>
-          <InnerWaveA sx={{ position: `absolute`, width: `130%`, left: 0, top: `50px`, height: `full`, svg: { width: `100%`, height: `200px`, transform: `scale(-1, -1)`, zIndex: 50}, zIndex: 50 }}>
+          <InnerWaveA sx={{ position: `absolute`, width: `130%`, left: 0, top: `50px`, height: `full`, svg: { width: `100%`, height: [`150px`,`200px`], transform: `scale(-1, -1)`, zIndex: 50}, zIndex: 50 }}>
             <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" fill="#061FAB" preserveAspectRatio="none">
               <path opacity={0.1} sx={{ boxShadow: `0 0 35px rgba(0,0,0,1)` }}>
                 <animate
@@ -116,7 +117,7 @@ const Footer = () => {
               </path>
             </svg>
           </InnerWaveA>
-          <InnerWaveB sx={{ position: `absolute`, width: `130%`, right: 0, top: `30px`, height: `full`, svg: { width: `100%`, height: `200px`, zIndex: 30 }, transform: `scale(1, -1)`, zIndex: 30 }}>
+          <InnerWaveB sx={{ position: `absolute`, width: `130%`, right: 0, top: `30px`, height: `full`, svg: { width: `100%`, height: [`150px`,`150px`,`150px`,`200px`], zIndex: 30 }, transform: `scale(1, -1)`, zIndex: 30 }}>
             <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" fill="#2D71F4" preserveAspectRatio="none">
               <path opacity={0.1} sx={{ boxShadow: `0 0 35px rgba(0,0,0,1)` }}>
                 <animate
@@ -130,7 +131,7 @@ const Footer = () => {
           </InnerWaveB>
         </UpDown>
         <UpDownWide sx={{zIndex: 20}}>
-        <InnerWaveB sx={{ position: `absolute`, width: `130%`, top: `0`, right: 0, height: `full`, svg: { width: `100%`, height: `200px`, zIndex: 0 }, transform: `scale(-1, -1)`, zIndex: 0, overflow: `hidden` }}>
+        <InnerWaveB sx={{ position: `absolute`, width: `130%`, top: `0`, right: 0, height: `full`, svg: { width: `100%`, height: [`150px`,`150px`,`150px`,`200px`], zIndex: 0 }, transform: `scale(-1, -1)`, zIndex: 0, overflow: `hidden` }}>
             <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" fill="#20DAF5" preserveAspectRatio="none">
               <path opacity={0.06} sx={{ boxShadow: `0 0 35px rgba(0,0,0,1)` }}>
                 <animate
@@ -145,8 +146,8 @@ const Footer = () => {
         </UpDownWide>
       </div>
       <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0}}>
-        <SVG icon="linesRight2" hiddenMobile width={302} color="icon_darkest" left="0" bottom="100px" opacity={0.5} transform="scale(-1,-1)" />
-          <SVG icon="roadmapGrid2" hiddenMobile width={310} color="icon_darkest" right="-200px" bottom="150px" opacity={1} />
+        <SVG icon="linesRight2" hiddenMobile width={[150,150,200, 302]} color="icon_darkest" left="0" bottom="100px" opacity={[0.8, 0.5]} transform="scale(-1,-1)" />
+        <SVG icon="roadmapGrid2" hiddenMobile width={[155,155,200, 310]} color="icon_darkest" right={[`-100px`,`-100px`,`-100px`, `-200px`]} bottom={[`100px`,`100px`,`100px`, `150px`]} opacity={1} />
         </div>
     </>
   )
