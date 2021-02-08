@@ -26,12 +26,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `array.finance by RaidGuild`,
+        name: `array.finance partnered with RaidGuild`,
         short_name: `array`,
         description: `Invest in trusted and user-curated portfolios`,
         start_url: `/`,
-        background_color: `#141821`,
-        theme_color: `#f6ad55`,
+        background_color: `#17043A`,
+        theme_color: `#0F30F5`,
         display: `standalone`,
         icons: [
           {
