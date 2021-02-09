@@ -5,7 +5,7 @@ const theme = merge(tailwind, {
   initialColorModeName: `dark`,
   useCustomProperties: true,
   colors: {
-    primary: `#0F30F5`,
+    primary: `#17043A`,
     primaryBlack: `#212121`,
     secondary: `#0F30F5`,
     text: tailwind.colors.white,
@@ -249,7 +249,7 @@ const theme = merge(tailwind, {
       borderRadius: `0`,
       color: `white`,
       fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.md`],
-      fontWeight: [`body`,  `heading`,  `heading`],
+      fontWeight: [`body`, `heading`, `heading`],
       px: [`30px`],
       py: [`10px`, `16px`],
       transition: `all 0.2s ease`,
