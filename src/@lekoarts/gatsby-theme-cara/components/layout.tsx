@@ -68,9 +68,9 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       position: `relative`,
       overflowX: `hidden`,
       width: `100vw`,
-      zIndex: `0`
+      zIndex: 1000
     }}>{children}</div>
-    <Footer />
+    <Footer sx={{position: `relative`, zIndex: 500}} />
   </React.Fragment>
 )
 
