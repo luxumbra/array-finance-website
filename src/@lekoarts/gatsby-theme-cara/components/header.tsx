@@ -122,7 +122,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 array.finance</span>
               <span className="line" sx={{
                 position: `absolute`,
-                backgroundColor: `primary`,
+                backgroundColor: `secondary`,
                 height: `4px`,
                 width: `0%`,
                 bottom: 0,
@@ -156,7 +156,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 team</span>
               <span className="line" sx={{
                 position: `absolute`,
-                backgroundColor: `primary`,
+                backgroundColor: `secondary`,
                 height: `4px`,
                 width: `0%`,
                 bottom: 0,
@@ -183,7 +183,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 roadmap</span>
               <span className="line" sx={{
                 position: `absolute`,
-                backgroundColor: `primary`,
+                backgroundColor: `secondary`,
                 height: `4px`,
                 width: `0%`,
                 bottom: 0,
@@ -209,7 +209,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
                 CCO</span>
               <span className="line" sx={{
                 position: `absolute`,
-                backgroundColor: `primary`,
+                backgroundColor: `secondary`,
                 height: `4px`,
                 width: `0%`,
                 bottom: 0,
