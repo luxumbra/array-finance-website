@@ -67,6 +67,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <div className={className} sx={{
       position: `relative`,
       overflowX: `hidden`,
+      pt: `170px`,
       width: `100vw`,
       zIndex: 1000
     }}>{children}</div>
