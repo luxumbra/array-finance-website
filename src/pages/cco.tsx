@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import {useSpring, animated, config} from 'react-spring'
 import { Heading, Text, Box, Flex, Progress, jsx } from 'theme-ui'
-import { BigNumber } from "bignumber.js"
 const Web3 = require('web3');
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
 //
