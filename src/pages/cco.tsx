@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import {useSpring, animated, config} from 'react-spring'
 import { Heading, Text, Box, Flex, Progress, jsx } from 'theme-ui'
-
+// import {usePoller, useContractReader, useTokenBalance} from 'eth-hooks';
 //
 import Layout from '../@lekoarts/gatsby-theme-cara/components/layout'
 import Hero from '../@lekoarts/gatsby-theme-cara/components/hero'
@@ -176,6 +176,8 @@ const CCOPage = () => {
   const contract = `0xFF3F8C0b98454306fB0bDA57E5ae38cbfA66CC0d`
   const apiQuery = `${api}${contract}`
 
+  // const tokenBalance = useTokenBalance(`0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d`, contract)
+  // console.log('tb', tokenBalance);
 
   const [data, loading] = useFetch(apiQuery)
 

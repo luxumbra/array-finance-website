@@ -164,7 +164,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
               mr: [`50px`,`79px`],
               position: `relative`,
               flex: [`0 1 40px`, `0 1 40px`, `0 1 50px`, `0 1 70px`],
-              transform: scrolled ? `scale(0.7) translateY(-5px)` : `scale(1)`,
+              transform: scrolled ? `scale(0.7) translateY(-5px)` : `scale(1) translateY(-10px)`,
               transition: `transform 0.2s ease-in-out`
             }}>
             <SVG icon="afLogo" width={[`40px`,`40px`,`50px`, `70px`]} left="0" bottom="0" top={[0]} />
