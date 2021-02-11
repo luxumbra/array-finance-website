@@ -32,6 +32,19 @@ const upDownWide = keyframes`
   }
 `
 
+const loading = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+
+const loadingAnimation = css`
+  ${loading} 2s ease-in-out infinite alternate;
+`
+
 const upDownAnimation = css`
   ${upDown} 10s ease-in-out infinite alternate;
 `
@@ -40,6 +53,10 @@ const upDownWideAnimation = css`
   ${upDownWide} 24s ease-in-out infinite alternate;
 `
 
+export const loadingAnim = () => css`
+  animation: ${loadingAnimation};
+  pointer-events: none;
+`
 export const UpDown = styled.div`
   animation: ${upDownAnimation};
   position: absolute;
@@ -87,11 +104,11 @@ export const waveAnimation = (length: string) => css`
 //   useEffect(() => {
 //     const el = document.querySelector(elID)
 //     console.log(el);
-    
+
 //     // el.strokeDasharray = ength
 //     // el.strokeDashoffset = length
 //     const handleScroll = () => {
-      
+
 //       let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
 //       let draw = length * scrollpercent
 //       setDrawLine(draw)
