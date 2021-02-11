@@ -21,6 +21,7 @@
     "@lekoarts/gatsby-theme-cara": "^1.2.18",
     "@theme-ui/presets": "^0.3.5",
     "axios": "^0.21.1",
+    "eth-hooks": "^1.1.2",
     "ethers": "^5.0.30",
     "gatsby": "^2.25.3",
     "gatsby-plugin-google-analytics": "^2.4.1",
