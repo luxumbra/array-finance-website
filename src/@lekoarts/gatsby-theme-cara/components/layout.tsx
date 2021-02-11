@@ -57,7 +57,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           display: `none`,
         },
         "::selection": {
-          backgroundColor: theme.colors.primary,
+          backgroundColor: theme.colors.brand.accents.light,
           color: theme.colors.background,
         },
       })}
