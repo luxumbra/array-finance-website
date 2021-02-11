@@ -4,14 +4,13 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import {useSpring, animated, config} from 'react-spring'
 import { Heading, Text, Box, Flex, Progress, jsx } from 'theme-ui'
-const Web3 = require('web3');
-let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
+
 //
 import Layout from '../@lekoarts/gatsby-theme-cara/components/layout'
 import Hero from '../@lekoarts/gatsby-theme-cara/components/hero'
 import PageSection from '../@lekoarts/gatsby-theme-cara/components/page-section'
 import SVG from "../@lekoarts/gatsby-theme-cara/components/svg"
-import { UpDown, UpDownWide, waveAnimation } from "../@lekoarts/gatsby-theme-cara/styles/animations"
+import { waveAnimation, loadingAnim } from "../@lekoarts/gatsby-theme-cara/styles/animations"
 import CTA from "../@lekoarts/gatsby-theme-cara/components/cta"
 import { useFetch } from "../@lekoarts/gatsby-theme-cara/hooks/use-fetch"
 //
@@ -21,7 +20,6 @@ const InnerWave = styled.div`
     ${waveAnimation(`20s`)};
   }
 `
-
 
 export const faqs = [
   {
@@ -158,7 +156,7 @@ export const ProgressInfo = ({ currentBalance, decimals, isLoading }: { currentB
       <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75, -100], mb: [4,4,5]}}>
         <animated.p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}} style={fade}>CCO shares will be migrated to the ArrayDAO in Q2. 5% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</animated.p>
         <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`center`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
-          <animated.span sx={{flex: `0 0 auto`, pr: [20]}} style={fade}>
+          <animated.span sx={{ flex: `0 0 auto`, pr: [20], borderRadius: `50%` }} style={fade}>
             <SVG icon="daiLogo" hiddenMobile width={[36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
           </animated.span>
 
