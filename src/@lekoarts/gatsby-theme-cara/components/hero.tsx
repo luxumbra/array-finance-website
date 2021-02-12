@@ -97,7 +97,7 @@ const Hero = ({ page }) => {
           </Flex>
       </Inner>
       {page === `home` && (
-          <SVG icon="linesRight1" width={[180,180,300,250, 492]} color="icon_darkest" right={[0, 0]} top={[-250, -250, -50, -50]} opacity={1} />
+          <SVG icon="linesRight1" width={[180,180,300,250, 492]} color="icon_darkest" right={[0, 0]} top={[-250, -250, -50, -150]} opacity={1} />
       )}
       <UpDown sx={{position: `absolute`, zIndex: 50}}>
         <SVG icon="linesRight2" width={[140,140,200, 200, 220,302]} color="icon_darkest" left="0" top={[-50,50,50, -50]} opacity={1} transform="scale(-1,-1)" />

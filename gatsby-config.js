@@ -6,10 +6,13 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
+    title: `array.finance: Invest in trusted & user curated portfolios`,
+    description: `Invest in trusted and user-curated portfolios`,
     // You can overwrite values here that are used for the SEO component
     // Of course you can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
     siteTitleAlt: `array.finance: Invest in trusted & user curated portfolios`,
+    image: '/static/banner.png',
   },
   flags: {
     DEV_SSR: false,
@@ -29,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `array.finance partnered with RaidGuild`,
-        short_name: `array`,
+        name: `array.finance: Invest in trusted & user curated portfolios`,
+        short_name: `array.finance`,
         description: `Invest in trusted and user-curated portfolios`,
         start_url: `/`,
         background_color: `#17043A`,

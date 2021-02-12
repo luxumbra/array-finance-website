@@ -124,7 +124,7 @@ const HomePage = () => (
         </Box>
         <Box sx={{ position: `relative`, flex: [`0 0 100%`,`0 1 90%`,`0 1 90%`, `0 1 59%`], pt: [3, 5], width: [`90%`,`59%`], justifySelf: `center`, margin: `0 auto`, pr: [0,0,0,50] }}>
           <RoadmapPhases phases={roadmapPhases} />
-          <CTA text="join our CCO" link="/ccor" type="link" sx={{
+          <CTA text="join our CCO" link="/cco" type="link" sx={{
             variant: `links.primary`
           }} />
           <SVG icon="roadmapGrid" width={115} color="icon_darkest" left={[0, 0, 50,50, -240, "-50%"]} top={[-100, -100,-200,"30%"]} opacity={[0,0.5,0.5,1]} />

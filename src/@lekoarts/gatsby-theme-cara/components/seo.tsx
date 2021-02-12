@@ -48,7 +48,6 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:image:alt" content={seo.description} />
       <meta name="twitter:creator" content={author} />
-      <meta name="gatsby-theme" content="@lekoarts/gatsby-theme-cara" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
