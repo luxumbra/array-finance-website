@@ -12,21 +12,21 @@ export const teamMembers = [
     name: `Gunnar Olsen`,
     role: `Founder`,
     bio: `Contributor at Harvest Finance. Dove into crypto in 2015 through data science, stayed on the blockchain ever since.`,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/gunnarolsen/`,
     imgPath: `/users/portraits/Gunnar.png`
   },
   {
     name: `Joshua Lapidus`,
     role: `Operations`,
     bio: `DAO aficionado and DeFi ReGen. Former ConsenSys and Lyft.`,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/JoshuaLapidus`,
     imgPath: `/users/portraits/Joshua.png`
   },
   {
     name: `Zack Rowland`,
     role: `Senior Engineer`,
     bio: `Long time advocate for crypto.  Network security and optimization by day, foreign film enthusiast by night.  `,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/zackrowland/`,
     imgPath: `/users/portraits/Zack.png`
   },
   {
@@ -34,21 +34,21 @@ export const teamMembers = [
     role: `Full Stack Developer`,
     bio: `Full-stack developer, contributor at Harvest.finance. Loves Magic Internet Money and dogs. Can exit VIM.
     `,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/joshahumphrey/`,
     imgPath: `/users/portraits/Jhump.png`
   },
   {
     name: `Bill Warren`,
     role: `Technical Advisor`,
     bio: `Product and smart contract development at Pool-Party and DAOhaus. Former startup and tech lawyer. `,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/bill-warren-31442021/`,
     imgPath: ``,//`/users/portraits/Bill.png`
   },
   {
     name: `Gavin Nicholson`,
     role: `Community Manager`,
     bio: `Previously a political and small business consultant. Accidently stumbled into ETH in 2019 and have been in love ever since.`,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/gavinnicholson97/`,
     imgPath: `/users/portraits/Gavin.png`
   },
 ]
@@ -58,14 +58,14 @@ export const advisors = [
     name: `Esfandiar Benjamin Lagevardi`,
     role: `Advisor`,
     bio: `Long time advocate for crypto.  Network security and optimization by day, foreign film enthusiast by night.  `,
-    link: `https://linkedin.com/Gunnar`,
+    link: ``,
     imgPath: ``, //`/users/Gunnar.png`
   },
   {
     name: `Alan Stivelman`,
     role: `Advisor`,
     bio: `Crypto fund manager, liquidity provider, market maker, and content creator with a focus in designing insured investment strategies across the DeFi ecosystem.`,
-    link: `https://linkedin.com/Gunnar`,
+    link: `https://www.linkedin.com/in/alanstivelman/`,
     imgPath: ``, //`/users/Gunnar.png`
   },
 
@@ -107,8 +107,10 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
                 fontSize: `display.md`, lineHeight: `md`, mb: 0
               }}><Text sx={{ fontSize: `display.md` }}>{m.name}</Text></h3>
               <p sx={{my: 0}}>{m.role}</p>
-              <p sx={{ width: [`100%`, "70%"], mt: 3, lineHeight: `1.22`, fontSize:[`body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.md`] }}>{m.bio}</p>
-              <Link href={m.link} sx={{ position: `relative`, transition: `all 0.2s ease`, "&:hover": { opacity: 0.7 }}}><SVG icon="linkedinCircle" color="white" left="0" top="0" width="32px" preserveAspectRatio="xMidYMid meet" /></Link>
+              <p sx={{ width: [`100%`, "70%"], mt: 3, lineHeight: `1.22`, fontSize: [`body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.md`] }}>{m.bio}</p>
+              {m.link && (
+                <Link href={m.link} sx={{ position: `relative`, transition: `all 0.2s ease`, "&:hover": { opacity: 0.7 }}}><SVG icon="linkedinCircle" color="white" left="0" top="0" width="32px" preserveAspectRatio="xMidYMid meet" /></Link>
+              )}
             </li>
           ))
         )}
@@ -116,7 +118,7 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
   </Box>
     <Box sx={{
       textAlign: `center` }}>
-      <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [0,4]}}>Advisors</Heading>
+      <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [3,3,4]}}>Advisors</Heading>
       <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mt: [0], mb: [0,0,5], ml: 0, pl: 0, listStyle: `none`}}>
         {advisors && (
           advisors.map((m,i) => (
@@ -144,7 +146,7 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
       </ul>
     </Box>
     <Box sx={{textAlign: `center` }}>
-    <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [0,5]}}>Partners</Heading>
+    <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [4,4,5]}}>Partners</Heading>
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {partners && (
           partners.map((m,i) => (

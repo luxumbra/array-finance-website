@@ -70,8 +70,8 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
     opacity: 1,
   })
   const fadeWidthLate = useSpring({
-    config: config.gentle,
-    delay: 600,
+    config: config.default,
+    delay: 350,
     from: {
       width: `0%`,
       opacity: 0,
