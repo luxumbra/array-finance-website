@@ -33,7 +33,15 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           position: `relative`,
           maxWidth: `100vw`,
           minHeight: `100vh`,
-          overflowX: `hidden`
+          overflowX: `hidden`,
+          "&.menu-open": {
+            overflow: `hidden`
+          },
+          ".wrapper": {
+            display: `flex`,
+            flexFlow: `column wrap`,
+            minHeight: 256
+          }
         },
         a: {
           color: `white`,
@@ -63,15 +71,17 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       })}
     />
     <SEO />
-    <Header />
-    <div className={className} sx={{
-      position: `relative`,
-      overflowX: `hidden`,
-      pt: `170px`,
-      width: `100vw`,
-      zIndex: 1000
-    }}>{children}</div>
-    <Footer sx={{position: `relative`, zIndex: 500}} />
+    <div className="wrapper">
+      <Header />
+      <div className={className} sx={{
+        position: `relative`,
+        overflowX: `hidden`,
+        pt: [`75px`, `75px`, `150px`, `170px`],
+        width: `100vw`,
+        zIndex: 1000
+      }}>{children}</div>
+      <Footer sx={{position: `relative`, zIndex: 500}} />
+    </div>
   </React.Fragment>
 )
 

@@ -736,13 +736,22 @@ const icons = {
     ),
     viewBox: `0 0 72 72`
   },
+  navToggle: {
+    shape: (
+      <>
+        <rect width="100" height="20" rx="8"></rect>
+        <rect y="30" width="100" height="20" rx="8"></rect>
+        <rect y="60" width="100" height="20" rx="8"></rect>
+      </>
+    ),
+    viewBox: `0 0 100 80`
+  },
 }
 
-
-type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross" | "line" | "afLogo" | "homeHero" | "afCircHome" | "afCircHomeSm" | "afDiscHome" | "afPlusHome" | "afStarFieldHome" | "bulletDisc" | "apyInfoG" | "autoDefi" | "backed" | "futureProof" | "gridAsset" | "gridAssetVert" | "linesRight2" | "roadmapGird" | "githubIcon" | "twitterIcon" | "discordIcon" | "mediumIcon" | "roadmapGrid2" | "defaultAvatar" | "ccoGrid1" | "ccoGrid2" | "teamPlay" | "teamStarRing" | "daiLogo"
+type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross" | "line" | "afLogo" | "homeHero" | "afCircHome" | "afCircHomeSm" | "afDiscHome" | "afPlusHome" | "afStarFieldHome" | "bulletDisc" | "apyInfoG" | "autoDefi" | "backed" | "futureProof" | "gridAsset" | "gridAssetVert" | "linesRight2" | "roadmapGird" | "githubIcon" | "twitterIcon" | "discordIcon" | "mediumIcon" | "roadmapGrid2" | "defaultAvatar" | "ccoGrid1" | "ccoGrid2" | "teamPlay" | "teamStarRing" | "daiLogo" | "navToggle"
 
 type SVGProps = {
-  stroke?: boolean
+  stroke?: string
   color?: string | number | any
   width: string | number | any
   height: string | number | any
@@ -765,7 +774,7 @@ const SVG = ({ stroke = false, color = ``, width, height, icon, left, right, top
   <svg
     sx={{
       position: position,
-      stroke: stroke ? `currentColor` : `none`,
+      stroke: stroke ? `currentColor` : `${stroke} !important`,
       fill: fill ? `${fill} !important` : `currentColor`,
       display: `block`,
       color,
