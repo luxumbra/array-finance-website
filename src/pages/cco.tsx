@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import {useSpring, animated, config} from 'react-spring'
 import { Heading, Text, Box, Flex, Progress, jsx } from 'theme-ui'
+import { utils } from 'web3'
 // import {usePoller, useContractReader, useTokenBalance} from 'eth-hooks';
 //
 import Layout from '../@lekoarts/gatsby-theme-cara/components/layout'
@@ -40,13 +41,17 @@ export const faqs = [
   },
 ]
 
-
 const ProgressIndicator = ({ current = 0, max = 100 }) => {
+  const progress = (current, max) => {
+    return Math.round((parseInt(current)/max) * 100)
+  }
+  const percent = progress(current, max)
+
   const progConfig = {
     friction: 60,
     mass: 4
   }
-  const flowWidth = useSpring({config: config.default, width: `${current}%`, from: { width: `0%` } })
+  const flowWidth = useSpring({config: config.default, width: `${percent}%`, from: { width: `0%` } })
   const fadeWidth = useSpring({
     config: config.default,
     delay: 400,
@@ -54,7 +59,7 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
       width: `0%`,
       opacity: 0,
     },
-    width: `${current}%`,
+    width: `${percent}%`,
     opacity: 1,
   })
     const fade = useSpring({
@@ -71,7 +76,7 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
       width: `0%`,
       opacity: 0,
     },
-    width: `${current}%`,
+    width: `${percent}%`,
     opacity: 1,
   })
   const fadeLate = useSpring({
@@ -85,14 +90,14 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
 
   return (
     <div className="indicator" sx={{ display: `flex`, flexFlow: `column wrap`, fontSize: [`body.xs`, `body.xs`, `body.xs`, `body.sm`] }}>
-      <div className="bounds" sx={{width: `${max}%`, backgroundColor: `#0F30F520`, borderRadius: `40px`, height: `33px`}}>
+      <div className="bounds" sx={{width: `${100}%`, backgroundColor: `#0F30F520`, borderRadius: `40px`, height: `33px`}}>
         <animated.div className="progress" sx={{ position: `relative`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`}} style={flowWidth}>
           <animated.span sx={{position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}} style={fadeLate}>We're here!</animated.span>
-          <span sx={{ visibility: `hidden` }}>{current}%</span>
+          <span sx={{ visibility: `hidden` }}>{percent}%</span>
         </animated.div>
       </div>
       <div className="numbers" sx={{
-        width: `${max}%`,
+        width: `${100}%`,
         pt: [2,2,4,4],
         position: `relative`,
         "span": {
@@ -110,13 +115,13 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
         }
       }}>
           <span>0%</span>
-          <animated.span style={fadeWidthLate}>{current}%</animated.span>
+          <animated.span style={fadeWidthLate}>{percent}%</animated.span>
           <span>100%</span>
       </div>
     </div>
   )
 }
-export const ProgressBar = ({current = 0, max = 100}) => {
+export const ProgressBar = ({ current = 0, max = 100 }) => {
   return (
     <PageSection>
       <div sx={{ position: `relative`, maxWidth: `1170px` }}>
@@ -133,12 +138,10 @@ export const progConfig = {
   friction: 25,
 }
 
-export const ProgressInfo = ({ currentBalance, decimals, isLoading }: { currentBalance: number|string; decimals: number; isLoading: boolean}) => {
-  console.log('balance', typeof currentBalance);
-
+export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: string; isLoading: boolean}) => {
   const total = useSpring({
     config: config.molasses,
-    x: currentBalance,
+    x: parseInt(currentBalance),
     from: {
       x: 0
     },
@@ -151,17 +154,22 @@ export const ProgressInfo = ({ currentBalance, decimals, isLoading }: { currentB
     opacity: 1
   })
 
+  const formatNumber = (number = 0) => {
+    const format = number.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    return format
+  }
+
   return (
     <PageSection>
       <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75, -100], mb: [4,4,5]}}>
-        <animated.p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}} style={fade}>CCO shares will be migrated to the ArrayDAO in Q2. 5% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</animated.p>
+        <animated.p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}} style={fade}>CCO shares will be migrated to the ArrayDAO in Q2. 10% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</animated.p>
         <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`center`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
           <animated.span sx={{ flex: `0 0 auto`, pr: [20], borderRadius: `50%` }} style={fade}>
             <SVG icon="daiLogo" hiddenMobile width={[36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
           </animated.span>
 
           <animated.div style={fade}>
-            {isLoading ? `Fetching...` : currentBalance } DAI
+            {isLoading ? `Fetching...` : formatNumber(parseInt(currentBalance)) } DAI
           </animated.div>
         </div>
       </Flex>
@@ -171,32 +179,20 @@ export const ProgressInfo = ({ currentBalance, decimals, isLoading }: { currentB
 }
 
 const CCOPage = () => {
+  const [displayBal, setDisplayBal] = useState()
   const page = 'cco'
   const api = `https://blockscout.com/poa/xdai/api?module=account&action=tokenlist&address=`
-  const contract = `0xFF3F8C0b98454306fB0bDA57E5ae38cbfA66CC0d`
+  const contract = "0xFF3F8C0b98454306fB0bDA57E5ae38cbfA66CC0d"
   const apiQuery = `${api}${contract}`
 
-  // const tokenBalance = useTokenBalance(`0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d`, contract)
-  // console.log('tb', tokenBalance);
-
   const [data, loading] = useFetch(apiQuery)
-
-  const { balance, contractAddress, decimals, symbol } = data
-  // const balance = data.result[0].balance
-  console.log(balance);
-
-  console.log('bal:', typeof balance, balance);
-  // const convertFromWei = (number) => {
-  //   return web3.utils.fromWei(number,"grand")
-  // }
-  const displayNumber = parseInt(balance)
 
 
   return (
     <Layout>
       <Hero page={page} />
-      <ProgressBar current={67} max={100} />
-      <ProgressInfo currentBalance={displayNumber} decimals={parseInt(decimals)} isLoading={loading} />
+      <ProgressBar current={data.balance && utils.fromWei(data.balance)} max={1000000} />
+      <ProgressInfo currentBalance={data.balance && utils.fromWei(data.balance)} isLoading={loading} />
       <PageSection sx={{ "&>div": { pt: [0] } }}>
         <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap` }}>
           <Box sx={{ position: `relative`, flex: [`0 0 100%`, `0 0 100%`, `0 0 100%`, `0 1 50%`, `0 1 50%`], pt: 0, width: [`100%`, `100%`, `100%`, `50%`, `50%`], justifySelf: `center`, margin: `0 auto` }}>

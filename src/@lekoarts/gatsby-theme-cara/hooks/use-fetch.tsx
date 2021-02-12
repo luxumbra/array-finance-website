@@ -5,7 +5,7 @@ interface FetchProps {
   data: Array<string>;
   loading: boolean;
 }
-function useFetch(url) {
+function useFetch(url = ``) {
   const [data, setData] = useState<Array<string>>({});
   const [loading, setLoading] = useState<boolean>(true);
   async function fetchUrl() {
