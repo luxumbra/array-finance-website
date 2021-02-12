@@ -36,7 +36,7 @@ const NavToggle = ({ toggle, setToggle }) => {
           opacity: toggle ? 1 : 0.6,
           transition: `all 0.2s 0.2s linear`,
           "&:first-child": {
-            transform: toggle ? 'rotate(45deg) translate3d(1px, 0, 0)' : 'rotate(0)'
+            transform: toggle ? 'rotate(45deg) translate3d(2px, -1px, 0)' : 'rotate(0)'
           },
           "&:nth-child(2)": {
             opacity: toggle ? '0' : '0.6',

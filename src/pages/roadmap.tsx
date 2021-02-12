@@ -35,7 +35,7 @@ const Roadmap = () => (
     <Hero page="roadmap" />
     <PageSection>
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
-        <Box sx={{ position: `relative`, flex: [`0 1 90%`,`0 1 90%`,`0 1 90%`, `0 1 90%`,`0 1 90%`, `0 1 50%`], pt: 0, width: [`90%`,`90%`,`90%`,`90%`, `50%`], justifySelf: `center`, margin: `0 auto`, mt: [0, 0, 0, -100, -50] }}>
+        <Box sx={{ position: `relative`, flex: [`0 1 100%`,`0 1 100%`,`0 1 90%`, `0 1 90%`,`0 1 90%`, `0 1 50%`], pt: 0, width: [`90%`,`90%`,`90%`,`90%`, `50%`], justifySelf: `center`, margin: `0 auto`, mt: [0, 0, 0, -100, -50] }}>
           <RoadmapPhases phases={roadmapPhases} />
           <CTA text="join our CCO" link="/cco" type="link" sx={{
             variant: `links.primary`

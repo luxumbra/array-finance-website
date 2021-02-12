@@ -146,6 +146,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         }}
         style={scrolled ? headerSpring : {}}
         ref={ref}>
+
       <DesktopNav as="nav"
           sx={{
             display: [`none`, `none`, `none`, `flex`, `flex`],
