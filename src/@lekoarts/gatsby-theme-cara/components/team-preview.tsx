@@ -38,17 +38,17 @@ export const TeamPreview = ({ images }) => {
 
   return (
     <Box sx={{textAlign: `center`, mt: [100]}}>
-      <Flex sx={{mx: `auto`, pl: `${(images.length * 50) / 2}px`, justifyContent: `center`}}>
+      <Flex sx={{mx: `auto`, pl: [`${(images.length * 30) / 2}px`, `${(images.length * 50) / 2}px`], justifyContent: `center`}}>
         {springs && (
           springs.map(( { x, transform } , i) => (
             <animated.div
-              sx={{ transform: `translateX(${i * -50}px)` }}
+              sx={{ transform: [`translateX(${i * -20}px)`, `translateX(${i * -50}px)`] }}
             >
               <Image
                 key={`image-${i}`}
                 src={images[i].imgPath}
                 variant="avatar"
-                sx={{backgroundColor: ` #17043A`,  border: [`5px solid #17043A`,`10px solid #17043A`], borderRadius: [`50%`], width:[`75px`, `160px`], height: [`75px`,`160px`]}}
+                sx={{backgroundColor: ` #17043A`,  border: [`5px solid #17043A`,`10px solid #17043A`], borderRadius: [`50%`], width:[`75px`,`75px`,`75px`, `160px`], minWidth: [`75px`,`75px`,`75px`, `160px`], height: [`75px`,`75px`,`75px`,`160px`]}}
               />
             </animated.div>
           ))

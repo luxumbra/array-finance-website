@@ -125,14 +125,14 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       id='header'
       sx={{
               position: `fixed`,
-              height: scrolled ? [`50px`,`50px`,`100px`] : [`75px`,`75px`,`100px`,`150px`, `150px`, `170px`],
+              height: scrolled ? [`50px`,`50px`,`75px`,`100px`] : [`75px`,`75px`,`100px`,`150px`, `150px`, `170px`],
               top: 0,
               left: 0,
               right: 0,
               display: `flex`,
               alignItems: `flex-end`,
-              justifyItems: [`space-between`, `space-between`, `center`],
-              justifyContent: [`space-between`, `space-between`, `center`],
+              justifyItems: [`space-between`, `space-between`,`space-between`, `center`],
+              justifyContent: [`space-between`, `space-between`,`space-between`, `center`],
               variant: `styles.header`,
               textAlign: `center`,
               backgroundColor: `#02095599`,
@@ -147,7 +147,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         ref={ref}>
       <DesktopNav as="nav"
           sx={{
-            display: [`none`, `none`, `flex`, `flex`],
+            display: [`none`, `none`, `none`, `flex`, `flex`],
             maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
             width: `100%`,
             mx: 'auto',
@@ -189,12 +189,12 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
 
       <MobileBrand href='/'
         sx={{
-          display: [`block`, `block`, `none`],
+          display: [`block`, `block`, `block`, `none`],
           alignSelf: `center`,
           justifySelf: `left`,
           "path, circle": {
             stroke: toggle ? `brand.secondary.light` : `white`,
-            transition: `all 0.2s 0.15s ease`
+            transition: `all 0.2s 0.2s ease`
           },
           width: [`40px`,`40px`,`50px`, `70px`],
           height: [`40px`,`40px`,`50px`, `70px`],
@@ -203,8 +203,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           mr: [`50px`,`79px`],
           position: `relative`,
           flex: [`0 1 40px`, `0 1 40px`, `0 1 50px`, `0 1 70px`],
-          transform: scrolled || toggle ? `scale(0.7) translateY(0)` : `scale(0.9) translateY(0)`,
-          transition: `all 0.2s ease-in-out`,
+          transform: (scrolled ? `scale(0.7) translateY(0)` : `scale(0.9) translateY(0)`),
+          transition: `all 0.2s 0.2s ease-in-out`,
           zIndex: 50
         }}>
         <SVG icon="afLogo" width={[`40px`,`40px`,`50px`, `70px`]} left="0" bottom="0" top={[0]} />
@@ -214,24 +214,24 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         sx={{
           position: `absolute`,
           top: `0`,
-          display: [`flex`, `flex`, `none`, `none`],
+          display: [`flex`, `flex`, `flex`, `none`, `none`],
           width: `100%`,
-          maxWidth: [`100vw`, `100vw`, `100%`],
+          maxWidth: [`100vw`, `100vw`, `100vw`, `100%`],
           height: `100vh`,
           maxHeight: `100vh`,
           overflow: `hidden`,
           flexFlow: `column wrap`,
           mx: 'auto',
           pt: 5,
-          px: [0, 0, 5, 8, 10],
+          px: [0, 0, 0, 8, 10],
           alignItems: 'flex-end',
           color: `white`,
           backgroundColor: `primary`,
           opacity: toggle ? 1 : 0,
           transform: toggle ? `translate3d(0, 0, 0)` : `translate3d(0, -120%, 0)`,
-          transition: `all 0.3s ease-in-out, opacity 0.2s 0.2s ease-in-out`,
+          transition: `all 0.2s 0.2s ease-in-out, opacity 0.2s 0.3s ease-in-out`,
           ".line": {
-            display: [`none`, `block`]
+            display: [`none`, `none`, `none`, `block`]
           },
           "a": {
             display: `block`,
@@ -250,7 +250,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           <Link to='/team' activeStyle={{ color: `#2D71F4`}}>team</Link>
           <Link to='/roadmap' activeStyle={{ color: `#2D71F4`}}>roadmap</Link>
         <Link to='/cco' activeStyle={{ color: `#2D71F4` }}>CCO</Link>
-        <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0}}>
+        <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0, opacity: toggle ? 1 : 0, transition: `opacity 0.1s ease`, pointerEvents: `none`}}>
           <SVG icon="linesRight2" width={[100,150,200, 302]} color="icon_darkest" left="0" top="100px" opacity={[1]} transform="scale(-1,-1)" zIndex={0} />
           <SVG icon="roadmapGrid2" width={[125,155,200, 310]} color="icon_darkest" right={[`-80px`,`-100px`,`-100px`, `-200px`]} bottom={[`90px`,`100px`,`100px`, `150px`]} opacity={1} zIndex={0} />
         </div>

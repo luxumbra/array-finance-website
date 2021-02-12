@@ -7,14 +7,14 @@ const NavToggle = ({ toggle, setToggle }) => {
     <Box as="button"
       onClick={() => setToggle(!toggle)}
       sx={{
-        display: [`flex`, `flex`, `none`, `none`],
+        display: [`flex`, `flex`, `flex`, `none`, `none`],
         alignSelf: `center`,
         justifySelf: `right`,
         position: `relative`,
         flexDirection: `column`,
         justifyContent: `space-around`,
-        width: `1.5rem`,
-        height: `1.5rem`,
+        width: [`1.5rem`,`1.5rem`,`2rem`],
+        height: [`1.5rem`,`1.5rem`,`2rem`],
         background: `transparent`,
         border: `none`,
         cursor: `pointer`,
@@ -26,15 +26,15 @@ const NavToggle = ({ toggle, setToggle }) => {
           outline: `none`
         },
         "div": {
-          width: `1.5rem`,
-          height: `0.1rem`,
+          width: [`1.5rem`,`1.5rem`,`2rem`],
+          height: [`0.1rem`, `0.1rem`, `0.2rem`],
           backgroundColor: toggle ? `#2D71F4` : `white`,
-          borderRadius: `5px`,
+          borderRadius: [`5px`, `5px`, `10px`],
           transition: `all 0.3s linear`,
           position: `relative`,
           transformOrigin: `1px`,
           opacity: toggle ? 1 : 0.6,
-          transition: `all 0.2s 0.15s linear`,
+          transition: `all 0.2s 0.2s linear`,
           "&:first-child": {
             transform: toggle ? 'rotate(45deg)' : 'rotate(0)'
           },

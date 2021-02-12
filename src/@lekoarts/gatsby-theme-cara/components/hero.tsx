@@ -19,8 +19,10 @@ import CCOHero from "../sections/cco-hero"
 const Hero = ({ page }) => {
   let heroW:string | number | any;
 
-  if (page === 'home' || page == 'team') {
-    heroW = [`100%`,`80%`, `85%`, `75%`, `65%`, `75%`]
+  if (page === 'home') {
+    heroW = [`100%`, `80%`, `85%`, `75%`, `65%`, `75%`]
+  } else if (page === 'team') {
+    heroW = [`100%`,`80%`, `80%`, `75%`, `65%`, `75%`]
   } else {
     heroW = [`90%`, `90%`, `75%`, `65%`]
   }
@@ -39,14 +41,14 @@ const Hero = ({ page }) => {
               p: {
                 fontSize:[`body.md`, `body.lg`, `body.xl`, `body.xl`, `body.xxl`, `display.lg`],
                 lineHeight: [`sm`,`md`],
-                mb: page !== `team` ? [5,5, 5, 6] : [3,4,5],
+                mb: page !== `team` ? [5,5, 5, 6] : [3,3,4,4,5],
                 width: heroW && heroW,
                 "&:last-of-type:not(:first-of-type)": {
                   fontSize:[`body.xs`, `body.sm`, `body.sm`, `body.md`, `display.md`, `display.md`,`display.md`],
                   fontWeight: `400`,
                   lineHeight: `lg`,
                   mb: [3,4,5],
-                  width: [`100%`,`80%`, `65%`, `65%`, `65%`, `65%`]
+                  width: [`100%`,`80%`, `70%`, `65%`, `65%`, `65%`]
                 },
               }
 
@@ -80,7 +82,7 @@ const Hero = ({ page }) => {
               <SVG icon="homeHero" color="colors.background" left={[`-200px`,`-200px`,`-210px`,`-90px`,`-310px`, `-390px`]} top={[`-20px`,`-70px`,`135px`,`210px`, `200px`]} width={[`250px`,`250px`,`300px`,`250px`,`551px`, `551px`]}  preserveAspectRatio="xMidYMid meet" zIndex={0} opacity={[0.1, 1]} />
             )}
             {page && page === `team` && (
-              <SVG icon="backed" color="colors.background" right="0" top={[`145px`, 0, 0, 0, -25, `-50px`]} width={[250,350,250, 350, 350, 421]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+              <SVG icon="backed" color="colors.background" right={[0, 0, -15, 0, 0]} top={[`145px`, `145px`,`145px`, -25, `-50px`]} width={[250,250,225, 300, 350, 421]} preserveAspectRatio="xMidYMid meet" opacity={[0.1,0.1,0.1, 1]} />
             )}
             {page && page === `roadmap` && (
               <SVG icon="futureProof" color="colors.background" right={[0]} top={[40, 40, 0, 0]} width={[300, 250, 458]} preserveAspectRatio="xMidYMid meet" opacity={[0.2,0.2,0.2, 1]} />
