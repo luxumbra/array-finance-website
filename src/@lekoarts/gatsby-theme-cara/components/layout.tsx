@@ -31,6 +31,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           fontSize: [`12px`, `14px`, `16px`],
           lineHeight: `1.75`,
           position: `relative`,
+          width: `100%`,
           maxWidth: `100vw`,
           minHeight: `100vh`,
           overflowX: `hidden`,
@@ -40,7 +41,9 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           ".wrapper": {
             display: `flex`,
             flexFlow: `column wrap`,
-            minHeight: 256
+            minHeight: 256,
+            maxWidth: `100vw`,
+            overflowX: `hidden`
           }
         },
         a: {

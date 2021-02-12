@@ -125,7 +125,8 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       id='header'
       sx={{
               position: `fixed`,
-              height: scrolled ? [`50px`,`50px`,`75px`,`100px`] : [`75px`,`75px`,`100px`,`150px`, `150px`, `170px`],
+        height: scrolled ? [`50px`, `50px`, `75px`, `100px`] : [`75px`, `75px`, `100px`, `150px`, `150px`, `170px`],
+              width: `100vw`,
               top: 0,
               left: 0,
               right: 0,
@@ -250,7 +251,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           <Link to='/team' activeStyle={{ color: `#2D71F4`}}>team</Link>
           <Link to='/roadmap' activeStyle={{ color: `#2D71F4`}}>roadmap</Link>
         <Link to='/cco' activeStyle={{ color: `#2D71F4` }}>CCO</Link>
-        <div sx={{position: `absolute`, bottom: 0, width: [`100vw`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0, opacity: toggle ? 1 : 0, transition: `opacity 0.1s ease`, pointerEvents: `none`}}>
+        <div sx={{position: `absolute`, bottom: 0, width: [`100%`], maxWidth: [`100vw`], overflow: `hidden`, height: `700px`, zIndex: 0, opacity: toggle ? 1 : 0, transition: `opacity 0.1s ease`, pointerEvents: `none`}}>
           <SVG icon="linesRight2" width={[100,150,200, 302]} color="icon_darkest" left="0" top="100px" opacity={[1]} transform="scale(-1,-1)" zIndex={0} />
           <SVG icon="roadmapGrid2" width={[125,155,200, 310]} color="icon_darkest" right={[`-80px`,`-100px`,`-100px`, `-200px`]} bottom={[`90px`,`100px`,`100px`, `150px`]} opacity={1} zIndex={0} />
         </div>
