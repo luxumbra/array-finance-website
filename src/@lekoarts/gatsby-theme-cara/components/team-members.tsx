@@ -24,8 +24,8 @@ export const teamMembers = [
   },
   {
     name: `Zack Rowland`,
-    role: `Founder`,
-    bio: `Contributor at Harvest Finance. Dove into crypto in 2015 through data science, stayed on the blockchain ever since.`,
+    role: `Senior Engineer`,
+    bio: `Long time advocate for crypto.  Network security and optimization by day, foreign film enthusiast by night.  `,
     link: `https://linkedin.com/Gunnar`,
     imgPath: `/users/portraits/Zack.png`
   },
@@ -57,14 +57,14 @@ export const advisors = [
   {
     name: `Esfandiar Benjamin Lagevardi`,
     role: `Advisor`,
-    bio: `Contributor at Harvest Finance. Dove into crypto in 2015 through data science, stayed on the blockchain ever since.`,
+    bio: `Long time advocate for crypto.  Network security and optimization by day, foreign film enthusiast by night.  `,
     link: `https://linkedin.com/Gunnar`,
     imgPath: ``, //`/users/Gunnar.png`
   },
   {
     name: `Alan Stivelman`,
     role: `Advisor`,
-    bio: `Contributor at Harvest Finance. Dove into crypto in 2015 through data science, stayed on the blockchain ever since.`,
+    bio: `Crypto fund manager, liquidity provider, market maker, and content creator with a focus in designing insured investment strategies across the DeFi ecosystem.`,
     link: `https://linkedin.com/Gunnar`,
     imgPath: ``, //`/users/Gunnar.png`
   },
