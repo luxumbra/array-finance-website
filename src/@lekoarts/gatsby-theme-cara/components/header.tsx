@@ -93,8 +93,6 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
   })
 
 
-  const [{ hs }, setHeader] = useSpring(() => ({ hs: [170, 0] }))
-
   useEffect(() => {
     const header = document.getElementById('header')
     const sticky = header.offsetTop
@@ -103,7 +101,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     toggle ? body.classList.add('menu-open') : body.classList.remove('menu-open');
 
     const handleScroll = () => {
-      if (window.pageYOffset > 200) {
+      if (window.pageYOffset > 50) {
         setScrolled(true)
       } else {
         setScrolled(false)
@@ -135,10 +133,10 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           variant: `styles.header`,
           textAlign: `center`,
           backgroundColor: scrolled ? `#02095599` : `rgba(2, 9, 80,0)`,
-          backdropFilter: `blur(3px)`,
+          backdropFilter: scrolled ? `blur(3px)` : `blur(1px)`,
           boxShadow: scrolled ?  `0 0 15px rgba(0,0,0,0.6)` : `0`,
           zIndex: `2000`,
-          transition: `height 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.2s ease-in-out`
+          transition: `height 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.2s ease-in-out, backdrop-filter 0.1s ease`
         }}
         style={scrolled ? headerSpring : {}}
         ref={ref}>
