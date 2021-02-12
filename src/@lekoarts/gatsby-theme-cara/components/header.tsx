@@ -103,7 +103,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     toggle ? body.classList.add('menu-open') : body.classList.remove('menu-open');
 
     const handleScroll = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 200) {
         setScrolled(true)
       } else {
         setScrolled(false)
@@ -122,25 +122,23 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
     <animated.header
       id='header'
       sx={{
-              position: `fixed`,
-        height: scrolled ? [`50px`, `50px`, `75px`, `100px`] : [`75px`, `75px`, `100px`, `150px`, `150px`, `170px`],
-              width: `100vw`,
-              top: 0,
-              left: 0,
-              right: 0,
-              display: `flex`,
-              alignItems: `flex-end`,
-              justifyItems: [`space-between`, `space-between`,`space-between`, `center`],
-              justifyContent: [`space-between`, `space-between`,`space-between`, `center`],
-              variant: `styles.header`,
-              textAlign: `center`,
-              backgroundColor: `#02095599`,
-              background: `linear-gradient(180deg, rgba(2, 9, 80,0.9) 0%, rgba(2, 9, 80,0.9) 90%, rgba(2, 9, 80, 0.9) 100%)`,
-              backdropFilter: `blur(3px)`,
-              // overflowX: `hidden`,
-              boxShadow: scrolled ?  `0 0 15px rgba(0,0,0,0.6)` : `0`,
-              zIndex: `2000`,
-              transition: `height 0.2s ease-in-out, box-shadow 0.2s ease`
+          position: `fixed`,
+          height: scrolled ? [`50px`, `50px`, `75px`, `100px`] : [`75px`, `75px`, `100px`, `150px`, `150px`, `170px`],
+          width: `100vw`,
+          top: 0,
+          left: 0,
+          right: 0,
+          display: `flex`,
+          alignItems: `flex-end`,
+          justifyItems: [`space-between`, `space-between`,`space-between`, `center`],
+          justifyContent: [`space-between`, `space-between`,`space-between`, `center`],
+          variant: `styles.header`,
+          textAlign: `center`,
+          backgroundColor: scrolled ? `#02095599` : `rgba(2, 9, 80,0)`,
+          backdropFilter: `blur(3px)`,
+          boxShadow: scrolled ?  `0 0 15px rgba(0,0,0,0.6)` : `0`,
+          zIndex: `2000`,
+          transition: `height 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.2s ease-in-out`
         }}
         style={scrolled ? headerSpring : {}}
         ref={ref}>
