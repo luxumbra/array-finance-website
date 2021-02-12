@@ -35,14 +35,14 @@ const NavToggle = ({ toggle, setToggle }) => {
           transformOrigin: `1px`,
           opacity: toggle ? 1 : 0.6,
           transition: `all 0.2s 0.2s linear`,
-          "&:first-child": {
+          "&:first-of-type": {
             transform: toggle ? 'rotate(45deg) translate3d(2px, -1px, 0)' : 'rotate(0)'
           },
-          "&:nth-child(2)": {
+          "&:nth-of-type(2)": {
             opacity: toggle ? '0' : '0.6',
             transform: toggle ? 'translate3d(-20px, 0, 0)' : 'translate3d(0, 0, 0)'
           },
-          "&:nth-child(3)": {
+          "&:nth-of-type(3)": {
             transform: toggle ? 'rotate(-45deg) translate3d(-1px, -1px, 0)' : 'rotate(0)'
           }
         },

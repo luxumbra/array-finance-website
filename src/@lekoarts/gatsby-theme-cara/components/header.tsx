@@ -98,9 +98,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
   useEffect(() => {
     const header = document.getElementById('header')
     const sticky = header.offsetTop
-
     const body = document.body;
-    console.log(body);
 
     toggle ? body.classList.add('menu-open') : body.classList.remove('menu-open');
 
