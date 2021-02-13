@@ -12,7 +12,7 @@ module.exports = {
     // Of course you can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
     siteTitleAlt: `array.finance: Invest in trusted & user curated portfolios`,
-    image: '/static/banner.png',
+    image: '/banner.png',
   },
   flags: {
     DEV_SSR: false,
