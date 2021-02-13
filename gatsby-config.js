@@ -13,9 +13,9 @@ module.exports = {
     // Of course you can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
     siteTitleAlt: `array.finance: Invest in trusted & user curated portfolios`,
-    siteImage: '/banner.png',
-    image: '/banner.png',
-    defaultImage: '/banner.png',
+    siteImage: '/static/banner.png',
+    image: '/static/banner.png',
+    defaultImage: '/static/banner.png',
     url: 'https://array.finance',
     twitterUsername: '@arrayfinance',
     author: '@RaidGuild',
