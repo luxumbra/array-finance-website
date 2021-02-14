@@ -15,6 +15,8 @@ import TeamHero from "../sections/team-hero"
 import RoadmapHero from "../sections/roadmap-hero"
 // @ts-ignore
 import CCOHero from "../sections/cco-hero"
+// @ts-ignore
+import NotFoundHero from "../sections/404-hero"
 
 const Hero = ({ page }) => {
   let heroW:string | number | any;
@@ -69,7 +71,9 @@ const Hero = ({ page }) => {
             {page && page === `cco` && (
               <CCOHero />
             )}
-
+            {page && page === `404` && (
+              <NotFoundHero />
+            )}
             </Box>
             <Box sx={{
               position: `relative`,
@@ -93,6 +97,13 @@ const Hero = ({ page }) => {
                 <SVG icon="ccoGrid1" color="colors.background" right={[125,225,200, 275,275]} top={[130,130,160, 180]} width={[60,60,60, 85]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
               </>
             )}
+            {page && page === `404` && (
+              <>
+                <SVG icon="ccoSemiCirc" color="colors.background" right={[-10, -20, -20, -20,-20, -50]} top={[20, 20, -10]} width={[250, 300, 350,411]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+                <SVG icon="ccoGrid1" color="colors.background" right={[125,225,200, 275,275]} top={[130,130,160, 180]} width={[60,60,60, 85]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} />
+              </>
+            )}
+
             </Box>
           </Flex>
       </Inner>

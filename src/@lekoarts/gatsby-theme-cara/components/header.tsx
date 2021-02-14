@@ -46,8 +46,8 @@ export const NavItem = ({ href=``, label=``, scrolled }) => {
   return (
       <AfLink to={href}
         activeStyle={{ color: `#2D71F4`}}
-        sx={{
-          variant: 'styles.navlink',
+      sx={{
+          color: `white`,
           p: 0,
           mr: [`30px`,`30px`,`30px`,`50px`,`79px`],
           position: `relative`,
@@ -55,6 +55,9 @@ export const NavItem = ({ href=``, label=``, scrolled }) => {
             ".line": {
               width: `100%`
             }
+        },
+        "&:visited": {
+            color: `white`
           },
           transform: scrolled ? `scale(0.8) translateY(5px)` : `scale(1)`,
           transition: `transform 0.2s ease-in-out`

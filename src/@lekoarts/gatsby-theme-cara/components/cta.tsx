@@ -8,17 +8,18 @@ type CTAProps = {
   type: string | any
   children?: React.ReactNode | any
   icon?: React.ReactNode | any
+  onClick: any
 }
 
-const CTA = ({ text, link, type, children, icon }:CTAProps) => {
+const CTA = ({ text, link, type, children, icon, onClick }:CTAProps) => {
   return (
     <>
       { type === 'button' ? (
-        <Button variant="primary">{icon} {text ? text : children}</Button>
+        <Button variant="buttons.primary" onClick={onClick}>{icon} {text ? text : children}</Button>
       ) : (
         <Link variant="links.primary" href={link}>{text ? text : children}</Link>
       )}
-      
+
     </>
   )
 }

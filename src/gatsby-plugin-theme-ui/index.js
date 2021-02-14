@@ -52,7 +52,7 @@ const theme = merge(tailwind, {
     // },
   },
   backgroundImage: {
-    listBg: `url(./bullet-circle.png)`,
+    listBg: `url(/bullet-circle.png)`,
   },
   fonts: {
     body: '"Helvetica Neue", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -117,7 +117,7 @@ const theme = merge(tailwind, {
       backgroundColor: `primary`,
     },
     a: {
-      color: `light`,
+      color: `brand.secondary.light`,
       textDecoration: `none`,
       transition: `all 0.3s ease-in-out`,
       '&:hover': {
@@ -189,7 +189,7 @@ const theme = merge(tailwind, {
     a: {
       color: `white`,
       fontWeight: `body`,
-      '&:hover': {
+      '&:hover, &:visited': {
         color: `white`,
         textDecoration: `none`,
         cursor: `pointer`,
@@ -221,6 +221,28 @@ const theme = merge(tailwind, {
         pr: [0, 6],
       },
     },
+    modalList: {
+      listStyle: `none`,
+      pl: 0,
+      textAlign: `left`,
+      li: {
+        display: `inline-flex`,
+        alignItems: `start`,
+        justifyItems: `left`,
+        pl: `44px`,
+        backgroundImage: `listBg`,
+        backgroundRepeat: `no-repeat`,
+        backgroundPosition: `0 20%`,
+        backgroundSize: [`18px`, `24px`],
+        fontSize: [`body.xs`, `display.xs`, `body.md`, `display.xl`, `display.xl`, `display.md`],
+        pr: [0, 6],
+        pb: [2, 3],
+        "p": {
+          my: 0
+        },
+        maxWidth: [`80%`, `unset`],
+      },
+    },
   },
   buttons: {
     toggle: {
@@ -229,20 +251,15 @@ const theme = merge(tailwind, {
       backgroundColor: `text`,
       cursor: `pointer`,
       alignSelf: `center`,
+      '&:hover': {
+        color: `brand.secondary.light`,
+        borderColor: `brand.secondary.light`,
+        cursor: `pointer`,
+      },
       px: 3,
       py: 2,
       ml: 3,
     },
-    primary: {
-      background: `transparent`,
-      border: `4px solid white`,
-      borderRadius: `0`,
-      color: `white`,
-      px: `30px`,
-      py: `16px`,
-    },
-  },
-  links: {
     primary: {
       background: `transparent`,
       border: `4px solid white`,
@@ -256,6 +273,30 @@ const theme = merge(tailwind, {
       '&:hover': {
         color: `brand.secondary.light`,
         borderColor: `brand.secondary.light`,
+        cursor: `pointer`,
+      },
+    },
+  },
+  links: {
+    primary: {
+      background: `transparent`,
+      border: `4px solid white`,
+      borderRadius: `0`,
+      color: `white`,
+      fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.md`],
+      fontWeight: [`body`, `heading`, `heading`],
+      px: [`30px`],
+      py: [`10px`, `16px`],
+      transition: `all 0.2s ease`,
+      "&:hover": {
+        color: `brand.secondary.light`,
+        borderColor: `brand.secondary.light`,
+      },
+      "&:visited": {
+        color: `white`
+      },
+      '&:visited:hover': {
+        color: `brand.secondary.light`,
       },
     },
   },

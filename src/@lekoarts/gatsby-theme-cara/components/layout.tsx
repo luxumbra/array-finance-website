@@ -9,7 +9,7 @@ import SEO from "./seo"
 type LayoutProps = { children: React.ReactNode; className?: string }
 
 const Layout = ({ children, className = `` }: LayoutProps) => (
-  <React.Fragment>
+  <>
     <Global
       styles={(theme) => ({
         "*": {
@@ -38,20 +38,37 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           "&.menu-open": {
             overflow: `hidden`
           },
+          "&.ReactModal__Body--open": {
+            overflow: `hidden`
+          },
           ".wrapper": {
             display: `flex`,
             flexFlow: `column wrap`,
             minHeight: 256,
             maxWidth: `100vw`,
             overflowX: `hidden`
-          }
+          },
+          ".ReactModal__Overlay": {
+            opacity: 0,
+            transition: `opacity 0.2s ease-in-out`
+          },
+          ".ReactModal__Overlay--after-open": {
+            opacity: 1
+          },
+          ".ReactModal__Overlay--before-close": {
+            opacity: 0
+          },
         },
         a: {
-          color: `white`,
+          color: `#86E5CC`,
           textDecoration: `none`,
           cursor: `pointer`,
-          "&:hover": {
-            color: `brand.secondary.light`
+          transition: `all 0.2s ease`,
+          "&:hover, &:visited:hover": {
+            color: `white`,
+          },
+         "&:visited": {
+           color: `#86E5CC`,
           }
         },
         h2: {
@@ -85,7 +102,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       }}>{children}</div>
       <Footer sx={{position: `relative`, zIndex: 500}} />
     </div>
-  </React.Fragment>
+  </>
 )
 
 export default Layout

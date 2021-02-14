@@ -7,8 +7,6 @@ import { Heading, Text, Box, Flex, jsx } from 'theme-ui'
 import Layout from '../@lekoarts/gatsby-theme-cara/components/layout'
 import Hero from '../@lekoarts/gatsby-theme-cara/components/hero'
 import PageSection from '../@lekoarts/gatsby-theme-cara/components/page-section'
-import Content from "../@lekoarts/gatsby-theme-cara/elements/content"
-import Divider from "../@lekoarts/gatsby-theme-cara/elements/divider"
 import SVG from "../@lekoarts/gatsby-theme-cara/components/svg"
 import { UpDown, UpDownWide, waveAnimation } from "../@lekoarts/gatsby-theme-cara/styles/animations"
 import { TeamPreview, teamImages } from "../@lekoarts/gatsby-theme-cara/components/team-preview"
@@ -42,8 +40,7 @@ const HomePage = () => (
           width: [`100%`, `100%`, `80%`, `80%`, `80%`, `60%`],
           lineHeight: [`sm`, `lg`],
           "p": { fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: [3,4,4,5], mb: [3,4,5], width: [`90%`, `90%`,`80%`,`80%`,`80%`,`80%`] },
-          "ul": { listStyle: `none`, p: `0` },
-          "ul": {variant: `lists.bigList`},
+          "ul": { listStyle: `none`, p: `0`, variant: `lists.bigList` },
           "li": { lineHeight: `lg`, mb: [2,3,4] },
           "& > div": { mt: 6, mb: 6, fontSize: `body.sm` },
           zIndex: 200
