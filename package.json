@@ -16,6 +16,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@accessible/modal": "^3.0.2",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@lekoarts/gatsby-theme-cara": "^1.2.18",

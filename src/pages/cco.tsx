@@ -1,24 +1,19 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from "react"
-import { Helmet } from "react-helmet"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import {useSpring, animated, config} from 'react-spring'
 import { Heading, Text, Box, Flex, Progress, jsx } from 'theme-ui'
 import { utils } from 'web3'
-// import {usePoller, useContractReader, useTokenBalance} from 'eth-hooks';
 //
 import Layout from '../@lekoarts/gatsby-theme-cara/components/layout'
 import Hero from '../@lekoarts/gatsby-theme-cara/components/hero'
 import PageSection from '../@lekoarts/gatsby-theme-cara/components/page-section'
 import SVG from "../@lekoarts/gatsby-theme-cara/components/svg"
-import { waveAnimation, loadingAnim } from "../@lekoarts/gatsby-theme-cara/styles/animations"
+import { waveAnimation } from "../@lekoarts/gatsby-theme-cara/styles/animations"
 import CTA from "../@lekoarts/gatsby-theme-cara/components/cta"
-import Modal from 'react-modal'
-import { CloseButton } from '../@lekoarts/gatsby-theme-cara/components/modal';
 import { useFetch } from "../@lekoarts/gatsby-theme-cara/hooks/use-fetch"
-import Overlay from '../../.cache/fast-refresh-overlay/components/overlay';
-Modal.setAppElement('#___gatsby')
+
 //
 
 const InnerWave = styled.div`
@@ -129,7 +124,7 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
 export const ProgressBar = ({ current = 0, max = 100 }) => {
   return (
     <PageSection>
-      <div sx={{ position: `relative`, maxWidth: `1170px` }}>
+      <div sx={{ position: `relative`, maxWidth: `1170px`, mt: [0, 0,0, 0,0, -100, 0] }}>
         <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left={[30,30,30,30,30, -130, -130]} top={[-30,-30,-30,-45,-45, -1, -1]} opacity={[0.2, 0.2,0.2,0.2,0.2, 1]} />
         <SVG icon="arrayPlus" hiddenMobile width="40px" color="icon_darkest" left={[130,130,130,130,190,-64, -230, -230]} top={[-50,-80,-110,-110,-110, -1, -1]} opacity={[0.4, 0.3,0.3,0.3,0.3, 1]}/>
         <ProgressIndicator max={max} current={current} />
@@ -188,48 +183,13 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
     setIsOpen(false);
   }
 
-  const modalStyles = {
-    overlay: {
-        backdropFilter: `blur(2px)`,
-        backgroundColor: `rgba(2, 9, 80,0.95)`,
-        modalFade,
-        transition: `all 0.2s 0.5s ease`,
-        zIndex: 4000,
-    },
-    content : {
-      top: [0,'50%'],
-      left: [0, '50%'],
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: [0, '-50%'],
-      transform: [`none`, `translate(-50%, -50%)`],
-      backdropFilter: `blur(6px)`,
-      backgroundColor: `rgba(255,255,255,0.05)`,
-      border: `none`,
-      boxShadow: `0 0 20px rgba(0,0,0,0.8)`,
-      minHeight: [`100vh`, `auto`],
-      width: [`100%`, `90%`, `95%`, `95%`,`95%`, `50%`],
-      maxWidth: [`100%`, `1080px`],
-      textAlign: `center`,
-      p: [0, 3, 4],
-      zIndex: 6000,
-      opacity: 1,
-      overflow: `hidden`,
-      transition: `all 0.2s ease`,
-      'svg': {
-        pointerEvents: `none`
-      },
-    }
-  };
-
-
   return (
     <PageSection>
-      <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75, -100], mb: [4,4,5]}}>
-        <animated.p sx={{flex: [`0 0 100%`, `0 0 52%`], width: [`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}} style={fade}>CCO shares will be migrated to the ArrayDAO in Q2. 10% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</animated.p>
-        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`center`, `right`], fontSize: [`body.md`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
+      <Flex sx={{flexFlow: [`column-reverse wrap`,`row-reverse wrap`,`row nowrap`, `row nowrap`], alignContent: `center`, justifyContent: `space-between`, mt: [-50, -50, -75,-25,-50,-125, -100], mb: [4,5,5]}}>
+        <animated.p sx={{flex: [`0 0 100%`,`0 0 100%`, `0 0 52%`], width: [`100%`,`100%`, `52%`], fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`]}} style={fade}>CCO shares will be migrated to the ArrayDAO in Q2. 10% of the bonding curve is allocated to CCO members, and will be distributed proportionally.</animated.p>
+        <div sx={{ display: `inline-flex`, flex: `1 0 auto`, alignItems: `center`, justifyItems: [`center`,`center`, `right`], fontSize: [`body.md`,`body.lg`,`body.md`,`display.sm`,`display.md`,`display.lg`], fontWeight: `700`, textAlign: `left`, pl: [`0`, `100px`] }}>
           <animated.span sx={{ flex: `0 0 auto`, pr: [20], borderRadius: `50%` }} style={fade}>
-            <SVG icon="daiLogo" hiddenMobile width={[36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
+            <SVG icon="daiLogo" hiddenMobile width={[36,36, 72]} color="icon_darkest" left="0" top="0" opacity={1} position="relative" />
           </animated.span>
 
           <animated.div style={fade}>
@@ -237,39 +197,7 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="/join" type="button" sx={{ variant: `links.primary` }} onClick={openModal} />
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={modalStyles}
-          contentLabel="Example Modal"
-          aria={{
-            labelledby: "heading",
-            describedby: "full_description"
-          }}>
-
-        <div sx={{px: [1, 5], pb: 5, zIndex: 200, textAlign: `center`, "h3, p, li": {textAlign: `left`}}}>
-            <h3 id="modal-heading" sx={{display: `flex`, alignItems: `center`, justifyItems: `left`, fontSize: [`display.sm`, `body.md`, `body.xl`,]}}><SVG icon="afLogo" hiddenMobile width={[`35px`,`45px`]} left="0" bottom="0" position="relative" /> <span sx={{ml: 3}}>Propose to join the CCO</span></h3>
-            <p id="full_description" sx={{fontSize: [`display.xs`, `body.sm`, `body.md`, `body.md`, `body.lg`], lineHeight: [1.22]}}>Hey there! From all of us at Array, thanks for your interest in the project! We’ve been working really hard over the past 6 months and are happy to finally give the keys to the community via a Community Contribution Opportunity (CCO). Unlike ICOs of the past, a CCO keeps your funds decentralized and liquid. Members can RageQuit to redeem their initial DAI contribution at any time for a small penalty. Sound good? Let’s get started. If you have any questions, feel free to hop into <a href="https://discord.gg/kGuamkkvfA">our discord here!</a></p>
-            <p sx={{fontSize: [`body.xs`, `body.sm`, `body.md`]}}>Because ETH fees have been very high as of late, we are utilizing a Layer 2 solution (xDAI) for our CCO, before our bespoke ArrayDAO launches on mainnet.</p>
-
-          <ol sx={{
-            variant: `lists.modalList`,
-            }}>
-              <li><p>Set up the xDAI network on MetaMask here: <a href="https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup">Metamask setup</a></p></li>
-              <li><p>Bridge Mainnet DAI to xDAI using the <a href="https://bridge.xdaichain.com/">xDAI Bridge</a> (make sure you are on Mainnet in Metamask)</p></li>
-              <li><p>Switch MetaMask to the xDAI network and propose membership here: <a href="/">(link here)</a></p></li>
-            </ol>
-
-          <p sx={{fontSize: [`body.xs`, `body.sm`, `body.md`], mb: [4, 4, 5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
-          <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.primary`, mx: `auto` }} />
-        </div>
-        <SVG icon="ccoGrid2" hiddenMobile width={[125, 125, 160]} color="icon_darkest" left={[200, 200, 420, 300, -90]} top={[-25, -25, -100, -60, `15%`]} opacity={[0.2, 0.2, 0.2, 0.2, 0.1]} stroke="red" zIndex={30} />
-        <SVG icon="ccoSemiCirc" color="colors.background" left={[0]} bottom={[0]} width={[250, 300, 350, 350]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 0.1]} transform="scale(-1,-1)" zIndex={30} pointerEvents="none" />
-        <SVG icon="roadmapGrid2" color="colors.background" right={[-60]} bottom={[0]} width={[60,60,60, 120]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} zIndex={30} />
-          <CloseButton modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-        </Modal>
+      <CTA text="propose to join" link="#propose" type="link" sx={{ variant: `links.primary` }} />
     </PageSection>
   )
 }
@@ -292,13 +220,13 @@ const CCOPage = () => {
       <PageSection sx={{ "&>div": { pt: [0] } }}>
         <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap` }}>
           <Box sx={{ position: `relative`, flex: [`0 0 100%`, `0 0 100%`, `0 0 100%`, `0 1 50%`, `0 1 50%`], pt: 0, width: [`100%`, `100%`, `100%`, `50%`, `50%`], justifySelf: `center`, margin: `0 auto` }}>
-            <Heading as="h2" sx={{ textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.lg`, `display.lg`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: 4 }}>FAQ</Heading>
+            <Heading as="h2" sx={{ textAlign: `left`, fontSize: [`body.xxl`, `body.xxl`, `display.lg`, `display.lg`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: 4 }}>FAQ</Heading>
             <ul sx={{ listStyle: `none`, pl: 0 }}>
               {faqs && (
                 faqs.map((faq, i) => (
                   <li key={`faq-${i}`} sx={{ mb: [4, 4, 5] }}>
-                    <Heading as="h3" sx={{ textAlign: `left`, fontSize: [`body.lg`, `body.xl`, `body.xl`, `body.xl`, `body.xl`, `display.lg`], lineHeight: 1.22, mb: [3] }}>{faq.question}</Heading>
-                    <p sx={{ fontSize: [`body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.sm`, `body.md`], width: [`100%`, `100%`, `80%`, `auto`, `auto`,] }}>{faq.answer}</p>
+                    <Heading as="h3" sx={{ textAlign: `left`, fontSize: [`body.lg`, `body.md`, `body.xl`, `body.xl`, `body.xl`, `display.lg`], lineHeight: 1.22, mb: [3] }}>{faq.question}</Heading>
+                    <p sx={{ fontSize: [`body.xs`, `body.xs`, `body.sm`, `body.sm`, `body.sm`, `body.md`], width: [`100%`, `100%`, `80%`, `auto`, `auto`,] }}>{faq.answer}</p>
                   </li>
                 ))
               )}
@@ -306,6 +234,25 @@ const CCOPage = () => {
           </Box>
         </Flex>
         <SVG icon="ccoGrid2" hiddenMobile width={[125, 125, 172]} color="icon_darkest" left={[200, 200, 420, 300, 0]} top={[-25, -25, -100, -60, `15%`]} opacity={[0.2, 0.2, 0.2, 0.2, 1]} />
+      </PageSection>
+      <PageSection sx={{"&>div": { pt: [0] } }}>
+        <div  id="propose"sx={{ mt: `-100px`,height: [50, 50,50,50, 100]}}></div>
+        <div sx={{position: `relative`, px: [0], pb: 5, zIndex: 200, textAlign: `center`, "h3, p, li": {textAlign: `left`}, maxWidth: [`100%`, `100%`, `100%`,`70%`]}}>
+            <h3 id="modal-heading" sx={{display: `flex`, alignItems: `center`, justifyItems: `left`, fontSize: [`display.md`, `display.md`,`display.lg`,`display.lg`,`display.lg`, `display.xl`], mt: 0, mb: [3,4]}}>Propose to join</h3>
+            <p id="full_description" sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`,`body.sm`,`body.md`,`body.lg`], lineHeight: [1.3, 1.4, 1.4]}}>Hey there! From all of us at Array, thanks for your interest in the project! We’ve been working really hard over the past 6 months and are happy to finally give the keys to the community via a Community Contribution Opportunity (CCO). Unlike ICOs of the past, a CCO keeps your funds decentralized and liquid. Members can RageQuit to redeem their initial DAI contribution at any time for a small penalty. Sound good? Let’s get started. If you have any questions, feel free to hop into <a href="https://discord.gg/kGuamkkvfA">our discord here!</a></p>
+            <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`,`body.sm`,`body.sm`, `body.md`]}}>Because ETH fees have been very high as of late, we are utilizing a Layer 2 solution (xDAI) for our CCO, before our bespoke ArrayDAO launches on mainnet.</p>
+
+          <ol sx={{
+            variant: `lists.modalList`,
+            }}>
+              <li><p>Set up the xDAI network on MetaMask here: <a href="https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup">Metamask setup</a></p></li>
+              <li><p>Bridge Mainnet DAI to xDAI using the <a href="https://bridge.xdaichain.com/">xDAI Bridge</a> (make sure you are on Mainnet in Metamask)</p></li>
+              <li><p>Switch MetaMask to the xDAI network and propose membership here: <a href="/">(link here)</a></p></li>
+            </ol>
+
+          <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [4, 5, 5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
+          <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
+        </div>
       </PageSection>
     </Layout>
   )

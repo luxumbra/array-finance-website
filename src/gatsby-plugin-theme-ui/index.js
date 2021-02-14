@@ -1,6 +1,7 @@
 import { merge } from 'theme-ui'
 import { tailwind } from '@theme-ui/presets'
 
+
 const theme = merge(tailwind, {
   initialColorModeName: `dark`,
   useCustomProperties: true,
@@ -183,6 +184,44 @@ const theme = merge(tailwind, {
         cursor: `pointer`,
       },
     },
+    modal: {
+      overlay: {
+        position: `absolute`,
+        top: 0,
+        left: 0,
+        width: `100%`,
+        height: `100%`,
+        backdropFilter: `blur(2px)`,
+        backgroundColor: `rgba(2, 9, 80,0.95)`,
+        // transition: `opacity 0.2s ease-in-out`,
+        transition: `all 0.2s 0.5s ease`,
+        zIndex: 4000,
+      },
+      content: {
+        top: ['50%'],
+        left: ['50%'],
+        right: 'auto',
+        bottom: ['auto'],
+        marginRight: ['-50%'],
+        transform: ['translate(-50%, -50%)'],
+        backdropFilter: 'blur(6px)',
+        backgroundColor: 'rgba(255,255,255,0.05)',
+        border: 'none',
+        boxShadow: '0 0 20px rgba(0,0,0,0.8)',
+        height: [, 'unset'],
+        width: ['50%'],
+        maxWidth: ['1080px'],
+        textAlign: 'center',
+        p: [5],
+        zIndex: 6000,
+        opacity: 1,
+        overflow: 'hidden',
+        transition: 'all 0.2s ease',
+        svg: {
+          pointerEvents: 'none',
+        },
+      },
+    },
   },
   header: {
     backgroundColor: `primary`,
@@ -229,18 +268,17 @@ const theme = merge(tailwind, {
         display: `inline-flex`,
         alignItems: `start`,
         justifyItems: `left`,
-        pl: `44px`,
+        pl: [30, 30, `44px`],
         backgroundImage: `listBg`,
         backgroundRepeat: `no-repeat`,
         backgroundPosition: `0 20%`,
-        backgroundSize: [`18px`, `24px`],
-        fontSize: [`body.xs`, `display.xs`, `body.md`, `display.xl`, `display.xl`, `display.md`],
-        pr: [0, 6],
-        pb: [2, 3],
-        "p": {
-          my: 0
+        backgroundSize: [`18px`, `18px`, `24px`],
+        fontSize: [`14px`, `14px`, `body.md`, `body.md`, `body.lg`],
+        pb: [2, 2, 3],
+        p: {
+          my: 0,
         },
-        maxWidth: [`80%`, `unset`],
+        maxWidth: [`100%`, `100%`, `100%`, `85%`],
       },
     },
   },
@@ -288,12 +326,33 @@ const theme = merge(tailwind, {
       px: [`30px`],
       py: [`10px`, `16px`],
       transition: `all 0.2s ease`,
-      "&:hover": {
+      '&:hover': {
         color: `brand.secondary.light`,
         borderColor: `brand.secondary.light`,
       },
-      "&:visited": {
-        color: `white`
+      '&:visited': {
+        color: `white`,
+      },
+      '&:visited:hover': {
+        color: `brand.secondary.light`,
+      },
+    },
+    large: {
+      background: `transparent`,
+      border: `4px solid white`,
+      borderRadius: `0`,
+      color: `white`,
+      fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.xl`],
+      fontWeight: [`body`, `heading`, `heading`],
+      px: [`30px`],
+      py: [`10px`, `16px`],
+      transition: `all 0.2s ease`,
+      '&:hover': {
+        color: `brand.secondary.light`,
+        borderColor: `brand.secondary.light`,
+      },
+      '&:visited': {
+        color: `white`,
       },
       '&:visited:hover': {
         color: `brand.secondary.light`,

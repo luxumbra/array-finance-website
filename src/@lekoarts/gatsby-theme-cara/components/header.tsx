@@ -124,7 +124,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       id='header'
       sx={{
           position: `fixed`,
-          height: scrolled ? [`50px`, `50px`, `75px`, `100px`] : [`75px`, `75px`, `100px`, `150px`, `150px`, `170px`],
+          height: scrolled ? [`50px`, `50px`, `75px`,`75px`,`75px`,`75px`, `100px`] : [`75px`, `75px`, `100px`,`100px`,`100px`,`130px`, `170px`],
           width: `100vw`,
           top: 0,
           left: 0,
@@ -147,10 +147,10 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
       <DesktopNav as="nav"
           sx={{
             display: [`none`, `none`, `none`, `flex`, `flex`],
-            maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1170px`],
+            maxWidth: [`90%`,`90%`,`90%`,`90%`, `1080px`, `1080px`, `1170px`],
             width: `100%`,
             mx: 'auto',
-            px: [0, 8, 10],
+            px: [0],
             alignItems: 'flex-end',
             color: `white`,
             ".line": {
@@ -169,16 +169,16 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             sx={{
               variant: 'styles.navlink',
               alignSelf: `baseline`,
-              width: [`40px`,`40px`,`50px`, `70px`],
-              height: [`40px`,`40px`,`50px`, `70px`],
+              width: [`40px`,`40px`,`50px`,`50px`,`50px`, `70px`],
+              height: [`40px`,`40px`,`50px`,`50px`,`50px`, `70px`],
               p: 0,
-              mr: [`50px`,`79px`],
+              mr: [`50px`,`50px`,`50px`,`50px`,`50px`,`70px`],
               position: `relative`,
-              flex: [`0 1 40px`, `0 1 40px`, `0 1 50px`, `0 1 70px`],
+              flex: [`0 1 40px`, `0 1 40px`, `0 1 50px`,`0 1 50px`,`0 1 50px`, `0 1 70px`],
               transform: scrolled ? `scale(0.7) translateY(-5px)` : `scale(1) translateY(-10px)`,
               transition: `transform 0.2s ease-in-out`
             }}>
-            <SVG icon="afLogo" width={[`40px`,`40px`,`50px`, `70px`]} left="0" bottom="0" top={[0]} />
+            <SVG icon="afLogo" width={[`40px`,`40px`,`50px`,`50px`,`50px`, `70px`]} left={[0, 0, -10]} bottom="0" top={[0]} />
           </NavLink>
           <NavItem href="/" label="array.finance" scrolled={scrolled}/>
           <NavItem href='/team' label="team"  scrolled={scrolled}/>
@@ -199,7 +199,7 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           height: [`40px`,`40px`,`50px`, `70px`],
           p: 0,
           ml: `5%`,
-          mr: [`50px`,`79px`],
+          mr: [`50px`,`50px`,`50px`,`79px`],
           position: `relative`,
           flex: [`0 1 40px`, `0 1 40px`, `0 1 50px`, `0 1 70px`],
           transform: (scrolled ? `scale(0.7) translateY(0)` : `scale(0.9) translateY(0)`),
@@ -241,7 +241,10 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
             pt: 3,
             "&:hover, &:focus": {
               color: `white`
-            }
+            },
+            "&:visited": {
+             color: `white`
+            },
           }
 
         }}>

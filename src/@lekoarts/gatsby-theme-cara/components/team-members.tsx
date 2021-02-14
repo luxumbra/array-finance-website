@@ -118,7 +118,7 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
   </Box>
     <Box sx={{
       textAlign: `center` }}>
-      <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [3,3,4]}}>Advisors</Heading>
+      <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.lg`, `display.lg`, `display.lg`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [3,4,4]}}>Advisors</Heading>
       <ul sx={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-between`, mt: [0], mb: [0,0,5], ml: 0, pl: 0, listStyle: `none`}}>
         {advisors && (
           advisors.map((m,i) => (
@@ -146,7 +146,7 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
       </ul>
     </Box>
     <Box sx={{textAlign: `center` }}>
-    <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.sm`, `display.md`, `display.md`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [4,4,5]}}>Partners</Heading>
+    <Heading as="h2" sx={{textAlign: `left`, fontSize: [`body.xxl`, `display.lg`, `display.lg`, `display.lg`, `display.lg`, `display.xl`], lineHeight: 1.22, mb: [4,5,5]}}>Partners</Heading>
       <ul sx={{ml: 0, pl: 0, listStyle: `none`,}}>
         {partners && (
           partners.map((m,i) => (

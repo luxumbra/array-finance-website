@@ -42,7 +42,7 @@ const Roadmap = () => (
           }} />
         </Box>
       </Flex>
-        <SVG position={`absolute`} icon="gridAssetVert" hiddenMobile width={[60, 60, 60, 113]} color="icon_darkest" left="0" top={[`50%`,`50%`,`50%`,`50%`,`8%`]}  preserveAspectRatio="xMidYMid meet" opacity={[0.07,0.7,0.07, 0.5]}/>
+        <SVG position={`absolute`} icon="gridAssetVert" hiddenMobile width={[60, 60, 60, 113]} color="icon_darkest" left="0" top={[`50%`,`50%`,`50%`,`50%`,`8%`]}  preserveAspectRatio="xMidYMid meet" opacity={[0.07,0.07,0.07, 0.5]} zIndex="0"/>
     </PageSection>
   </Layout>
 )

@@ -26,7 +26,7 @@ const TeamPage = () => (
           <TeamMembers teamMembers={teamMembers} advisors={advisors} partners={partners} />
         </Box>
       </Flex>
-      <SVG icon="teamPlay" hiddenMobile width={117} color="icon_darkest" left={[`70%`, `70%`,`70%`,`70%`,`90%`,0]} top="50%" opacity={[0.1, 0.1, 0.5]} transform="" zIndex={0}  transform={[`scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(1)`]} zIndex={0} />
+      <SVG icon="teamPlay" hiddenMobile width={117} color="icon_darkest" left={[`70%`, `70%`,`90%`,`70%`,`90%`,0]} top="50%" opacity={[0.1, 0.1, 0.5]} transform="" zIndex={0}  transform={[`scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(-1)`, `scaleX(1)`]} zIndex={0} />
     </PageSection>
       <SVG icon="teamStarRing" hiddenMobile width={[150, 150, 150, 268]} color="icon_darkest" right={[0]} top={[`37%`,`35%`]} opacity={0.5} />
   </Layout>

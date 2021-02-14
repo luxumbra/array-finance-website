@@ -116,7 +116,7 @@ const HomePage = () => (
           }}>
           <FutureProof />
         </Box>
-        <Box sx={{position: `relative`, flex: [`0 0 10%`,`0 0 10%`,`0 0 29%`,`0 0 46%`], width: [`10%`, `10%`,`29%`,`46%`], minHeight: [`100px`, `458px`], overflowX: `visible`,  zIndex: 0}}>
+        <Box sx={{position: `relative`, flex: [`0 0 10%`,`0 0 10%`,`0 0 29%`,`0 0 46%`], width: [`10%`, `10%`,`29%`,`46%`], minHeight: [`100px`,`130px`, `458px`], overflowX: `visible`,  zIndex: 0}}>
           <SVG icon="futureProof" color="colors.background" right={[0, 0, -20, 0]} top={[-30, 0, -75, 0]} width={[`250px`,`250px`,`400px`,`458px`]} preserveAspectRatio="xMidYMid meet" opacity={[0.3,0.3,0.3, 1]} />
         </Box>
         <Box sx={{ position: `relative`, flex: [`0 0 100%`,`0 1 90%`,`0 1 90%`, `0 1 59%`], pt: [3, 5], width: [`90%`,`59%`], justifySelf: `center`, margin: `0 auto`, pr: [0,0,0,50] }}>
@@ -124,7 +124,7 @@ const HomePage = () => (
           <CTA text="join our CCO" link="/cco" type="link" sx={{
             variant: `links.primary`
           }} />
-          <SVG icon="roadmapGrid" width={115} color="icon_darkest" left={[0, 0, 50,50, -240, "-50%"]} top={[-100, -100,-200,"30%"]} opacity={[0,0.5,0.5,1]} />
+          <SVG icon="roadmapGrid" width={115} color="icon_darkest" left={[0, 0, 50,50, -240, "-50%"]} top={[-100, 100,-200,"30%"]} opacity={[0,0,0.5,0.5,1]} />
         </Box>
       </Flex>
       {/* <UpDownWide >

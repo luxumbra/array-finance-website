@@ -5,11 +5,24 @@ import { jsx } from "theme-ui"
 import Footer from './footer'
 import Header from './header'
 import SEO from "./seo"
+import {useSpring, animated, config} from 'react-spring'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
-const Layout = ({ children, className = `` }: LayoutProps) => (
-  <>
+const Layout = ({ children, className = `` }: LayoutProps) => {
+
+
+  const modalFade = useSpring({
+    config: config.default,
+    delay: 200,
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  })
+
+  return (
+    <>
     <Global
       styles={(theme) => ({
         "*": {
@@ -25,6 +38,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         html: {
           fontSize: `100%`,
           WebkitTextSizeAdjust: `100%`,
+          scrollBehavior: `smooth`
         },
         body: {
           backgroundColor: theme.colors.background,
@@ -48,9 +62,8 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
             maxWidth: `100vw`,
             overflowX: `hidden`
           },
-          ".ReactModal__Overlay": {
-            opacity: 0,
-            transition: `opacity 0.2s ease-in-out`
+          ".CCOModal_overlay": {
+            modalFade,
           },
           ".ReactModal__Overlay--after-open": {
             opacity: 1
@@ -96,13 +109,14 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       <div className={className} sx={{
         position: `relative`,
         overflowX: `hidden`,
-        pt: [`75px`, `75px`, `100px`,`150px`, `170px`],
+        pt: [`75px`, `75px`, `100px`,`100px`,`100px`,`130px`, `170px`],
         width: `100vw`,
         zIndex: 1000
       }}>{children}</div>
       <Footer sx={{position: `relative`, zIndex: 500}} />
     </div>
   </>
-)
+  )
+    }
 
 export default Layout
