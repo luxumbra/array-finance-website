@@ -250,7 +250,7 @@ const CCOPage = () => {
               <li><p>Switch MetaMask to the xDAI network and propose membership here: <a href="/">(link here)</a></p></li>
             </ol>
 
-          <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [4, 5, 5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
+          <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
           <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
         </div>
       </PageSection>

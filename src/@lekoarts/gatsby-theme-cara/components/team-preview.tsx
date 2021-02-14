@@ -37,7 +37,7 @@ export const TeamPreview = ({ images }) => {
   )
 
   return (
-    <Box sx={{textAlign: `center`, mt: [100]}}>
+    <Box sx={{textAlign: `center`, mt: [25, 25, 50, 50, 50, 50, 100]}}>
       <Flex sx={{mx: `auto`, pl: [`${(images.length * 30) / 2}px`,`${(images.length * 30) / 2}px`, `${(images.length * 30) / 2}px`, `${(images.length * 50) / 2}px`], justifyContent: `center`}}>
         {springs && (
           springs.map(( { x, transform } , i) => (
