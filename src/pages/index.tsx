@@ -92,7 +92,7 @@ const HomePage = () => (
           "p": { fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: [3,4,4], mb: [5,4,5], width: [`90%`, `80%`] },
           }}>
           <Backed />
-          <CTA text="read our whitepaper" link="/whitepaper" type="link" sx={{
+          <CTA text="read our whitepaper" link="/Array_Whitepaper.pdf" type="link" sx={{
             variant: `links.primary`
           }} />
         </Box>

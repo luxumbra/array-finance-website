@@ -247,7 +247,7 @@ const CCOPage = () => {
             </ol>
 
           <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [5]}}>Your Tribute is your DAI contribution, which will be migrated to Array tokens at a later date.</p>
-          <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
+          <CTA text="Make your proposal" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
         </div>
       </PageSection>
     </Layout>

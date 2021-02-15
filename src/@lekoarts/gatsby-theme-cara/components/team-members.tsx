@@ -53,8 +53,8 @@ export const advisors = [
   {
     name: `Esfandiar Benjamin Lagevardi`,
     role: `Advisor`,
-    bio: `Long time advocate for crypto.  Network security and optimization by day, foreign film enthusiast by night.  `,
-    link: ``,
+    bio: `With a background in Banking & Finance, Essi started investing in digital assets in 2013. Expert in consensus algorithms, automated market maker pricing curves, tokenomics, digital custody solutions, and vault strategies.`,
+    link: `https://www.linkedin.com/in/esfandiar-benjamin-lagevardi-9b631086/`,
     imgPath: ``, //`/users/Gunnar.png`
   },
   {

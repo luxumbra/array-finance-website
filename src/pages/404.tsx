@@ -217,41 +217,7 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="/join" type="button" sx={{ variant: `links.primary` }} onClick={openModal} />
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={modalStyles}
-          contentLabel="Example Modal"
-          aria={{
-            labelledby: "heading",
-            describedby: "full_description"
-          }}>
-
-        <div sx={{px: 5, pb: 5, zIndex: 200, textAlign: `center`, "h3, p, li": {textAlign: `left`}}}>
-            <h3 id="modal-heading" sx={{display: `flex`, alignItems: `center`, justifyItems: `left`, fontSize: [`body.sm`, `body.md`, `body.xl`,]}}><SVG icon="afLogo" hiddenMobile width={[`35px`,`45px`]} left="0" bottom="0" position="relative" /> <span sx={{ml: 3}}>Propose to join the CCO</span></h3>
-            <p id="full_description" sx={{fontSize: [`body.sm`, `body.sm`, `body.md`]}}>Hey there! From all of us at Array, thanks for your interest in the project! We’ve been working really hard over the past 6 months and are happy to finally give the keys to the community via a Community Contribution Opportunity (CCO). Unlike ICOs of the past, a CCO keeps your funds decentralized and liquid. Members can RageQuit to redeem their initial DAI contribution at any time for a small penalty. Sound good? Let’s get started. If you have any questions, feel free to hop into <a href="https://discord.gg/kGuamkkvfA">our discord here!</a></p>
-            <p sx={{fontSize: [`body.sm`, `body.sm`, `body.md`]}}>Because ETH fees have been very high as of late, we are utilizing a Layer 2 solution (xDAI) for our CCO, before our bespoke ArrayDAO launches on mainnet.</p>
-
-          <ul sx={{
-            variant: `lists.modalList`,
-
-            }}>
-              <li>Set up the xDAI network on MetaMask here:
-                <a href="https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup">Metamask setup</a></li>
-              <li>Bridge Mainnet DAI to xDAI using the <a href="https://bridge.xdaichain.com/">xDAI Bridge</a> (make sure you are on Mainnet in Metamask)</li>
-              <li>Switch MetaMask to the xDAI network and propose membership here: <a href="/">(link here)</a></li>
-            </ul>
-
-          <p sx={{fontSize: [`body.sm`, `body.sm`, `body.md`], mb: [4, 4, 5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
-          <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.primary`, mx: `auto` }} />
-        </div>
-        <SVG icon="ccoGrid2" hiddenMobile width={[125, 125, 160]} color="icon_darkest" left={[200, 200, 420, 300, -90]} top={[-25, -25, -100, -60, `15%`]} opacity={[0.2, 0.2, 0.2, 0.2, 0.1]} stroke="red" zIndex={30} />
-        <SVG icon="ccoSemiCirc" color="colors.background" left={[0]} bottom={[0]} width={[250, 300, 350, 350]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 0.1]} transform="scale(-1,-1)" zIndex={30} />
-        <SVG icon="roadmapGrid2" color="colors.background" right={[-60]} bottom={[0]} width={[60,60,60, 120]} preserveAspectRatio="xMidYMid meet" opacity={[0.1, 1]} zIndex={30} />
-          <CloseButton modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-        </Modal>
+      <CTA text="propose to join" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="button" sx={{ variant: `links.primary` }} />
     </PageSection>
   )
 }
@@ -271,8 +237,6 @@ const CCOPage = () => {
       <Hero page={page} />
       <ProgressBar current={data.balance && utils.fromWei(data.balance)} max={1000000} />
       <ProgressInfo currentBalance={data.balance && utils.fromWei(data.balance)} isLoading={loading} />
-      <PageSection sx={{ "&>div": { pt: [0] } }}>
-      </PageSection>
     </Layout>
   )
 }

@@ -118,13 +118,17 @@ const theme = merge(tailwind, {
       backgroundColor: `primary`,
     },
     a: {
-      color: `brand.secondary.light`,
+      color: `brand.accents.light`,
       textDecoration: `none`,
       transition: `all 0.3s ease-in-out`,
       '&:hover': {
-        color: `primary`,
+        color: `white`,
         textDecoration: `none`,
         cursor: `pointer`,
+      },
+      '&:visited': {
+        color: `brand.accents.light`,
+        textDecoration: `none`,
       },
     },
     p: {
