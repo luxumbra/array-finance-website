@@ -42,6 +42,7 @@ export const TeamPreview = ({ images }) => {
         {springs && (
           springs.map(( { x, transform } , i) => (
             <animated.div
+              key={`member-${i}`}
               sx={{ transform: [`translateX(${i * -20}px)`,`translateX(${i * -20}px)`,`translateX(${i * -20}px)`, `translateX(${i * -50}px)`] }}
             >
               <Image

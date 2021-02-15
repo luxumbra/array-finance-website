@@ -22,23 +22,19 @@ const InnerWave = styled.div`
   }
 `
 
+
+
+
 export const faqs = [
   {
-    question: `Question 1`,
-    answer: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`
+    question: `What is a CCO?`,
+    answer: `CCO stands for “Community Contribution Opportunity.” The end result of a CCO is a product managed by a community rather than a small team and their investors.`
   },
   {
-    question: `Question 2`,
-    answer: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`
+    question: `What is DAOHaus?`,
+    answer: `DAOhaus is a community-owned platform that enables teams, projects, or communities to unlock the coordination power of a DAO.`
   },
-  {
-    question: `Question 3`,
-    answer: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`
-  },
-  {
-    question: `Question 4`,
-    answer: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`
-  },
+
 ]
 
 const ProgressIndicator = ({ current = 0, max = 100 }) => {
@@ -239,7 +235,7 @@ const CCOPage = () => {
         <div  id="propose"sx={{ mt: `-100px`,height: [50, 50,50,50, 100]}}></div>
         <div sx={{position: `relative`, px: [0], pb: 5, zIndex: 200, textAlign: `center`, "h3, p, li": {textAlign: `left`}, maxWidth: [`100%`, `100%`, `100%`,`70%`]}}>
             <h3 id="modal-heading" sx={{display: `flex`, alignItems: `center`, justifyItems: `left`, fontSize: [`display.md`, `display.md`,`display.lg`,`display.lg`,`display.lg`, `display.xl`], mt: 0, mb: [3,4]}}>Propose to join</h3>
-            <p id="full_description" sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`,`body.sm`,`body.md`,`body.lg`], lineHeight: [1.3, 1.4, 1.4]}}>Hey there! From all of us at Array, thanks for your interest in the project! We’ve been working really hard over the past 6 months and are happy to finally give the keys to the community via a Community Contribution Opportunity (CCO). Unlike ICOs of the past, a CCO keeps your funds decentralized and liquid. Members can RageQuit to redeem their initial DAI contribution at any time for a small penalty. Sound good? Let’s get started. If you have any questions, feel free to hop into <a href="https://discord.gg/kGuamkkvfA">our discord here!</a></p>
+            <p id="full_description" sx={{fontSize: [`body.xs`,`body.sm`,`body.sm`,`body.sm`,`body.md`,`body.lg`], lineHeight: [1.3, 1.4, 1.4]}}>Hey there! From all of us at Array, thanks for your interest in the project! We’ve been working really hard over the past 6 months and are happy to finally give the keys to the community via a Community Contribution Opportunity (CCO). Unlike ICOs of the past, a CCO keeps your funds decentralized and liquid. Members can RageQuit to redeem their initial DAI contribution at any time for a small penalty. Sound good? Let’s get started. If you have any questions, feel free to hop into <a href="https://discord.gg/kGuamkkvfA">our discord here</a>!</p>
             <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`,`body.sm`,`body.sm`, `body.md`]}}>Because ETH fees have been very high as of late, we are utilizing a Layer 2 solution (xDAI) for our CCO, before our bespoke ArrayDAO launches on mainnet.</p>
 
           <ol sx={{
@@ -247,10 +243,10 @@ const CCOPage = () => {
             }}>
               <li><p>Set up the xDAI network on MetaMask here: <a href="https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup">Metamask setup</a></p></li>
               <li><p>Bridge Mainnet DAI to xDAI using the <a href="https://bridge.xdaichain.com/">xDAI Bridge</a> (make sure you are on Mainnet in Metamask)</p></li>
-              <li><p>Switch MetaMask to the xDAI network and propose membership here: <a href="/">(link here)</a></p></li>
+              <li><p>Switch MetaMask to the xDAI network and propose membership here by using the <a href="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new">Loot Grab proposal</a></p></li>
             </ol>
 
-          <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [5]}}>Your Tribute is your DAI contribution, which will be migrated to Array at a later date. Please match your Shares (for voting) or Loot Shares (if you are not interested in governance) to your Tribute.</p>
+          <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [5]}}>Your Tribute is your DAI contribution, which will be migrated to Array tokens at a later date.</p>
           <CTA text="Make your proposal" link="/join" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
         </div>
       </PageSection>

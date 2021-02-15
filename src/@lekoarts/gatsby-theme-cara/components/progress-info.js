@@ -7,7 +7,6 @@ import CTA from './cta'
 import SVG from './svg'
 
 const ProgressInfo = ({ currentBalance, decimals, isLoading }) => {
-  console.log('balance', typeof currentBalance)
   const progConfig = {
     delay: 1000,
     friction: 25,
@@ -27,7 +26,6 @@ const ProgressInfo = ({ currentBalance, decimals, isLoading }) => {
     },
     opacity: 1,
   })
-  console.log('x: ', total.x)
 
   return (
     <PageSection>

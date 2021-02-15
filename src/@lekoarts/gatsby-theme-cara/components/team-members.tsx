@@ -1,11 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
-import { Flex, Box, Heading, Text, AspectImage, Link, jsx } from "theme-ui"
-import Divider from "../elements/divider"
-import Inner from "../elements/inner"
-import Content from "../elements/content"
+import { Box, Heading, Text, AspectImage, Link, jsx } from "theme-ui"
 import SVG from "./svg"
-import CTA from "./cta"
 
 export const teamMembers = [
   {
@@ -91,17 +87,20 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
         {teamMembers && (
           teamMembers.map((m,i) => (
             <li key={`team-${i}`} sx={{ flex: [`0 0 100%`,`0 0 100%`, `0 0 49%`], width: [`100%`,`100%`,`49%`], pl: 0, textAlign: `left`, mb: 6 }}>
-              <div sx={{ position: `relative`, width: `100%`, maxWidth: [`162px`,`162px`,`162px`,`162px`,`162px`,`231px`], height: [`200px`,`200px`,`200px`,`200px`,`200px`,`285px`] }}>
+              <div sx={{ position: `relative`, width: `100%`, maxWidth: [`162px`, `162px`, `162px`, `162px`, `162px`, `231px`], height: [`200px`, `200px`, `200px`, `200px`, `200px`, `285px`] }}>
                 {m.imgPath ? (
+                  <div sx={{position: `relative`}}>
                   <AspectImage
                     key={`image-${i}`}
                     ratio={231/285}
                     src={m.imgPath}
-                    sx={{background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover`, mb: 3}}
+                    sx={{background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover`, mb: 3, zIndex: 100}}
                     />
+                    <div sx={{position: `absolute`, top: 0, left: 0, width: `100%`, height: `100%`, backgroundColor: `rgb(15, 26, 74, 0.5)`, zIndex: 200}}></div>
+                    </div>
                 ) : (
                   <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width={[`162px`,`162px`,`162px`,`162px`,`162px`,`231px`]} preserveAspectRatio="xMidYMid meet" />
-                )}
+                    )}
               </div>
               <h3 sx={{
                 fontSize: `display.md`, lineHeight: `md`, mb: 0
@@ -125,11 +124,14 @@ export const TeamMembers = ({ teamMembers, advisors, partners }: TeamMembersProp
             <li key={`adv-${i}`} sx={{ flex: [`0 0 100%`,`0 0 100%`, `0 0 49%`], width: [`100%`,`100%`,`49%`], pl: 0, textAlign: `left`, mb: [6,5, 3], pr: `50px` }}>
               <div sx={{ position: `relative`, width: `100%`, maxWidth: [`162px`,`162px`,`162px`,`162px`,`162px`,`231px`], height: [`200px`,`200px`,`200px`,`200px`,`200px`,`285px`], mb: [3] }}>
                 {m.imgPath ? (
+                  <div sx={{position: `relative`}}>
                   <AspectImage
                     key={`image-${i}`}
                     ratio={231 / 285}
                     src={m.imgPath}
-                    sx={{ background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover` }}/>
+                    sx={{ background: `primary`, borderRadius: `32px`, width: `100%`, height: `100%`, objectFit: `cover` }} />
+                  <div sx={{position: `absolute`, top: 0, left: 0, width: `100%`, height: `100%`, backgroundColor: `rgb(15, 26, 74, 0.5)`, zIndex: 200}}></div>
+                    </div>
                 ) : (
                   <SVG icon="defaultAvatar" color="colors.background" right="0" top="0" width={[`162px`,`162px`,`162px`,`162px`,`162px`,`231px`]} preserveAspectRatio="xMidYMid meet" />
                 )}

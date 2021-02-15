@@ -11,7 +11,6 @@ function useFetch(url = ``) {
   async function fetchUrl() {
     await axios.get(url)
       .then(response => {
-        console.log(response.data.result[0]);
         setData(response.data.result[0]);
         setLoading(false);
       })
