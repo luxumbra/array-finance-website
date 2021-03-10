@@ -87,8 +87,8 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
   return (
     <div className="indicator" sx={{ display: `flex`, flexFlow: `column wrap`, fontSize: [`body.xs`, `body.xs`, `body.xs`, `body.sm`] }}>
       <div className="bounds" sx={{width: `${100}%`, backgroundColor: `#0F30F520`, borderRadius: `40px`, height: `33px`}}>
-        <animated.div className="progress" sx={{ position: `relative`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`}} style={flowWidth}>
-          <animated.span sx={{position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}} style={fadeLate}>We're here!</animated.span>
+        <animated.div className="progress" sx={{ position: `relative`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`, width: `100%`}}>
+                  <animated.span sx={{ position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0 }}>We're here!</animated.span>
           <span sx={{ visibility: `hidden` }}>{percent}%</span>
         </animated.div>
       </div>
@@ -111,7 +111,7 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
         }
       }}>
           <span>0%</span>
-          <animated.span style={fadeWidthLate}>{percent}%</animated.span>
+          {/* <animated.span style={fadeWidthLate}>{percent}%</animated.span> */}
           <span>100%</span>
       </div>
     </div>
@@ -193,7 +193,7 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="#propose" type="link" sx={{ variant: `links.primary` }} />
+      <CTA text="propose to join" link="#propose" type="link" disabled />
     </PageSection>
   )
 }
@@ -231,7 +231,7 @@ const CCOPage = () => {
         </Flex>
         <SVG icon="ccoGrid2" hiddenMobile width={[125, 125, 172]} color="icon_darkest" left={[200, 200, 420, 300, 0]} top={[-25, -25, -100, -60, `15%`]} opacity={[0.2, 0.2, 0.2, 0.2, 1]} />
       </PageSection>
-      <PageSection sx={{"&>div": { pt: [0] } }}>
+      {/* <PageSection sx={{"&>div": { pt: [0] } }}>
         <div  id="propose"sx={{ mt: `-100px`,height: [50, 50,50,50, 100]}}></div>
         <div sx={{position: `relative`, px: [0], pb: 5, zIndex: 200, textAlign: `center`, "h3, p, li": {textAlign: `left`}, maxWidth: [`100%`, `100%`, `100%`,`70%`]}}>
             <h3 id="modal-heading" sx={{display: `flex`, alignItems: `center`, justifyItems: `left`, fontSize: [`display.md`, `display.md`,`display.lg`,`display.lg`,`display.lg`, `display.xl`], mt: 0, mb: [3,4]}}>Propose to join</h3>
@@ -249,7 +249,7 @@ const CCOPage = () => {
           <p sx={{fontSize: [`display.xs`,`display.xs`, `body.sm`, `body.md`], mb: [5]}}>Your Tribute is your DAI contribution, which will be migrated to Array tokens at a later date.</p>
           <CTA text="Make your proposal" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="link" sx={{ variant: `links.large`, mx: `auto`, transform: `scale(1.2)` }} />
         </div>
-      </PageSection>
+      </PageSection> */}
     </Layout>
   )
 }

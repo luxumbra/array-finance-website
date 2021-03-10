@@ -318,6 +318,27 @@ const theme = merge(tailwind, {
         cursor: `pointer`,
       },
     },
+    disabled: {
+      background: `transparent`,
+      border: `4px solid #a5a5a5`,
+      borderRadius: `0`,
+      color: `#a5a5a5`,
+      fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.md`],
+      fontWeight: [`body`, `heading`, `heading`],
+      px: [`30px`],
+      py: [`10px`, `16px`],
+      transition: `all 0.2s ease`,
+      '&:hover': {
+        color: `#a5a5a5`,
+        borderColor: `#a5a5a5`,
+      },
+      '&:visited': {
+        color: `#a5a5a5`,
+      },
+      '&:visited:hover': {
+        color: `#a5a5a5`,
+      },
+    },
   },
   links: {
     primary: {
@@ -339,6 +360,29 @@ const theme = merge(tailwind, {
       },
       '&:visited:hover': {
         color: `brand.secondary.light`,
+      },
+    },
+    disabled: {
+      background: `transparent`,
+      border: `4px solid #a5a5a5`,
+      borderRadius: `0`,
+      color: `#a5a5a5`,
+      fontSize: [`display.sm`, `display.sm`, `display.sm`, `display.md`],
+      fontWeight: [`body`, `heading`, `heading`],
+      px: [`30px`],
+      py: [`10px`, `16px`],
+      opacity: 0.3,
+      transition: `all 0.2s ease`,
+      '&:hover': {
+        color: `#a5a5a5`,
+        borderColor: `#a5a5a5`,
+        cursor: `unset`,
+      },
+      '&:visited': {
+        color: `#a5a5a5`,
+      },
+      '&:visited:hover': {
+        color: `#a5a5a5`,
       },
     },
     large: {

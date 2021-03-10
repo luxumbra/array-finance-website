@@ -8,16 +8,17 @@ type CTAProps = {
   type: string | any
   children?: React.ReactNode | any
   icon?: React.ReactNode | any
-  onClick: any
+    onClick?: any
+  disabled?: boolean
 }
 
-const CTA = ({ text, link, type, children, icon, onClick }:CTAProps) => {
+const CTA = ({ text, link, type, children, icon, onClick, disabled }:CTAProps) => {
   return (
     <>
       { type === 'button' ? (
-        <Button variant="buttons.primary" onClick={onClick}>{icon} {text ? text : children}</Button>
+        <Button variant={disabled ? `buttons.disabled` : `buttons.primary`} onClick={onClick}>{icon} {text ? text : children}</Button>
       ) : (
-        <Link variant="links.primary" href={link}>{text ? text : children}</Link>
+                  <Link variant={disabled ? `links.disabled` : `links.primary`} href={link}>{text ? text : children}</Link>
       )}
 
     </>

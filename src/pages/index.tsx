@@ -67,7 +67,7 @@ const HomePage = () => (
           }}
           }}>
           <AutomateDefi />
-          <CTA text="join our CCO" link="/cco" type="link" sx={{variant: `links.primary`}} />
+          <CTA text="join our CCO" link="/cco" type="link" disabled />
         </Box>
         <Box sx={{position: `relative`, flex: [`0 0 90%`,`0 0 40%`], width: [`90%`, `40%`], overflowX: `visible`, zIndex: 0}}>
           <SVG icon="autoDefi" color="colors.background" left={[`399px`,`265px`,`-35px`, `-150px`]} top={[`-75px`,`-75px`,`-50px`, `-100px`]} width={[`250px`, `200px`,`300px`, `569px`]} preserveAspectRatio="xMidYMid meet" opacity={[0.09,0.09, 1]} />
@@ -92,9 +92,7 @@ const HomePage = () => (
           "p": { fontSize: [`body.xs`,`body.sm`,`body.md`,`display.sm`,`display.md`,`display.md`], lineHeight: `lg`, mt: [3,4,4], mb: [5,4,5], width: [`90%`, `80%`] },
           }}>
           <Backed />
-          <CTA text="read our whitepaper" link="/Array_Whitepaper.pdf" type="link" sx={{
-            variant: `links.primary`
-          }} />
+          <CTA text="read our whitepaper" link="/Array_Whitepaper.pdf" type="link" />
         </Box>
         <Box sx={{position: `relative`, flex: [`0 0 10%`,`0 0 10%`, `0 0 40%`], width: `40%`, overflowX: `visible`, zIndex: 0}}>
           <SVG icon="backed" color="colors.background" right={[0, 0, -20, 0]} top={[`-50px`,`-50px`,`-50px`, `-100px`]} width={[`200px`,`200px`,`300px`, `421px`]} preserveAspectRatio="xMidYMid meet" opacity={[0.2,0.2, 1] }/>
@@ -121,9 +119,7 @@ const HomePage = () => (
         </Box>
         <Box sx={{ position: `relative`, flex: [`0 0 100%`,`0 1 90%`,`0 1 90%`, `0 1 59%`], pt: [3, 5], width: [`90%`,`59%`], justifySelf: `center`, margin: `0 auto`, pr: [0,0,0,50] }}>
           <RoadmapPhases phases={roadmapPhases} />
-          <CTA text="join our CCO" link="/cco" type="link" sx={{
-            variant: `links.primary`
-          }} />
+          <CTA text="join our CCO" link="/cco" type="link" disabled />
           <SVG icon="roadmapGrid" width={115} color="icon_darkest" left={[0, 0, 50,50, -240, "-50%"]} top={[-100, 100,-200,"30%"]} opacity={[0,0,0.5,0.5,1]} />
         </Box>
       </Flex>
