@@ -7,6 +7,7 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 module.exports = {
   siteMetadata: {
     title: `array.finance: Invest in trusted & user curated portfolios`,
+    siteTitle: `array.finance`,
     description: `Invest in trusted and user-curated portfolios`,
     siteDescription: `Quit protocol hopping and start earning. Create and easily invest in trusted portfolios, earning real returns.`,
     // You can overwrite values here that are used for the SEO component
@@ -16,9 +17,9 @@ module.exports = {
     siteImage: '/array.jpg',
     image: '/array.jpg',
     defaultImage: '/array.jpg',
-    url: 'https://array.finance',
-    twitterUsername: '@arrayfinance',
-    author: '@RaidGuild',
+    url: `https://twitter.com/arrayfinance`,
+    siteUrl: 'https://array.finance',
+    author: '@arrayfinance',
   },
   flags: {
     DEV_SSR: false,
