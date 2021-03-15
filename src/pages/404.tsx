@@ -213,11 +213,11 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.span>
 
           <animated.div style={fade}>
-            {isLoading ? `Fetching...` : formatNumber(parseInt(currentBalance)) } DAI
+            {isLoading ? `Fetching...` : `1,000,000` } DAI
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="button" disabled />
+      <CTA text="propose to join" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="link" disabled />
     </PageSection>
   )
 }

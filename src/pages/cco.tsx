@@ -189,11 +189,11 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.span>
 
           <animated.div style={fade}>
-            {isLoading ? `Fetching...` : formatNumber(parseInt(currentBalance)) } DAI
+            {isLoading ? `Fetching...` : `1,000,000` } DAI
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="#propose" type="link" disabled />
+      <CTA text="propose to join" link="" type="link" disabled />
     </PageSection>
   )
 }

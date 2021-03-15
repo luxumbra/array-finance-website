@@ -373,6 +373,7 @@ const theme = merge(tailwind, {
       py: [`10px`, `16px`],
       opacity: 0.3,
       transition: `all 0.2s ease`,
+      display: `inline`,
       '&:hover': {
         color: `#a5a5a5`,
         borderColor: `#a5a5a5`,
