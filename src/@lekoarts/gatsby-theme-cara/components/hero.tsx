@@ -58,8 +58,7 @@ const Hero = ({ page }) => {
             {page && page === `home` && (
               <>
                 <HomeHero />
-                <CTA text="join our CCO" link="/cco" type="link" sx={{variant: `links.primary`
-                }} />
+                <CTA text="join our CCO" link="/cco" type="link" disabled />
               </>
             )}
             {page && page === `team` && (

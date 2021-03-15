@@ -18,6 +18,7 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
     siteTitle,
     siteTitleAlt: defaultTitle,
     siteUrl,
+    url,
     siteDescription: defaultDescription,
     siteLanguage,
     siteImage: defaultImage,
@@ -27,7 +28,8 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname || ``}`,
+      url: `${url}${pathname || ``}`,
+    siteUrl: `${siteUrl}${pathname || ``}`,
     image: `${siteUrl}${image || defaultImage}`,
   }
   return (
@@ -36,7 +38,7 @@ const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
-      <meta property="og:url" content={seo.url} />
+      <meta property="og:url" content={seo.siteUrl} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content="website" />

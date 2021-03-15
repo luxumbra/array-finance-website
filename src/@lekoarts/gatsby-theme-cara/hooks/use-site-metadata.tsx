@@ -7,6 +7,7 @@ type UseSiteMetadataProps = {
       siteTitleAlt: string
       siteHeadline: string
       siteUrl: string
+      url: string
       siteDescription: string
       siteLanguage: string
       siteImage: string
@@ -25,6 +26,7 @@ const useSiteMetadata = () => {
           siteTitleAlt
           siteHeadline
           siteUrl
+          url
           siteDescription
           siteLanguage
           siteImage

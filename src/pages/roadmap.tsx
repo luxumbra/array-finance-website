@@ -37,9 +37,7 @@ const Roadmap = () => (
       <Flex sx={{ justifyItems: `space-between`, flexFlow: `row wrap`}}>
         <Box sx={{ position: `relative`, flex: [`0 1 100%`,`0 1 100%`,`0 1 90%`, `0 1 90%`,`0 1 90%`, `0 1 50%`], pt: 0, width: [`90%`,`90%`,`90%`,`90%`, `50%`], justifySelf: `center`, margin: `0 auto`, mt: [0, 0, 0, -100, -50] }}>
           <RoadmapPhases phases={roadmapPhases} />
-          <CTA text="join our CCO" link="/cco" type="link" sx={{
-            variant: `links.primary`
-          }} />
+          <CTA text="join our CCO" link="/cco" type="link" disabled />
         </Box>
       </Flex>
         <SVG position={`absolute`} icon="gridAssetVert" hiddenMobile width={[60, 60, 60, 113]} color="icon_darkest" left="0" top={[`50%`,`50%`,`50%`,`50%`,`8%`]}  preserveAspectRatio="xMidYMid meet" opacity={[0.07,0.07,0.07, 0.5]} zIndex="0"/>

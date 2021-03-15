@@ -77,8 +77,8 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
   return (
     <div className="indicator" sx={{ display: `flex`, flexFlow: `column wrap`, fontSize: [`body.xs`, `body.xs`, `body.xs`, `body.sm`] }}>
       <div className="bounds" sx={{width: `${100}%`, backgroundColor: `#0F30F520`, borderRadius: `40px`, height: `33px`}}>
-        <animated.div className="progress" sx={{ position: `relative`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`}} style={flowWidth}>
-          <animated.span sx={{position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}} style={fadeLate}>We're here!</animated.span>
+        <animated.div className="progress" sx={{ position: `relative`, backgroundColor: `#0F30F5`, borderRadius: `40px`, height: `33px`, opacity: 1, transition: `all 0.3s ease-in-out`, width: `100%`}}>
+          <animated.span sx={{position: `absolute`, top: [`-30px`, `-30px`, `-60px`], display: `block`, height: `33px`, width: `100px`, textAlign: `right`, color: `white`, right: 0}}>We're here!</animated.span>
           <span sx={{ visibility: `hidden` }}>{percent}%</span>
         </animated.div>
       </div>
@@ -101,12 +101,13 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
         }
       }}>
           <span>0%</span>
-          <animated.span style={fadeWidthLate}>{percent}%</animated.span>
+          {/* <animated.span style={fadeWidthLate}>{percent}%</animated.span> */}
           <span>100%</span>
       </div>
     </div>
   )
 }
+
 export const ProgressBar = ({ current = 0, max = 100 }) => {
   return (
     <PageSection>
@@ -213,11 +214,11 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.span>
 
           <animated.div style={fade}>
-            {isLoading ? `Fetching...` : formatNumber(parseInt(currentBalance)) } DAI
+            {isLoading ? `Fetching...` : `1,000,000` } DAI
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="button" sx={{ variant: `links.primary` }} />
+      <CTA text="propose to join" link="https://app.daohaus.club/dao/0x64/0xff3f8c0b98454306fb0bda57e5ae38cbfa66cc0d/proposals/new" type="link" disabled />
     </PageSection>
   )
 }
