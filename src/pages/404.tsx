@@ -107,6 +107,7 @@ const ProgressIndicator = ({ current = 0, max = 100 }) => {
     </div>
   )
 }
+
 export const ProgressBar = ({ current = 0, max = 100 }) => {
   return (
     <PageSection>
