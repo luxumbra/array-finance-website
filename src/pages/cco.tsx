@@ -193,7 +193,7 @@ export const ProgressInfo = ({ currentBalance, isLoading }: { currentBalance: st
           </animated.div>
         </div>
       </Flex>
-      <CTA text="propose to join" link="" type="link" disabled />
+      <CTA text="proposals closed" link="" type="link" disabled />
     </PageSection>
   )
 }
